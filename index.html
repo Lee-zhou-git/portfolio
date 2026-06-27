@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>周惠琳 · AI产品经理</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* 主色调——深紫 + 蓝紫，专业且有科技感 */
+    --accent: #6c47ff;
+    --accent-hover: #825bff;
+    --accent-glow: rgba(108, 71, 255, 0.15);
+    --accent-subtle: rgba(108, 71, 255, 0.08);
+
+    /* 背景层次 */
+    --bg-page: #fafafa;
+    --bg-card: #ffffff;
+    --bg-alt: #f5f5f7;
+    --bg-dark: #0a0a0b;
+
+    /* 文字 */
+    --text-primary: #171717;
+    --text-secondary: #52525b;
+    --text-tertiary: #a1a1aa;
+    --text-on-dark: #fafafa;
+    --text-muted-on-dark: #a1a1aa;
+
+    /* 边框 & 阴影 */
+    --border: #e4e4e7;
+    --border-hover: #d4d4d8;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.06), 0 2px 4px -2px rgba(0,0,0,0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+    --shadow-xl: 0 0 0 1px rgba(0,0,0,0.04), 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+
+    --max-w: 1120px;
+    --nav-h: 64px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* =========== NAV ========== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+  }
+  nav .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+  nav .logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  nav .links { display: flex; align-items: center; gap: 28px; }
+  nav .links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+  nav .links a:hover { color: var(--accent); }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    background: var(--accent);
+    color: #fff !important;
+    border-radius: 8px;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    transition: all 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--accent-hover) !important; transform: translateY(-1px); }
+
+  /* =========== HERO ========== */
+  #hero {
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--nav-h);
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(108,71,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139,92,246,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #hero .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: var(--accent-subtle);
+    color: var(--accent);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 20px;
+  }
+  .hero-badge .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .hero-left h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 6px;
+  }
+  .hero-left h1 .gradient {
+    background: linear-gradient(135deg, var(--accent), #8b5cf6, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-left h1 .wave { font-size: 0.9em; }
+  .hero-left .subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+  .hero-left .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    max-width: 520px;
+  }
+  .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px; font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(108,71,255,0.25);
+  }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(108,71,255,0.35); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-subtle); }
+
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .avatar-ring {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .avatar-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--accent), #8b5cf6, #a78bfa, #c4b5fd, var(--accent));
+    animation: spin 8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .avatar-ring .inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .avatar-ring .inner .emoji {
+    font-size: 100px;
+    filter: grayscale(0.1);
+  }
+  .avatar-ring .status-dot {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+    background: #10b981;
+    border: 4px solid var(--bg-page);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(16,185,129,0.3);
+  }
+
+  /* =========== SECTIONS ========== */
+  section { padding: 100px 24px; }
+  section .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .section-header .label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-header h2 {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .section-header p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* =========== PROJECTS ========== */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+  }
+  .project-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    border: 1px solid var(--border);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), #8b5cf6, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 32px rgba(108,71,255,0.1);
+  }
+  .project-card:hover::before { opacity: 1; }
+  .project-card .icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+    display: inline-block;
+  }
+  .project-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+  .project-card .role {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .project-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .project-tags span {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: var(--accent-subtle);
+    color: var(--accent);
+  }
+
+  /* =========== SKILLS ========== */
+  #skills { background: var(--bg-alt); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.2s;
+  }
+  .skill-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(108,71,255,0.08);
+  }
+  .skill-card .icon-s {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--accent-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .skill-card .info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 1px;
+  }
+  .skill-card .info .level {
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  /* =========== EXPERIENCE ========== */
+  .timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--border), transparent);
+  }
+  .timeline-item {
+    position: relative;
+    padding-left: 56px;
+    padding-bottom: 40px;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item .dot {
+    position: absolute;
+    left: 12px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 3px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 4px var(--bg-page);
+  }
+  .timeline-item .dot::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .timeline-item .date {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .timeline-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    margin-bottom: 2px;
+  }
+  .timeline-item .company {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+  .timeline-item ul {
+    list-style: none;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+  .timeline-item ul li {
+    position: relative;
+    padding-left: 18px;
+  }
+  .timeline-item ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* =========== STATS ========== */
+  #stats {
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  .stat-item .num {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #fff, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-item .label {
+    font-size: 13px;
+    color: var(--text-muted-on-dark);
+    margin-top: 4px;
+  }
+
+  /* =========== CONTACT ========== */
+  #contact { background: var(--bg-alt); }
+  .contact-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+  }
+  .contact-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .contact-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-subtle);
+  }
+
+  /* =========== FOOTER ========== */
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 13px;
+    color: var(--text-tertiary);
+    border-top: 1px solid var(--border);
+  }
+
+  /* =========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    #hero .inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .hero-left .desc { margin: 0 auto 24px; }
+    .hero-btns { justify-content: center; }
+    .hero-left h1 { font-size: 32px; }
+    .hero-badge { margin-left: auto; margin-right: auto; }
+    nav .links a:not(.nav-cta) { display: none; }
+    .project-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    section { padding: 60px 16px; }
+    .avatar-ring { width: 200px; height: 200px; }
+    .avatar-ring .inner .emoji { font-size: 72px; }
+    .avatar-ring .status-dot { width: 24px; height: 24px; bottom: 16px; right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <div class="logo">Huilin.</div>
+    <div class="links">
+      <a onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">项目</a>
+      <a onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">技能</a>
+      <a onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">经历</a>
+      <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">联系</a>
+      <a href="#contact" class="nav-cta">📬 联系我</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="inner">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="dot"></span> 2026应届毕业生</div>
+      <h1>
+        你好，我是<span class="gradient">周惠琳</span><span class="wave">👋</span>
+      </h1>
+      <div class="subtitle">AI产品经理</div>
+      <p class="desc">
+        专注于AI产品设计，具备从需求分析、文档输出到项目推进的完整产品闭环。
+        实习期间主导AI裁判评估系统从0到1的产品设计，参与AI营销SaaS平台及多个B端系统的需求迭代。
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">📂 查看项目作品</a>
+        <a href="#contact" class="btn btn-secondary">💬 联系我</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="avatar-ring">
+        <div class="inner">
+          <div class="emoji">👩🏻‍💻</div>
+        </div>
+        <div class="status-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="inner">
+    <div class="section-header">
+      <div class="label">PROJECTS</div>
+      <h2>项目作品</h2>
+      <p>实习期间参与的核心项目，从需求到落地的全流程实践</p>
+    </div>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="icon">🤖</div>
+        <h3>可信AI裁判评估系统</h3>
+        <div class="role">AI产品经理实习生 · 主导产品设计</div>
+        <p>从0到1设计AI裁判评估系统，输出需求规格说明书、详细设计、操作手册等核心产品文档；跟进8周迭代周期，协调前后端开发团队，推动系统按期交付。</p>
+        <div class="project-tags">
+          <span>产品设计</span>
+          <span>需求文档</span>
+          <span>项目推进</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="icon">📦</div>
+        <h3>客户活动物料管理系统</h3>
+        <div class="role">产品实习生 · 需求管理</div>
+        <p>主导需求文档从V1迭代至V6版本，覆盖系统架构设计、数据库设计、第三方接口对接等产品工作，推动开发团队代码规范建设。</p>
+        <div class="project-tags">
+          <span>需求迭代</span>
+          <span>系统设计</span>
+          <span>SaaS</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="icon">💰</div>
+        <h3>CS客户订单模块 (ePO)</h3>
+        <div class="role">产品实习生 · 需求分析与原型设计</div>
+        <p>负责财务综合平台订单模块的产品设计，输出中英双语需求规格说明书，独立完成HTML原型设计方案。</p>
+        <div class="project-tags">
+          <span>ToB产品</span>
+          <span>原型设计</span>
+          <span>财务系统</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="icon">📱</div>
+        <h3>汉全AI营销系统</h3>
+        <div class="role">产品/运营实习生 · 文档建设与迭代</div>
+        <p>输出AI手机配置手册及SOP智能体配置指南，覆盖AI获客、AI销冠、AI客服等核心模块；协调前后端完成小程序迭代及微信审核上线。</p>
+        <div class="project-tags">
+          <span>SaaS</span>
+          <span>AI自动化</span>
+          <span>小程序</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="icon">🔮</div>
+        <h3>在线测算H5</h3>
+        <div class="role">产品实习生 · 合规与验收</div>
+        <p>参与H5付费测算产品的合规建设，输出隐私政策及用户服务协议，跟进前端产品验收测试，保障产品合规上线。</p>
+        <div class="project-tags">
+          <span>H5产品</span>
+          <span>合规文档</span>
+          <span>测试验收</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="icon">🎬</div>
+        <h3>AI内容生产工具链</h3>
+        <div class="role">独立探索 · 技术选型与流程建立</div>
+        <p>基于OpenClaw、Whisper、即梦AI等工具搭建AI视频内容生产流水线，实现语音转写→字幕生成→成片全自动处理，输出可复用的技能复刻指南。</p>
+        <div class="project-tags">
+          <span>AI工具</span>
+          <span>自动化</span>
+          <span>技能沉淀</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="inner">
+    <div class="section-header">
+      <div class="label">SKILLS</div>
+      <h2>专业能力</h2>
+      <p>产品经理核心技能与工具掌握</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="icon-s">📋</div>
+        <div class="info"><h4>需求分析与管理</h4><div class="level">熟练 · 输出多份BRD/PRD</div></div>
+      </div>
+      <div class="skill-card">
+        <div class="icon-s">🎨</div>
+        <div class="info"><h4>产品原型设计</h4><div class="level">熟练 · Axure / Figma</div></div>
+      </div>
+      <div class="skill-card">
+        <div class="icon-s">📊</div>
+        <div class="info"><h4>数据分析</h4><div class="level">掌握 · SQL / 数据看板</div></div>
+      </div>
+      <div class="skill-card">
+        <div class="icon-s">🤖</div>
+        <div class="info"><h4>AI工具链实操</h4><div class="level">掌握 · OpenClaw/Whisper</div></div>
+      </div>
+      <div class="skill-card">
+        <div class="icon-s">📐</div>
+        <div class="info"><h4>项目管理</h4><div class="level">熟练 · Jira / 飞书</div></div>
+      </div>
+      <div class="skill-card">
+        <div class="icon-s">📱</div>
+        <div class="info"><h4>微信生态</h4><div class="level">掌握 · 小程序/公众号</div></div>
+      </div>
+      <div class="skill-card">
+        <div class="icon-s">🐍</div>
+        <div class="info"><h4>Python / 脚本</h4><div class="level">基础 · 数据处理/自动化</div></div>
+      </div>
+      <div class="skill-card">
+        <div class="icon-s">🌐</div>
+        <div class="info"><h4>双语文档能力</h4><div class="level">CET-6 · 中英双语输出</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="inner">
+    <div class="section-header">
+      <div class="label">EXPERIENCE</div>
+      <h2>实习经历</h2>
+      <p>2025.09 — 2026.07 · 从校园到职场的产品成长之路</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <div class="date">2025.09 — 2026.07</div>
+        <h3>AI产品经理实习生</h3>
+        <div class="company">广州汉全科技有限公司</div>
+        <ul>
+          <li>主导可信AI裁判评估系统从0到1的产品设计，输出需求规格说明书、详细设计、操作手册等核心文档，协调前后端团队推进项目迭代</li>
+          <li>负责客户活动物料管理系统需求管理，推动产品文档从V1迭代至V6版本，覆盖系统架构、数据库、第三方接口的全链路产品设计</li>
+          <li>参与AI营销SaaS平台的产品文档建设及小程序版本迭代管理，跟进微信审核发布流程</li>
+          <li>建立产品部门文档规范及标准化模板体系，提升团队文档产出效率</li>
+          <li>探索AI内容生产工具链，独立搭建视频处理自动化流水线，撰写技术复刻指南沉淀知识</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="inner">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="num">6</div>
+        <div class="label">参与项目</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">8+</div>
+        <div class="label">周迭代跟踪</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">10+</div>
+        <div class="label">核心文档输出</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">3</div>
+        <div class="label">产品模块</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="inner">
+    <div class="section-header">
+      <div class="label">CONTACT</div>
+      <h2>保持联系</h2>
+      <p>如果你对我的作品集感兴趣，欢迎随时找我聊聊</p>
+    </div>
+    <div class="contact-card">
+      <h3>📬 期待你的消息</h3>
+      <p>无论是工作机会、项目合作还是交流AI产品，都欢迎联系我</p>
+      <div class="contact-links">
+        <a href="mailto:laozhoujiade@qq.com" class="contact-link">📧 laozhoujiade@qq.com</a>
+        <a href="#" class="contact-link" onclick="alert('微信: TTlisten0905')">💬 微信: TTlisten0905</a>
+        <a href="https://github.com/" target="_blank" class="contact-link">🐙 GitHub</a>
+        <a href="#" class="contact-link">📄 下载简历</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 周惠琳 &middot; Build with ❤️</p>
+</footer>
+
+</body>
+</html>
