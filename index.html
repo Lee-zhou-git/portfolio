@@ -183,12 +183,27 @@
     background-clip: text;
   }
   .hero-left h1 .wave { font-size: 0.9em; }
-  .hero-left .subtitle {
-    font-size: 18px;
+  .hero-left .badge-sub {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--text-secondary);
     margin-bottom: 6px;
     letter-spacing: -0.3px;
+  }
+  .hero-left .badge-sub span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-subtle);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-left: 4px;
   }
   .hero-left .desc {
     font-size: 15px;
@@ -620,7 +635,7 @@
       <h1>
         你好，我是<span class="gradient">周惠琳</span><span class="wave">👋</span>
       </h1>
-      <div class="subtitle">AI产品经理</div>
+      <div class="badge-sub">AI产品经理 <span>寻找2026校招机会</span></div>
       <p class="desc">
         专注于AI产品设计，具备从需求分析、文档输出到项目推进的完整产品闭环。
         实习期间主导AI裁判评估系统从0到1的产品设计，参与AI营销SaaS平台及多个B端系统的需求迭代。
@@ -714,7 +729,7 @@
         <div class="icon">🎬</div>
         <h3>AI内容生产工具链</h3>
         <div class="role">独立探索 · 技术选型与流程建立</div>
-        <p>基于OpenClaw、Whisper、即梦AI等工具搭建AI视频内容生产流水线，实现语音转写→字幕生成→成片全自动处理，输出可复用的技能复刻指南。</p>
+        <p>基于OpenClaw、Whisper、即梦AI等工具搭建AI视频内容生产流水线，实现语音转写→字幕生成→成片全自动处理，沉淀可复用的技能复刻指南。</p>
         <div class="project-tags">
           <span>AI工具</span>
           <span>自动化</span>
@@ -806,14 +821,14 @@
       </div>
       <div class="stat-item">
         <div class="num">8+</div>
-        <div class="label">周迭代跟踪</div>
+        <div class="label">迭代周数</div>
       </div>
       <div class="stat-item">
         <div class="num">10+</div>
-        <div class="label">核心文档输出</div>
+        <div class="label">核心文档</div>
       </div>
       <div class="stat-item">
-        <div class="num">3</div>
+        <div class="num">6</div>
         <div class="label">产品模块</div>
       </div>
     </div>
@@ -834,7 +849,7 @@
       <div class="contact-links">
         <a href="mailto:laozhoujiade@qq.com" class="contact-link">📧 laozhoujiade@qq.com</a>
         <a href="#" class="contact-link" onclick="alert('微信: TTlisten0905')">💬 微信: TTlisten0905</a>
-        <a href="https://github.com/" target="_blank" class="contact-link">🐙 GitHub</a>
+        <a href="https://github.com/laozhoujiade" target="_blank" class="contact-link">🐙 GitHub</a>
         <a href="#" class="contact-link">📄 下载简历</a>
       </div>
     </div>
@@ -842,7 +857,7 @@
 </section>
 
 <footer>
-  <p>© 2026 周惠琳 &middot; Build with ❤️</p>
+  <p>© 2026 周惠琳 &middot; Built with ❤️</p>
 </footer>
 
 </body>
