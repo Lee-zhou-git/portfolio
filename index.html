@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>周惠琳 · AI产品经理</title>
-  <meta name="description" content="周惠琳，AI产品经理实习生，2026届应届生。广东工业大学物联网工程专业，专注于AI产品设计与项目推进。">
+  <meta name="description" content="周惠琳，AI产品经理实习生，2026届应届生。广东工业大学网络工程专业，专注于AI产品设计与项目推进。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -272,6 +272,26 @@
   .doc-thumb svg { width: 48px; height: 48px; opacity: 0.5; }
   .doc-thumb span { font-size: 13px; }
 
+  /* Image grid for multi-screenshot projects */
+  .img-grid-2x2 {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6px; width: 100%; height: 100%;
+  }
+  .img-grid-2x2 img {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 4px; box-shadow: var(--shadow-sm);
+    transition: transform 0.2s;
+  }
+  .img-grid-2x2 img:hover { transform: scale(1.02); }
+  .img-grid-1 {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 100%;
+  }
+  .img-grid-1 img {
+    max-width: 100%; max-height: 280px; object-fit: contain;
+    border-radius: var(--radius-sm); box-shadow: var(--shadow-md);
+  }
+
   /* ===== SKILLS ===== */
   #skills { background: var(--bg-alt); }
   .skills-categories { display: flex; flex-direction: column; gap: 32px; }
@@ -496,7 +516,7 @@
       <h1>你好，我是<span class="name">周惠琳</span></h1>
       <div class="title-line">AI产品经理实习生</div>
       <p class="bio">
-        广东工业大学物联网工程专业2026届毕业生。专注于AI产品设计与项目推进，具备从需求分析、原型设计到文档输出的完整产品闭环。
+        广东工业大学网络工程专业2026届毕业生。专注于AI产品设计与项目推进，具备从需求分析、原型设计到文档输出的完整产品闭环。
         实习期间主导AI裁判评估系统从0到1的产品设计，参与AI营销SaaS平台及多个B端系统的需求迭代。
       </p>
       <div class="hero-btns">
@@ -547,14 +567,16 @@
             <span>产品设计</span><span>需求文档</span><span>项目推进</span><span>AI评估</span><span>B端系统</span>
           </div>
         </div>
-        <div class="card-visual" onclick="openLightbox('可信AI裁判评估系统 — 产品文档体系')">
-          <div class="doc-thumb">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            <span>需求规格说明书 + 详细设计 + 操作手册</span>
+        <div class="card-visual" onclick="openLightboxImg('assets/images/projects/trustai-dashboard.png')">
+          <div class="img-grid-2x2">
+            <img src="assets/images/projects/trustai-dashboard.png" alt="可信AI任务列表" loading="lazy">
+            <img src="assets/images/projects/trustai-results.png" alt="可信AI评估结果" loading="lazy">
+            <img src="assets/images/projects/trustai-config.png" alt="可信AI模型配置" loading="lazy">
+            <img src="assets/images/projects/trustai-report.png" alt="可信AI评估报告" loading="lazy">
           </div>
           <div class="zoom-hint">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            点击查看文档清单
+            点击放大（共4张系统截图）
           </div>
         </div>
       </div>
@@ -575,14 +597,16 @@
             <span>需求迭代</span><span>系统设计</span><span>接口对接</span><span>项目管理</span><span>SaaS</span>
           </div>
         </div>
-        <div class="card-visual" onclick="openLightbox('客户活动物料管理系统 — 产品需求文档V6.0 + 系统架构设计')">
-          <div class="doc-thumb">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <span>PRD V6.0 + 数据库设计 + 架构方案</span>
+        <div class="card-visual" onclick="openLightboxImg('assets/images/projects/material-architecture.png')">
+          <div class="img-grid-2x2">
+            <img src="assets/images/projects/material-architecture.png" alt="物料系统架构图" loading="lazy">
+            <img src="assets/images/projects/material-giftlist.png" alt="礼品池管理列表" loading="lazy">
+            <img src="assets/images/projects/material-addgift.png" alt="添加礼品表单" loading="lazy">
+            <img src="assets/images/projects/material-roles.png" alt="角色权限管理" loading="lazy">
           </div>
           <div class="zoom-hint">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            点击查看文档清单
+            点击放大（共4张系统截图）
           </div>
         </div>
       </div>
@@ -628,14 +652,16 @@
             <span>SaaS</span><span>AI自动化</span><span>小程序</span><span>文档建设</span><span>运营支持</span>
           </div>
         </div>
-        <div class="card-visual" onclick="openLightbox('汉全AI营销系统 — PC端 + 小程序端产品文档')">
-          <div class="doc-thumb">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <span>AI营销系统 — 操作手册 + SOP配置指南</span>
+        <div class="card-visual" onclick="openLightboxImg('assets/images/projects/aimarketing-dashboard.png')">
+          <div class="img-grid-2x2">
+            <img src="assets/images/projects/aimarketing-dashboard.png" alt="AI营销系统主页" loading="lazy">
+            <img src="assets/images/projects/aimarketing-acquisition.png" alt="AI获客任务创建" loading="lazy">
+            <img src="assets/images/projects/aimarketing-agent.png" alt="AI智能体配置" loading="lazy">
+            <img src="assets/images/projects/aimarketing-mobile.png" alt="移动端AI销冠" loading="lazy">
           </div>
           <div class="zoom-hint">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            点击查看文档清单
+            点击放大（共4张系统截图）
           </div>
         </div>
       </div>
@@ -690,26 +716,26 @@
         </div>
       </div>
 
-      <!-- Project 7: QuickCanvas -->
+      <!-- Project 7: QuickCanvas / Next Canvas -->
       <div class="project-card reveal">
         <div class="card-text">
           <div class="project-index">07</div>
-          <h3>QuickCanvas 协作画板</h3>
-          <div class="role">独立项目 · 产品设计与AI工作流实践 · 2025.08 — 2025.11</div>
+          <h3>Next Canvas 协作画板（毕设）</h3>
+          <div class="role">毕业设计 · 全栈开发 + 产品设计 · 2025.08 — 2026.05</div>
           <ul class="contributions">
-            <li>针对Figma/Canva学习成本高、Excalidraw协作弱的痛点，设计轻量级实时协作画板产品方案</li>
-            <li>完成竞品深度分析（Figma、Canva、Excalidraw），输出结构化竞品对比报告、PRD及功能清单</li>
-            <li>全流程使用AI辅助：Claude生成结构化文档，Coze+Trea在30分钟内将想法转化为可交互原型</li>
-            <li>基于用户反馈完成5项关键改进：协作状态提示优化、模板选择器逻辑、画布性能优化方案</li>
+            <li>独立完成本科毕业设计，基于 React 19 + Konva.js + Yjs CRDT 实现实时协作画板应用</li>
+            <li>设计静态/动态双层渲染策略（Konva StaticLayer + DynamicLayer），100+元素下保持 60 FPS</li>
+            <li>基于 Yjs CRDT 算法实现无冲突协同编辑，端到端同步延迟 <50ms，支持离线编辑自动恢复</li>
+            <li>使用 IndexedDB + SQLite 双层持久化架构，AI 辅助完成需求分析、系统设计、答辩材料全流程</li>
           </ul>
           <div class="project-tags">
-            <span>AI-first</span><span>竞品分析</span><span>原型设计</span><span>用户研究</span><span>0→1</span>
+            <span>React 19</span><span>Konva.js</span><span>Yjs CRDT</span><span>WebSocket</span><span>毕设</span>
           </div>
         </div>
-        <div class="card-visual" onclick="openLightbox('QuickCanvas — AI驱动的轻量级协作画板产品方案')">
+        <div class="card-visual" onclick="openLightbox('Next Canvas — 基于CRDT的实时协作画板（本科毕业设计）')">
           <div class="doc-thumb">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-            <span>QuickCanvas — 竞品分析 + PRD + AI辅助原型</span>
+            <span>毕业设计 — 论文 + 源码 + 答辩材料</span>
           </div>
           <div class="zoom-hint">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -734,14 +760,13 @@
             <span>AI工具链</span><span>自动化</span><span>Whisper</span><span>内容运营</span><span>技能沉淀</span>
           </div>
         </div>
-        <div class="card-visual" onclick="openLightbox('AI内容生产工具链 — 视频处理流水线 + 社交卡片生成系统')">
-          <div class="doc-thumb">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-            <span>AI工具链 — 视频自动处理 + 社交卡片生成</span>
+        <div class="card-visual" onclick="openLightboxImg('assets/images/projects/aitoolchain-flow.png')">
+          <div class="img-grid-1">
+            <img src="assets/images/projects/aitoolchain-flow.png" alt="AI内容生产工具链流程图" loading="lazy">
           </div>
           <div class="zoom-hint">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            点击查看说明
+            点击放大查看工具链流程图
           </div>
         </div>
       </div>
@@ -832,8 +857,8 @@
       <div class="timeline-item reveal">
         <div class="dot"></div>
         <div class="date">2024.10 — 2025.01</div>
-        <h3>产品实习生</h3>
-        <div class="company">深圳市思通信息技术有限公司</div>
+        <h3>产品经理助理</h3>
+        <div class="company">深圳市博思通信息技术有限公司</div>
         <ul>
           <li>搭建4个Coze智能体用于用户访谈结构化、竞品动态监控、PRD自动生成、原型文案润色，将原型产出效率提升约30%</li>
           <li>开发Claude Skill将会议录音/纪要自动转化为结构化需求文档，减少人工整理时间，提升需求一致性</li>
@@ -856,11 +881,11 @@
     <div class="edu-card reveal">
       <div>
         <h3>广东工业大学</h3>
-        <div class="major">物联网工程 · 本科 · 2022 — 2026</div>
+        <div class="major">网络工程 · 本科 · 2022 — 2026</div>
         <div class="details">
           主修课程：Java程序设计、数据库原理、C语言、计算机网络、数据结构<br>
           语言能力：CET-6，中英双语文档输出<br>
-          校园经历：女子篮球队后勤负责人（组织赛事后勤保障，参与率提升50%）、班级委员
+          校园经历：女子篮球队后勤负责人（组织赛事后勤保障，赞助转化率50%）、班级心委
         </div>
       </div>
       <div class="edu-badge">
