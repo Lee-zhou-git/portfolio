@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" data-theme="light" data-lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>周惠琳 · AI产品经理</title>
-  <meta name="description" content="周惠琳，AI产品经理实习生，2026届应届生。广东工业大学网络工程专业，专注于AI产品设计与项目推进。">
+  <meta name="description" content="周惠琳，AI产品经理，2026届应届生。广东工业大学网络工程专业，专注于AI产品设计与项目推进。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -545,684 +545,201 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
   }
+
+  /* ===== LANG SWITCH ===== */
+  .lang-switch { display:inline-flex; border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+  .lang-switch button {
+    background:none; border:none; padding:6px 9px; font-size:12px; font-weight:600;
+    color:var(--text-secondary); cursor:pointer; font-family:inherit;
+    border-left:1px solid var(--border); transition:all 0.2s; line-height:1;
+  }
+  .lang-switch button:first-child { border-left:none; }
+  .lang-switch button:hover { color:var(--accent); }
+  .lang-switch button.active { background:var(--accent); color:#fff; }
+  @media (max-width:768px){ .lang-switch button{ padding:6px 7px; font-size:11px; } }
+
+  /* ===== LANG SWITCH ===== */
+  .lang-switch { display:inline-flex; border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+  .lang-switch button {
+    background:none; border:none; padding:6px 9px; font-size:12px; font-weight:600;
+    color:var(--text-secondary); cursor:pointer; font-family:inherit;
+    border-left:1px solid var(--border); transition:all 0.2s; line-height:1;
+  }
+  .lang-switch button:first-child { border-left:none; }
+  .lang-switch button:hover { color:var(--accent); }
+  .lang-switch button.active { background:var(--accent); color:#fff; }
+  @media (max-width:768px){ .lang-switch button{ padding:6px 7px; font-size:11px; } }
+  /* 英文模式：拉丁字体优先，标点宽度正常 */
+  html[data-lang="en"] body { font-family:"Segoe UI", Roboto, Helvetica, Arial, "Noto Sans SC", sans-serif; }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
   <div class="inner">
-    <a href="#" class="logo">周惠琳<span>.</span></a>
+    <a href="#" class="logo" data-i18n-html="logo">周惠琳<span>.</span></a>
     <div class="links">
-      <a onclick="scrollToSection('projects')">项目</a>
-      <a onclick="scrollToSection('skills')">技能</a>
-      <a onclick="scrollToSection('experience')">经历</a>
-      <a onclick="scrollToSection('education')">教育</a>
-      <a onclick="scrollToSection('honors')">荣誉</a>
-      <a onclick="scrollToSection('contact')">联系</a>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换暗色模式">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
+      <a onclick="scrollToSection('projects')" data-i18n="nav_projects">项目</a><a onclick="scrollToSection('skills')" data-i18n="nav_skills">技能</a><a onclick="scrollToSection('experience')" data-i18n="nav_experience">经历</a><a onclick="scrollToSection('education')" data-i18n="nav_education">教育</a><a onclick="scrollToSection('honors')" data-i18n="nav_honors">荣誉</a><a onclick="scrollToSection('contact')" data-i18n="nav_contact">联系</a>
+      <div class="lang-switch" role="group" aria-label="language">
+        <button data-lang-btn="zh">简</button>
+        <button data-lang-btn="tw">繁</button>
+        <button data-lang-btn="en">EN</button>
+      </div>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
     </div>
   </div>
 </nav>
-
-<!-- HERO -->
 <section id="hero">
   <div class="inner">
     <div class="hero-left">
-      <div class="greeting">2026届应届毕业生 · 即日到岗</div>
-      <h1>你好，我是<span class="name">周惠琳</span></h1>
-      <div class="title-line">AI产品经理实习生 · 广东工业大学网络工程</div>
-      <p class="bio">
-        网络工程科班出身的AI产品实习生。<strong style="color:var(--text-primary);font-weight:600">从0到1主导服务某中信旗下国企的可信AI评估系统</strong>，并参与AI营销SaaS、财务综合平台等多个B端系统迭代。擅长把 LLM / RPA / Agent 能力落地为可交付产品，能独立输出中英双语PRD与高保真原型。
-      </p>
+      <div class="greeting" data-i18n="hero_greeting">2026届应届毕业生 · 即日到岗</div>
+      <h1 data-i18n-html="hero_h1">你好，我是<span class="name">周惠琳</span></h1>
+      <div class="title-line" data-i18n="hero_title">AI产品经理 · 广东工业大学网络工程</div>
+      <p class="bio" data-i18n-html="hero_bio">网络工程科班出身，深耕AI产品方向。<strong style="color:var(--text-primary);font-weight:600">从0到1主导服务某中信旗下国企的可信AI评估系统</strong>，并参与AI营销SaaS、财务综合平台等多个B端系统迭代。擅长把 LLM / RPA / Agent 能力落地为可交付产品，能独立输出中英双语PRD与高保真原型。</p>
       <div class="hero-stats">
-        <div class="stat"><div class="stat-num">7+</div><div class="stat-label">主导 / 参与项目</div></div>
-        <div class="stat"><div class="stat-num">0→1</div><div class="stat-label">国企级AI系统主导</div></div>
-        <div class="stat"><div class="stat-num">1<span style="font-size:15px;font-weight:600">年</span></div><div class="stat-label">产品实习经验</div></div>
+        <div class="stat"><div class="stat-num">7+</div><div class="stat-label" data-i18n="stat1">主导 / 参与项目</div></div>
+        <div class="stat"><div class="stat-num">0→1</div><div class="stat-label" data-i18n="stat2">国企级AI系统主导</div></div>
+        <div class="stat"><div class="stat-num" data-i18n-html="stat3num">1<span style="font-size:15px;font-weight:600">年</span></div><div class="stat-label" data-i18n="stat3">产品实习经验</div></div>
       </div>
       <div class="hero-btns">
-        <a onclick="scrollToSection('projects')" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          查看项目作品
-        </a>
-        <a onclick="scrollToSection('contact')" class="btn btn-secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          联系我
-        </a>
+        <a onclick="scrollToSection('projects')" class="btn btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span data-i18n="btn_projects">查看项目作品</span></a>
+        <a onclick="scrollToSection('contact')" class="btn btn-secondary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span data-i18n="btn_contact">联系我</span></a>
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-photo" id="heroPhoto">
-        <img src="assets/images/profile.jpg" alt="周惠琳" loading="eager">
-      </div>
+      <div class="hero-photo" id="heroPhoto"><img src="assets/images/profile.jpg" alt="周惠琳" loading="eager"></div>
     </div>
   </div>
 </section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="inner">
-    <div class="section-header">
-      <div class="num">01 / PROJECTS</div>
-      <h2>项目作品</h2>
-      <p class="sub">实习期间参与的核心项目，从需求到落地的全流程实践</p>
+<section id="projects"><div class="inner">
+  <div class="section-header"><div class="num">01 / PROJECTS</div><h2 data-i18n="sec_proj_h">项目作品</h2><p class="sub" data-i18n="sec_proj_sub">实习期间参与的核心项目，从需求到落地的全流程实践</p></div>
+  <div class="project-list">
+<div class="project-card reveal"><div class="card-text"><div class="project-index">01</div><h3 data-i18n="p01_title">可信AI裁判评估系统</h3><div class="role" data-i18n="p01_role">主导产品设计 · 甲方：某中信旗下国企 · 2026.02 — 2026.07</div><div class="pb"><div class="pb-label" data-i18n="label_intro">项目介绍</div><div class="pb-desc" data-i18n="p01_intro">可信AI评估系统结合开源 LLM 评估框架 opik，对企业 AI 应用（智能体 / 通用大模型）的输出内容进行统一评估并输出评估报告，解决 AI 应用投产前「输出无统一评判标准、质量不可预测」的痛点，为 AI 应用投入实际业务奠定基础。</div></div><div class="pb"><div class="pb-label" data-i18n="label_duties">项目职责</div><ul class="contributions"><li data-i18n-html="p01_duty1">深入调研 opik 开源框架，对其托管云服务与开发文档进行深度研究，结合甲方业务需求与开发团队共同制定产品与技术方案</li><li data-i18n-html="p01_duty2">开展项目管理，根据交付时间及开发团队工期制定排期计划，推动前后端团队紧密协作，保证各里程碑按时交付</li><li data-i18n-html="p01_duty3">管理需求变更，评估变更影响并制定解决措施，隔离甲方等干系人变更对开发团队的干扰</li></ul></div><div class="pb"><div class="pb-label" data-i18n="label_solution">解决方案</div><ul class="contributions"><li data-i18n-html="p01_sol1">采用 Agent-to-Agent 模式，通过 opik 的评估能力与内置指标，配置裁判模型对 AI 应用输出统一评判，生成结构化评估报告</li><li data-i18n-html="p01_sol2">采用「业务系统 + opik 本地部署 + SDK 调用」模式，数据本地化存储保障隐私性</li><li data-i18n-html="p01_sol3">模型经 OpenAI 协议接入、智能体经中间层形式接入，适配多智能体 / 多裁判模型</li></ul></div><div class="project-tags"><span data-i18n="p01_tag1">0→1</span><span data-i18n="p01_tag2">opik评估框架</span><span data-i18n="p01_tag3">Agent-to-Agent</span><span data-i18n="p01_tag4">国企客户</span><span data-i18n="p01_tag5">LLM评估</span></div></div><div class="card-visual"><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/trustai-dashboard.png" alt="可信AI任务列表" loading="lazy"><img class="carousel-slide" src="assets/images/projects/trustai-results.png" alt="可信AI评估结果" loading="lazy"><img class="carousel-slide" src="assets/images/projects/trustai-config.png" alt="可信AI模型配置" loading="lazy"><img class="carousel-slide" src="assets/images/projects/trustai-report.png" alt="可信AI评估报告" loading="lazy"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal"><div class="card-text"><div class="project-index">02</div><h3 data-i18n="p02_title">客户活动物料管理系统</h3><div class="role" data-i18n="p02_role">产品实习生 · 需求管理与系统设计 · 2026.05 — 2026.07</div><div class="pb"><div class="pb-label" data-i18n="label_intro">项目介绍</div><div class="pb-desc" data-i18n="p02_intro">面向客户活动运营的物料（礼品池）管理系统，覆盖礼品池管理、角色权限、活动核销等能力，帮助企业规范化管理活动物料的申请、发放与核销流程。</div></div><div class="pb"><div class="pb-label" data-i18n="label_duties">项目职责</div><ul class="contributions"><li data-i18n-html="p02_duty1">主导产品需求文档从 V1 至 V6 的 6 个版本迭代，基于甲方反馈持续细化功能清单与业务规则</li><li data-i18n-html="p02_duty2">参与系统架构设计评审，输出数据库设计说明书（含 ER 图、表结构、索引策略）</li><li data-i18n-html="p02_duty3">组织项目周会与需求评审会，管理项目计划表，跟踪开发进度与风险点</li></ul></div><div class="pb"><div class="pb-label" data-i18n="label_solution">解决方案</div><ul class="contributions"><li data-i18n-html="p02_sol1">对接第三方接口（微信支付、短信服务、对象存储），编写接口对接文档与联调测试方案，保障链路稳定</li><li data-i18n-html="p02_sol2">针对多角色（管理员 / 运营 / 审核）设计差异化的操作权限与礼品核销流程，保证物料发放合规、可追溯</li></ul></div><div class="project-tags"><span data-i18n="p02_tag1">需求迭代</span><span data-i18n="p02_tag2">系统设计</span><span data-i18n="p02_tag3">接口对接</span><span data-i18n="p02_tag4">项目管理</span><span data-i18n="p02_tag5">SaaS</span></div></div><div class="card-visual"><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/material-architecture.png" alt="物料系统架构图" loading="lazy"><img class="carousel-slide" src="assets/images/projects/material-giftlist.png" alt="礼品池管理列表" loading="lazy"><img class="carousel-slide" src="assets/images/projects/material-addgift.png" alt="添加礼品表单" loading="lazy"><img class="carousel-slide" src="assets/images/projects/material-roles.png" alt="角色权限管理" loading="lazy"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal"><div class="card-text"><div class="project-index">03</div><h3 data-i18n="p03_title">CS客户订单模块 (ePO)</h3><div class="role" data-i18n="p03_role">需求分析与原型设计 · 甲方：某中信旗下国企 · 2026.04 — 2026.07</div><div class="pb"><div class="pb-label" data-i18n="label_intro">项目介绍</div><div class="pb-desc" data-i18n="p03_intro">面向国企的财务综合平台采购订单（ePO）模块，覆盖采购订单、预算费用、库存管理、付款报表等财务全流程，帮助企业实现采购与费用的规范化、线上化管理。</div></div><div class="pb"><div class="pb-label" data-i18n="label_duties">项目职责</div><ul class="contributions"><li data-i18n-html="p03_duty1">独立完成中英双语需求规格说明书，将甲方财务业务需求转化为清晰、可开发的产品需求文档</li><li data-i18n-html="p03_duty2">设计 HTML 高保真交互原型，覆盖工作台、采购订单管理、预算费用、库存管理、付款报表等核心页面</li><li data-i18n-html="p03_duty3">与甲方对接需求，完成 3 轮需求评审，持续跟进原型与需求文档的迭代修订</li></ul></div><div class="pb"><div class="pb-label" data-i18n="label_solution">解决方案</div><ul class="contributions"><li data-i18n-html="p03_sol1">梳理 CAPEX / OPEX 资本性与运营性支出的业务流程差异，针对不同费用类型设计差异化的审批与记账流程，保证财务处理的合规性</li><li data-i18n-html="p03_sol2">输出数据字典与功能清单，明确字段定义、状态流转与接口逻辑，降低开发的理解成本与返工风险</li></ul></div><div class="project-tags"><span data-i18n="p03_tag1">ToB产品</span><span data-i18n="p03_tag2">原型设计</span><span data-i18n="p03_tag3">财务系统</span><span data-i18n="p03_tag4">双语文档</span><span data-i18n="p03_tag5">需求分析</span></div></div><div class="card-visual"><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/cspo-CS_PO__.png" alt="CS客户订单模块原型" loading="lazy"><img class="carousel-slide" src="assets/images/projects/cspo-Purchase_Order_Manag.png" alt="采购订单管理原型" loading="lazy"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">2</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal"><div class="card-text"><div class="project-index">04</div><h3 data-i18n="p04_title">汉全AI营销系统</h3><div class="role" data-i18n="p04_role">产品/运营实习生 · 文档建设与迭代管理 · 2025.09 — 2026.07</div><div class="pb"><div class="pb-label" data-i18n="label_intro">项目介绍</div><div class="pb-desc" data-i18n="p04_intro">汉全AI营销系统专注于 AI 与 RPA 自动化相结合，提供 AI 获客、AI 销冠、AI 客服、矩阵发布等功能，为企业和商家管理客户的全生命周期，提升获客效率与客户转化率。</div></div><div class="pb"><div class="pb-label" data-i18n="label_duties">项目职责</div><ul class="contributions"><li data-i18n-html="p04_duty1">负责 AI 营销系统的迭代计划，统筹需求评审、开发跟进及版本发布流程，确保产品按计划高质量上线</li><li data-i18n-html="p04_duty2">负责面向客户的产品演示与方案讲解，配合商务部门交付，完成 AI 手机的基础配置及系统功能培训</li><li data-i18n-html="p04_duty3">统筹规划客户生命周期管理，制定 SOP 流程、SOP 看板、SOP 任务等功能，跟踪客户完成转化的全过程</li></ul></div><div class="pb"><div class="pb-label" data-i18n="label_solution">解决方案</div><ul class="contributions"><li data-i18n-html="p04_sol1">针对传统获客效率低，结合 RPA 技术代替人工操作，通过 AI 扩展关键词锁定目标客户，提供「直接抓取线索」与「关键词匹配后触达」等三大获客方式，将询盘客户量提升约 20%-30%</li><li data-i18n-html="p04_sol2">针对销售培训成本高、人手不足，提供 AI 销冠功能：结合企业知识库自动接待客户，当 AI 遇到无法解决的问题或客户进入询价阶段时自动通知销售接管，销售只需处理核心环节，降低约 50% 的用工成本</li></ul></div><div class="project-tags"><span data-i18n="p04_tag1">SaaS</span><span data-i18n="p04_tag2">AI自动化</span><span data-i18n="p04_tag3">小程序</span><span data-i18n="p04_tag4">文档建设</span><span data-i18n="p04_tag5">运营支持</span></div></div><div class="card-visual"><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/aimarketing-dashboard.png" alt="AI营销系统主页" loading="lazy"><img class="carousel-slide" src="assets/images/projects/aimarketing-acquisition.png" alt="AI获客任务创建" loading="lazy"><img class="carousel-slide" src="assets/images/projects/aimarketing-agent.png" alt="AI智能体配置" loading="lazy"><img class="carousel-slide" src="assets/images/projects/aimarketing-mobile.png" alt="移动端AI销冠" loading="lazy"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal"><div class="card-text"><div class="project-index">05</div><h3 data-i18n="p05_title">智能闹钟枕头App</h3><div class="role" data-i18n="p05_role">产品实习生 · 需求分析与产品设计 · 2026.04 — 2026.06</div><div class="pb"><div class="pb-label" data-i18n="label_intro">项目介绍</div><div class="pb-desc" data-i18n="p05_intro">为智能硬件（闹钟枕头）设计的 React Native + BLE 蓝牙双平台（iOS / Android）配套 App，实现闹钟设置、蓝牙同步、离线可用等核心能力，保障用户在弱网 / 断连场景下的可靠唤醒体验。</div></div><div class="pb"><div class="pb-label" data-i18n="label_duties">项目职责</div><ul class="contributions"><li data-i18n-html="p05_duty1">独立完成产品需求分析与设计，输出覆盖 4 大功能模块与蓝牙配对流程的开发评审文档</li><li data-i18n-html="p05_duty2">设计中英双语 i18n 方案，覆盖导航标签、按钮文案、Toast 提示、表单标签与文档内容</li></ul></div><div class="pb"><div class="pb-label" data-i18n="label_solution">解决方案</div><ul class="contributions"><li data-i18n-html="p05_sol1">设计完整的闹钟状态机：响铃 30s→暂停 60s→循环，15 分钟后自动停止，蓝牙断开后本地仍可离线响铃，保证核心闹钟功能的可靠性</li><li data-i18n-html="p05_sol2">梳理蓝牙通信全链路：设备扫描→配对→同步闹钟 / 音量 / 振动档位→电量上报，明确各环节的数据结构与异常处理逻辑</li></ul></div><div class="project-tags"><span data-i18n="p05_tag1">智能硬件</span><span data-i18n="p05_tag2">BLE蓝牙</span><span data-i18n="p05_tag3">React Native</span><span data-i18n="p05_tag4">状态机设计</span><span data-i18n="p05_tag5">i18n</span></div></div><div class="card-visual"><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/smartalarm-main.png" alt="智能闹钟App主页" loading="lazy"><img class="carousel-slide" src="assets/images/projects/smartalarm-alarms.png" alt="闹钟列表" loading="lazy"><img class="carousel-slide" src="assets/images/projects/smartalarm-connect.png" alt="蓝牙连接" loading="lazy"><img class="carousel-slide" src="assets/images/projects/smartalarm-settings.png" alt="设置页" loading="lazy"><img class="carousel-slide" src="assets/images/projects/smartalarm-modal.png" alt="弹窗交互" loading="lazy"><img class="carousel-slide" src="assets/images/projects/smartalarm-card.png" alt="设备卡片" loading="lazy"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">6</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal"><div class="card-text"><div class="project-index">06</div><h3 data-i18n="p06_title">Next Canvas 协作画板（毕设）</h3><div class="role" data-i18n="p06_role">毕业设计 · 全栈开发 + 产品设计 · 2025.08 — 2026.05</div><div class="pb"><div class="pb-label" data-i18n="label_intro">项目介绍</div><div class="pb-desc" data-i18n="p06_intro">本科毕业设计《屏幕在线共享平台的几何元素设计与实现》，基于 React 19 + Konva.js + Yjs CRDT 实现支持多人实时协作的几何元素画板，可绘制、编辑、协同多种几何图形与文字、图片元素。</div></div><div class="pb"><div class="pb-label" data-i18n="label_duties">项目职责</div><ul class="contributions"><li data-i18n-html="p06_duty1">独立完成毕业设计全流程，AI 辅助完成需求分析、竞品调研、系统设计与答辩材料</li><li data-i18n-html="p06_duty2">设计画板的图形绘制、多选编辑、文字样式、房间协同等核心功能</li></ul></div><div class="pb"><div class="pb-label" data-i18n="label_solution">解决方案</div><ul class="contributions"><li data-i18n-html="p06_sol1">设计静态 / 动态双层渲染策略（Konva StaticLayer + DynamicLayer），100+ 元素下稳定保持 60 FPS</li><li data-i18n-html="p06_sol2">基于 Yjs CRDT 算法实现无冲突协同编辑，端到端同步延迟 &lt;50ms；采用 IndexedDB + SQLite 双层持久化架构，支持离线编辑自动恢复</li></ul></div><div class="project-tags"><span data-i18n="p06_tag1">React 19</span><span data-i18n="p06_tag2">Konva.js</span><span data-i18n="p06_tag3">Yjs CRDT</span><span data-i18n="p06_tag4">WebSocket</span><span data-i18n="p06_tag5">毕设</span></div></div><div class="card-visual"><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/nextcanvas-shapes.png" alt="Next Canvas 几何元素画布" loading="lazy"><img class="carousel-slide" src="assets/images/projects/nextcanvas-edit.png" alt="多图形选中与文字样式编辑" loading="lazy"><img class="carousel-slide" src="assets/images/projects/nextcanvas-collab.png" alt="协同编辑面板与画布" loading="lazy"><img class="carousel-slide" src="assets/images/projects/nextcanvas-connected.png" alt="多人实时协同已连接" loading="lazy"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal"><div class="card-text"><div class="project-index">07</div><h3 data-i18n="p07_title">AI内容生产工具链</h3><div class="role" data-i18n="p07_role">独立探索 · 技术选型与流程搭建 · 2025.11 — 2026.07</div><div class="pb"><div class="pb-label" data-i18n="label_intro">项目介绍</div><div class="pb-desc" data-i18n="p07_intro">基于 OpenClaw、Whisper、FFmpeg、即梦AI 等工具搭建的 AI 视频内容生产流水线，实现从素材到成片的自动化处理，显著提升内容运营效率。</div></div><div class="pb"><div class="pb-label" data-i18n="label_duties">项目职责</div><ul class="contributions"><li data-i18n-html="p07_duty1">独立完成工具选型与流程设计，搭建可复用的 AI 内容生产链路</li><li data-i18n-html="p07_duty2">沉淀《OpenClaw 技能复刻指南》，覆盖 8 个核心技能的安装、配置、使用全流程文档</li></ul></div><div class="pb"><div class="pb-label" data-i18n="label_solution">解决方案</div><ul class="contributions"><li data-i18n-html="p07_sol1">实现「语音转写→字幕生成→封面标题→顶格标题→成片烧录」全自动处理流程</li><li data-i18n-html="p07_sol2">搭建社交卡片生成系统，支持小红书 3:4 图文封面（1080×1440）的自动化设计输出</li></ul></div><div class="project-tags"><span data-i18n="p07_tag1">AI工具链</span><span data-i18n="p07_tag2">自动化</span><span data-i18n="p07_tag3">Whisper</span><span data-i18n="p07_tag4">内容运营</span><span data-i18n="p07_tag5">技能沉淀</span></div></div><div class="card-visual"><div class="carousel single" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/aitoolchain-flow.png" alt="AI内容生产工具链流程图" loading="lazy"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">1</span></div><div class="carousel-dots"></div></div></div></div>
+  </div>
+</div></section>
+<section id="skills"><div class="inner">
+  <div class="section-header"><div class="num">02 / SKILLS</div><h2 data-i18n="sec_sk_h">专业能力</h2><p class="sub" data-i18n="sec_sk_sub">产品经理核心技能 + AI工具实操能力</p></div>
+  <div class="skills-categories">
+<div class="skill-category reveal"><h3 data-i18n="sk1_h">AI产品能力</h3><div class="skill-tags"><span class="skill-tag"><span class="dot"></span><span data-i18n="sk1_t1">LLM应用（Claude / DeepSeek）</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk1_t2">Prompt Engineering</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk1_t3">Coze智能体搭建</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk1_t4">Claude Skill开发</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk1_t5">RAG / Agent概念</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk1_t6">AI原型工具（Trea）</span></span></div></div>
+<div class="skill-category reveal"><h3 data-i18n="sk2_h">产品设计</h3><div class="skill-tags"><span class="skill-tag"><span class="dot"></span><span data-i18n="sk2_t1">需求分析与管理</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk2_t2">竞品分析</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk2_t3">PRD/BRD撰写</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk2_t4">高保真原型（Axure RP）</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk2_t5">用户旅程地图</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk2_t6">产品全生命周期管理</span></span></div></div>
+<div class="skill-category reveal"><h3 data-i18n="sk3_h">技术理解</h3><div class="skill-tags"><span class="skill-tag"><span class="dot"></span><span data-i18n="sk3_t1">前端基础（HTML / Vue3）</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk3_t2">后端概念（Java / Spring Boot）</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk3_t3">数据库基础（MySQL）</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk3_t4">API接口设计理解</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk3_t5">Git版本管理</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk3_t6">Python脚本/自动化</span></span></div></div>
+<div class="skill-category reveal"><h3 data-i18n="sk4_h">协作与工具</h3><div class="skill-tags"><span class="skill-tag"><span class="dot"></span><span data-i18n="sk4_t1">项目管理（飞书 / Jira）</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk4_t2">文档规范建设</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk4_t3">微信生态（小程序/公众号）</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk4_t4">SQL数据查询</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk4_t5">中英双语文档（CET-6）</span></span><span class="skill-tag"><span class="dot"></span><span data-i18n="sk4_t6">跨部门协调沟通</span></span></div></div>
+  </div>
+</div></section>
+<section id="experience"><div class="inner">
+  <div class="section-header"><div class="num">03 / EXPERIENCE</div><h2 data-i18n="sec_exp_h">实习经历</h2><p class="sub" data-i18n="sec_exp_sub">两段产品实习经历，从AI工具应用到B端系统设计</p></div>
+  <div class="timeline">
+<div class="timeline-item reveal"><div class="dot"></div><div class="date">2025.09 — 2026.07</div><h3 data-i18n="e1_role">AI产品经理实习生</h3><div class="company" data-i18n="e1_co">广州汉全信息科技股份有限公司</div><ul><li data-i18n-html="e1_li1">主导可信AI裁判评估系统（服务某中信旗下国企客户）从0到1产品设计，输出需求规格说明书、详细设计、操作手册全套文档，协调前后端团队按期迭代交付</li><li data-i18n-html="e1_li2">负责客户活动物料管理系统需求管理，推动PRD从V1至V6的6个版本迭代，覆盖系统架构、数据库、第三方接口的全链路产品设计</li><li data-i18n-html="e1_li3">参与AI营销SaaS平台产品文档建设及小程序版本迭代管理，跟进微信审核发布流程</li><li data-i18n-html="e1_li4">建立产品部门文档规范及标准化模板体系，提升团队文档产出效率</li><li data-i18n-html="e1_li5">独立搭建AI内容生产工具链（Whisper + FFmpeg + OpenClaw），撰写技术复刻指南沉淀知识</li><li data-i18n-html="e1_li6">搭建4个Coze智能体用于用户访谈结构化、竞品动态监控、PRD自动生成、原型文案润色，显著提升原型产出效率</li><li data-i18n-html="e1_li7">开发Claude Skill将会议录音/纪要自动转化为结构化需求文档，减少人工整理时间，提升需求一致性</li></ul></div><div class="timeline-item reveal"><div class="dot"></div><div class="date">2024.10 — 2025.01</div><h3 data-i18n="e2_role">产品经理助理</h3><div class="company" data-i18n="e2_co">深圳市博思通信息技术有限公司</div><ul><li data-i18n-html="e2_li1">主导ToB营销平台优惠券模块设计：竞品分析拼多多、淘宝、京东优惠券玩法，深访目标用户，输出Axure高保真原型覆盖C端+B端全流程</li><li data-i18n-html="e2_li2">跨部门协同多个团队，组织多轮需求评审，输出PRD及接口说明文档，推动项目按期上线</li><li data-i18n-html="e2_li3">优惠券模块上线后有效带动订单转化与GMV增长，并沉淀为平台通用营销工具</li></ul></div>
+  </div>
+</div></section>
+<section id="education"><div class="inner">
+  <div class="section-header"><div class="num">04 / EDUCATION</div><h2 data-i18n="sec_edu_h">教育背景</h2></div>
+  <div class="edu-card reveal">
+    <div>
+      <h3 data-i18n="edu_school">广东工业大学</h3>
+      <div class="major" data-i18n="edu_major">网络工程 · 本科 · 2022 — 2026</div>
+      <div class="details" data-i18n-html="edu_details">主修课程：Java程序设计、数据库原理、C语言、计算机网络、数据结构<br>语言能力：CET-6，中英双语文档输出<br>校园经历：女子篮球队后勤负责人（组织赛事后勤保障，赞助转化率50%）、班级心委</div>
     </div>
-    <div class="project-list">
-
-      <!-- Project 1: 可信AI裁判 -->
-      <div class="project-card reveal">
-        <div class="card-text">
-          <div class="project-index">01</div>
-          <h3>可信AI裁判评估系统</h3>
-          <div class="role">主导产品设计 · 甲方：某中信旗下国企 · 2026.02 — 2026.07</div>
-          <div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">可信AI评估系统结合开源 LLM 评估框架 opik，对企业 AI 应用（智能体 / 通用大模型）的输出内容进行统一评估并输出评估报告，解决 AI 应用投产前「输出无统一评判标准、质量不可预测」的痛点，为 AI 应用投入实际业务奠定基础。</div></div>
-          <div class="pb"><div class="pb-label">项目职责</div>
-            <ul class="contributions">
-              <li>深入调研 opik 开源框架，对其托管云服务与开发文档进行深度研究，结合甲方业务需求与开发团队共同制定产品与技术方案</li>
-              <li>开展项目管理，根据交付时间及开发团队工期制定排期计划，推动前后端团队紧密协作，保证各里程碑按时交付</li>
-              <li>管理需求变更，评估变更影响并制定解决措施，隔离甲方等干系人变更对开发团队的干扰</li>
-            </ul>
-          </div>
-          <div class="pb"><div class="pb-label">解决方案</div>
-            <ul class="contributions">
-              <li>采用 Agent-to-Agent 模式，通过 opik 的评估能力与内置指标，配置裁判模型对 AI 应用输出统一评判，生成结构化评估报告</li>
-              <li>采用「业务系统 + opik 本地部署 + SDK 调用」模式，数据本地化存储保障隐私性</li>
-              <li>模型经 OpenAI 协议接入、智能体经中间层形式接入，适配多智能体 / 多裁判模型</li>
-            </ul>
-          </div>
-          <div class="project-tags">
-            <span>0→1</span><span>opik评估框架</span><span>Agent-to-Agent</span><span>国企客户</span><span>LLM评估</span>
-          </div>
-        </div>
-        <div class="card-visual">
-          <div class="carousel" data-carousel>
-            <div class="carousel-viewport">
-              <div class="carousel-track">
-                <img class="carousel-slide" src="assets/images/projects/trustai-dashboard.png" alt="可信AI任务列表" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/trustai-results.png" alt="可信AI评估结果" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/trustai-config.png" alt="可信AI模型配置" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/trustai-report.png" alt="可信AI评估报告" loading="lazy">
-              </div>
-            </div>
-            <button class="carousel-btn cprev" aria-label="上一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="carousel-btn cnext" aria-label="下一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div>
-            <div class="carousel-dots"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2: 物料管理系统 -->
-      <div class="project-card reveal">
-        <div class="card-text">
-          <div class="project-index">02</div>
-          <h3>客户活动物料管理系统</h3>
-          <div class="role">产品实习生 · 需求管理与系统设计 · 2026.05 — 2026.07</div>
-          <div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">面向客户活动运营的物料（礼品池）管理系统，覆盖礼品池管理、角色权限、活动核销等能力，帮助企业规范化管理活动物料的申请、发放与核销流程。</div></div>
-          <div class="pb"><div class="pb-label">项目职责</div>
-            <ul class="contributions">
-              <li>主导产品需求文档从 V1 至 V6 的 6 个版本迭代，基于甲方反馈持续细化功能清单与业务规则</li>
-              <li>参与系统架构设计评审，输出数据库设计说明书（含 ER 图、表结构、索引策略）</li>
-              <li>组织项目周会与需求评审会，管理项目计划表，跟踪开发进度与风险点</li>
-            </ul>
-          </div>
-          <div class="pb"><div class="pb-label">解决方案</div>
-            <ul class="contributions">
-              <li>对接第三方接口（微信支付、短信服务、对象存储），编写接口对接文档与联调测试方案，保障链路稳定</li>
-              <li>针对多角色（管理员 / 运营 / 审核）设计差异化的操作权限与礼品核销流程，保证物料发放合规、可追溯</li>
-            </ul>
-          </div>
-          <div class="project-tags">
-            <span>需求迭代</span><span>系统设计</span><span>接口对接</span><span>项目管理</span><span>SaaS</span>
-          </div>
-        </div>
-        <div class="card-visual">
-          <div class="carousel" data-carousel>
-            <div class="carousel-viewport">
-              <div class="carousel-track">
-                <img class="carousel-slide" src="assets/images/projects/material-architecture.png" alt="物料系统架构图" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/material-giftlist.png" alt="礼品池管理列表" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/material-addgift.png" alt="添加礼品表单" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/material-roles.png" alt="角色权限管理" loading="lazy">
-              </div>
-            </div>
-            <button class="carousel-btn cprev" aria-label="上一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="carousel-btn cnext" aria-label="下一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div>
-            <div class="carousel-dots"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: CS客户订单模块 -->
-      <div class="project-card reveal">
-        <div class="card-text">
-          <div class="project-index">03</div>
-          <h3>CS客户订单模块 (ePO)</h3>
-          <div class="role">需求分析与原型设计 · 甲方：某中信旗下国企 · 2026.04 — 2026.07</div>
-          <div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">面向国企的财务综合平台采购订单（ePO）模块，覆盖采购订单、预算费用、库存管理、付款报表等财务全流程，帮助企业实现采购与费用的规范化、线上化管理。</div></div>
-          <div class="pb"><div class="pb-label">项目职责</div>
-            <ul class="contributions">
-              <li>独立完成中英双语需求规格说明书，将甲方财务业务需求转化为清晰、可开发的产品需求文档</li>
-              <li>设计 HTML 高保真交互原型，覆盖工作台、采购订单管理、预算费用、库存管理、付款报表等核心页面</li>
-              <li>与甲方对接需求，完成 3 轮需求评审，持续跟进原型与需求文档的迭代修订</li>
-            </ul>
-          </div>
-          <div class="pb"><div class="pb-label">解决方案</div>
-            <ul class="contributions">
-              <li>梳理 CAPEX / OPEX 资本性与运营性支出的业务流程差异，针对不同费用类型设计差异化的审批与记账流程，保证财务处理的合规性</li>
-              <li>输出数据字典与功能清单，明确字段定义、状态流转与接口逻辑，降低开发的理解成本与返工风险</li>
-            </ul>
-          </div>
-          <div class="project-tags">
-            <span>ToB产品</span><span>原型设计</span><span>财务系统</span><span>双语文档</span><span>需求分析</span>
-          </div>
-        </div>
-        <div class="card-visual">
-          <div class="carousel" data-carousel>
-            <div class="carousel-viewport">
-              <div class="carousel-track">
-                <img class="carousel-slide" src="assets/images/projects/cspo-CS_PO__.png" alt="CS客户订单模块原型" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/cspo-Purchase_Order_Manag.png" alt="采购订单管理原型" loading="lazy">
-              </div>
-            </div>
-            <button class="carousel-btn cprev" aria-label="上一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="carousel-btn cnext" aria-label="下一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">2</span></div>
-            <div class="carousel-dots"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4: AI营销系统 -->
-      <div class="project-card reveal">
-        <div class="card-text">
-          <div class="project-index">04</div>
-          <h3>汉全AI营销系统</h3>
-          <div class="role">产品/运营实习生 · 文档建设与迭代管理 · 2025.09 — 2026.07</div>
-          <div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">汉全AI营销系统专注于 AI 与 RPA 自动化相结合，提供 AI 获客、AI 销冠、AI 客服、矩阵发布等功能，为企业和商家管理客户的全生命周期，提升获客效率与客户转化率。</div></div>
-          <div class="pb"><div class="pb-label">项目职责</div>
-            <ul class="contributions">
-              <li>负责 AI 营销系统的迭代计划，统筹需求评审、开发跟进及版本发布流程，确保产品按计划高质量上线</li>
-              <li>负责面向客户的产品演示与方案讲解，配合商务部门交付，完成 AI 手机的基础配置及系统功能培训</li>
-              <li>统筹规划客户生命周期管理，制定 SOP 流程、SOP 看板、SOP 任务等功能，跟踪客户完成转化的全过程</li>
-            </ul>
-          </div>
-          <div class="pb"><div class="pb-label">解决方案</div>
-            <ul class="contributions">
-              <li>针对传统获客效率低，结合 RPA 技术代替人工操作，通过 AI 扩展关键词锁定目标客户，提供「直接抓取线索」与「关键词匹配后触达」等三大获客方式，将询盘客户量提升约 20%-30%</li>
-              <li>针对销售培训成本高、人手不足，提供 AI 销冠功能：结合企业知识库自动接待客户，当 AI 遇到无法解决的问题或客户进入询价阶段时自动通知销售接管，销售只需处理核心环节，降低约 50% 的用工成本</li>
-            </ul>
-          </div>
-          <div class="project-tags">
-            <span>SaaS</span><span>AI自动化</span><span>小程序</span><span>文档建设</span><span>运营支持</span>
-          </div>
-        </div>
-        <div class="card-visual">
-          <div class="carousel" data-carousel>
-            <div class="carousel-viewport">
-              <div class="carousel-track">
-                <img class="carousel-slide" src="assets/images/projects/aimarketing-dashboard.png" alt="AI营销系统主页" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/aimarketing-acquisition.png" alt="AI获客任务创建" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/aimarketing-agent.png" alt="AI智能体配置" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/aimarketing-mobile.png" alt="移动端AI销冠" loading="lazy">
-              </div>
-            </div>
-            <button class="carousel-btn cprev" aria-label="上一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="carousel-btn cnext" aria-label="下一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div>
-            <div class="carousel-dots"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 5: 智能枕头App -->
-      <div class="project-card reveal">
-        <div class="card-text">
-          <div class="project-index">05</div>
-          <h3>智能闹钟枕头App</h3>
-          <div class="role">产品实习生 · 需求分析与产品设计 · 2026.04 — 2026.06</div>
-          <div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">为智能硬件（闹钟枕头）设计的 React Native + BLE 蓝牙双平台（iOS / Android）配套 App，实现闹钟设置、蓝牙同步、离线可用等核心能力，保障用户在弱网 / 断连场景下的可靠唤醒体验。</div></div>
-          <div class="pb"><div class="pb-label">项目职责</div>
-            <ul class="contributions">
-              <li>独立完成产品需求分析与设计，输出覆盖 4 大功能模块与蓝牙配对流程的开发评审文档</li>
-              <li>设计中英双语 i18n 方案，覆盖导航标签、按钮文案、Toast 提示、表单标签与文档内容</li>
-            </ul>
-          </div>
-          <div class="pb"><div class="pb-label">解决方案</div>
-            <ul class="contributions">
-              <li>设计完整的闹钟状态机：响铃 30s→暂停 60s→循环，15 分钟后自动停止，蓝牙断开后本地仍可离线响铃，保证核心闹钟功能的可靠性</li>
-              <li>梳理蓝牙通信全链路：设备扫描→配对→同步闹钟 / 音量 / 振动档位→电量上报，明确各环节的数据结构与异常处理逻辑</li>
-            </ul>
-          </div>
-          <div class="project-tags">
-            <span>智能硬件</span><span>BLE蓝牙</span><span>React Native</span><span>状态机设计</span><span>i18n</span>
-          </div>
-        </div>
-        <div class="card-visual">
-          <div class="carousel" data-carousel>
-            <div class="carousel-viewport">
-              <div class="carousel-track">
-                <img class="carousel-slide" src="assets/images/projects/smartalarm-main.png" alt="智能闹钟App主页" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/smartalarm-alarms.png" alt="闹钟列表" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/smartalarm-connect.png" alt="蓝牙连接" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/smartalarm-settings.png" alt="设置页" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/smartalarm-modal.png" alt="弹窗交互" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/smartalarm-card.png" alt="设备卡片" loading="lazy">
-              </div>
-            </div>
-            <button class="carousel-btn cprev" aria-label="上一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="carousel-btn cnext" aria-label="下一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">6</span></div>
-            <div class="carousel-dots"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 6: Next Canvas -->
-      <div class="project-card reveal">
-        <div class="card-text">
-          <div class="project-index">06</div>
-          <h3>Next Canvas 协作画板（毕设）</h3>
-          <div class="role">毕业设计 · 全栈开发 + 产品设计 · 2025.08 — 2026.05</div>
-          <div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">本科毕业设计《屏幕在线共享平台的几何元素设计与实现》，基于 React 19 + Konva.js + Yjs CRDT 实现支持多人实时协作的几何元素画板，可绘制、编辑、协同多种几何图形与文字、图片元素。</div></div>
-          <div class="pb"><div class="pb-label">项目职责</div>
-            <ul class="contributions">
-              <li>独立完成毕业设计全流程，AI 辅助完成需求分析、竞品调研、系统设计与答辩材料</li>
-              <li>设计画板的图形绘制、多选编辑、文字样式、房间协同等核心功能</li>
-            </ul>
-          </div>
-          <div class="pb"><div class="pb-label">解决方案</div>
-            <ul class="contributions">
-              <li>设计静态 / 动态双层渲染策略（Konva StaticLayer + DynamicLayer），100+ 元素下稳定保持 60 FPS</li>
-              <li>基于 Yjs CRDT 算法实现无冲突协同编辑，端到端同步延迟 &lt;50ms；采用 IndexedDB + SQLite 双层持久化架构，支持离线编辑自动恢复</li>
-            </ul>
-          </div>
-          <div class="project-tags">
-            <span>React 19</span><span>Konva.js</span><span>Yjs CRDT</span><span>WebSocket</span><span>毕设</span>
-          </div>
-        </div>
-        <div class="card-visual">
-          <div class="carousel" data-carousel>
-            <div class="carousel-viewport">
-              <div class="carousel-track">
-                <img class="carousel-slide" src="assets/images/projects/nextcanvas-shapes.png" alt="Next Canvas 几何元素画布（100+元素 60FPS）" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/nextcanvas-edit.png" alt="多图形选中与文字样式编辑" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/nextcanvas-collab.png" alt="协同编辑面板与画布" loading="lazy">
-                <img class="carousel-slide" src="assets/images/projects/nextcanvas-connected.png" alt="多人实时协同已连接" loading="lazy">
-              </div>
-            </div>
-            <button class="carousel-btn cprev" aria-label="上一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="carousel-btn cnext" aria-label="下一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div>
-            <div class="carousel-dots"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 7: AI运营工具链 -->
-      <div class="project-card reveal">
-        <div class="card-text">
-          <div class="project-index">07</div>
-          <h3>AI内容生产工具链</h3>
-          <div class="role">独立探索 · 技术选型与流程搭建 · 2025.11 — 2026.07</div>
-          <div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">基于 OpenClaw、Whisper、FFmpeg、即梦AI 等工具搭建的 AI 视频内容生产流水线，实现从素材到成片的自动化处理，显著提升内容运营效率。</div></div>
-          <div class="pb"><div class="pb-label">项目职责</div>
-            <ul class="contributions">
-              <li>独立完成工具选型与流程设计，搭建可复用的 AI 内容生产链路</li>
-              <li>沉淀《OpenClaw 技能复刻指南》，覆盖 8 个核心技能的安装、配置、使用全流程文档</li>
-            </ul>
-          </div>
-          <div class="pb"><div class="pb-label">解决方案</div>
-            <ul class="contributions">
-              <li>实现「语音转写→字幕生成→封面标题→顶格标题→成片烧录」全自动处理流程</li>
-              <li>搭建社交卡片生成系统，支持小红书 3:4 图文封面（1080×1440）的自动化设计输出</li>
-            </ul>
-          </div>
-          <div class="project-tags">
-            <span>AI工具链</span><span>自动化</span><span>Whisper</span><span>内容运营</span><span>技能沉淀</span>
-          </div>
-        </div>
-        <div class="card-visual">
-          <div class="carousel single" data-carousel>
-            <div class="carousel-viewport">
-              <div class="carousel-track">
-                <img class="carousel-slide" src="assets/images/projects/aitoolchain-flow.png" alt="AI内容生产工具链流程图" loading="lazy">
-              </div>
-            </div>
-            <button class="carousel-btn cprev" aria-label="上一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="carousel-btn cnext" aria-label="下一张"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">1</span></div>
-            <div class="carousel-dots"></div>
-          </div>
-        </div>
-      </div>
-
+    <div class="edu-badge">
+      <div class="rank">11/159</div>
+      <div class="rank-label" data-i18n="edu_rank">专业排名 · 前7%</div>
     </div>
   </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="inner">
-    <div class="section-header">
-      <div class="num">02 / SKILLS</div>
-      <h2>专业能力</h2>
-      <p class="sub">产品经理核心技能 + AI工具实操能力</p>
+</div></section>
+<section id="honors"><div class="inner">
+  <div class="section-header"><div class="num">05 / HONORS</div><h2 data-i18n="sec_hon_h">荣誉与证书</h2></div>
+  <div class="honors-grid">
+<div class="honor-card reveal" onclick="openLightboxImg('assets/images/cert-scholarship-2025.jpg')" style="cursor:pointer">
+      <div class="honor-img"><img src="assets/images/cert-scholarship-2025.jpg" alt="honor" loading="lazy"></div>
+      <div class="honor-info"><h4 data-i18n="hon1_t">优秀学生一等奖学金</h4><span data-i18n="hon1_d">2024 — 2025 年度</span></div>
     </div>
-    <div class="skills-categories">
-      <div class="skill-category reveal">
-        <h3>AI产品能力</h3>
-        <div class="skill-tags">
-          <span class="skill-tag"><span class="dot"></span>LLM应用（Claude / DeepSeek）</span>
-          <span class="skill-tag"><span class="dot"></span>Prompt Engineering</span>
-          <span class="skill-tag"><span class="dot"></span>Coze智能体搭建</span>
-          <span class="skill-tag"><span class="dot"></span>Claude Skill开发</span>
-          <span class="skill-tag"><span class="dot"></span>RAG / Agent概念</span>
-          <span class="skill-tag"><span class="dot"></span>AI原型工具（Trea）</span>
-        </div>
-      </div>
-      <div class="skill-category reveal">
-        <h3>产品设计</h3>
-        <div class="skill-tags">
-          <span class="skill-tag"><span class="dot"></span>需求分析与管理</span>
-          <span class="skill-tag"><span class="dot"></span>竞品分析</span>
-          <span class="skill-tag"><span class="dot"></span>PRD/BRD撰写</span>
-          <span class="skill-tag"><span class="dot"></span>高保真原型（Axure RP）</span>
-          <span class="skill-tag"><span class="dot"></span>用户旅程地图</span>
-          <span class="skill-tag"><span class="dot"></span>产品全生命周期管理</span>
-        </div>
-      </div>
-      <div class="skill-category reveal">
-        <h3>技术理解</h3>
-        <div class="skill-tags">
-          <span class="skill-tag"><span class="dot"></span>前端基础（HTML / Vue3）</span>
-          <span class="skill-tag"><span class="dot"></span>后端概念（Java / Spring Boot）</span>
-          <span class="skill-tag"><span class="dot"></span>数据库基础（MySQL）</span>
-          <span class="skill-tag"><span class="dot"></span>API接口设计理解</span>
-          <span class="skill-tag"><span class="dot"></span>Git版本管理</span>
-          <span class="skill-tag"><span class="dot"></span>Python脚本/自动化</span>
-        </div>
-      </div>
-      <div class="skill-category reveal">
-        <h3>协作与工具</h3>
-        <div class="skill-tags">
-          <span class="skill-tag"><span class="dot"></span>项目管理（飞书 / Jira）</span>
-          <span class="skill-tag"><span class="dot"></span>文档规范建设</span>
-          <span class="skill-tag"><span class="dot"></span>微信生态（小程序/公众号）</span>
-          <span class="skill-tag"><span class="dot"></span>SQL数据查询</span>
-          <span class="skill-tag"><span class="dot"></span>中英双语文档（CET-6）</span>
-          <span class="skill-tag"><span class="dot"></span>跨部门协调沟通</span>
-        </div>
-      </div>
+<div class="honor-card reveal" onclick="openLightboxImg('assets/images/cert-scholarship-2024.jpg')" style="cursor:pointer">
+      <div class="honor-img"><img src="assets/images/cert-scholarship-2024.jpg" alt="honor" loading="lazy"></div>
+      <div class="honor-info"><h4 data-i18n="hon2_t">优秀学生二等奖学金</h4><span data-i18n="hon2_d">2023 — 2024 年度</span></div>
+    </div>
+<div class="honor-card reveal" onclick="openLightboxImg('assets/images/cert-thesis-award.jpg')" style="cursor:pointer">
+      <div class="honor-img"><img src="assets/images/cert-thesis-award.jpg" alt="honor" loading="lazy"></div>
+      <div class="honor-info"><h4 data-i18n="hon3_t">本科毕业设计（论文）创新奖</h4><span data-i18n="hon3_d">2026 届</span></div>
     </div>
   </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="inner">
-    <div class="section-header">
-      <div class="num">03 / EXPERIENCE</div>
-      <h2>实习经历</h2>
-      <p class="sub">两段产品实习经历，从AI工具应用到B端系统设计</p>
+</div></section>
+<section id="contact"><div class="inner">
+  <div class="section-header"><div class="num">06 / CONTACT</div><h2 data-i18n="sec_ct_h">保持联系</h2><p class="sub" data-i18n="sec_ct_sub">如果你对我的经历感兴趣，欢迎随时联系</p></div>
+  <div class="contact-grid">
+    <a href="mailto:laozhoujiade@qq.com" class="contact-item">
+      <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="ci-text"><div class="ci-label" data-i18n="ct_email_l">邮箱</div><div class="ci-value">laozhoujiade@qq.com</div></div>
+    </a>
+    <div class="contact-item" onclick="copyWechat()" style="cursor:pointer">
+      <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+      <div class="ci-text"><div class="ci-label" data-i18n="ct_wx_l">微信</div><div class="ci-value" data-i18n-html="wx_value">TTlisten0905 <span style="font-size:11px;color:var(--text-muted-dark)">（点击复制）</span></div></div>
     </div>
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="dot"></div>
-        <div class="date">2025.09 — 2026.07</div>
-        <h3>AI产品经理实习生</h3>
-        <div class="company">广州汉全信息科技股份有限公司</div>
-        <ul>
-          <li>主导可信AI裁判评估系统（服务某中信旗下国企客户）从0到1产品设计，输出需求规格说明书、详细设计、操作手册全套文档，协调前后端团队按期迭代交付</li>
-          <li>负责客户活动物料管理系统需求管理，推动PRD从V1至V6的6个版本迭代，覆盖系统架构、数据库、第三方接口的全链路产品设计</li>
-          <li>参与AI营销SaaS平台产品文档建设及小程序版本迭代管理，跟进微信审核发布流程</li>
-          <li>建立产品部门文档规范及标准化模板体系，提升团队文档产出效率</li>
-          <li>独立搭建AI内容生产工具链（Whisper + FFmpeg + OpenClaw），撰写技术复刻指南沉淀知识</li>
-          <li>搭建4个Coze智能体用于用户访谈结构化、竞品动态监控、PRD自动生成、原型文案润色，显著提升原型产出效率</li>
-          <li>开发Claude Skill将会议录音/纪要自动转化为结构化需求文档，减少人工整理时间，提升需求一致性</li>
-        </ul>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="dot"></div>
-        <div class="date">2024.10 — 2025.01</div>
-        <h3>产品经理助理</h3>
-        <div class="company">深圳市博思通信息技术有限公司</div>
-        <ul>
-          <li>主导ToB营销平台优惠券模块设计：竞品分析拼多多、淘宝、京东优惠券玩法，深访目标用户，输出Axure高保真原型覆盖C端+B端全流程</li>
-          <li>跨部门协同多个团队，组织多轮需求评审，输出PRD及接口说明文档，推动项目按期上线</li>
-          <li>优惠券模块上线后有效带动订单转化与GMV增长，并沉淀为平台通用营销工具</li>
-        </ul>
-      </div>
-    </div>
+    <a href="assets/resume.pdf" class="contact-item" download>
+      <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg></div>
+      <div class="ci-text"><div class="ci-label" data-i18n="ct_cv_l">简历</div><div class="ci-value" data-i18n="ct_cv_v">下载PDF简历</div></div>
+    </a>
   </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="inner">
-    <div class="section-header">
-      <div class="num">04 / EDUCATION</div>
-      <h2>教育背景</h2>
-    </div>
-    <div class="edu-card reveal">
-      <div>
-        <h3>广东工业大学</h3>
-        <div class="major">网络工程 · 本科 · 2022 — 2026</div>
-        <div class="details">
-          主修课程：Java程序设计、数据库原理、C语言、计算机网络、数据结构<br>
-          语言能力：CET-6，中英双语文档输出<br>
-          校园经历：女子篮球队后勤负责人（组织赛事后勤保障，赞助转化率50%）、班级心委
-        </div>
-      </div>
-      <div class="edu-badge">
-        <div class="rank">11/159</div>
-        <div class="rank-label">专业排名 · 前7%</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HONORS -->
-<section id="honors">
-  <div class="inner">
-    <div class="section-header">
-      <div class="num">05 / HONORS</div>
-      <h2>荣誉与证书</h2>
-    </div>
-    <div class="honors-grid">
-      <div class="honor-card reveal" onclick="openLightboxImg('assets/images/cert-scholarship-2025.jpg')" style="cursor:pointer">
-        <div class="honor-img">
-          <img src="assets/images/cert-scholarship-2025.jpg" alt="一等奖学金" loading="lazy">
-        </div>
-        <div class="honor-info">
-          <h4>优秀学生一等奖学金</h4>
-          <span>2024 — 2025 年度</span>
-        </div>
-      </div>
-      <div class="honor-card reveal" onclick="openLightboxImg('assets/images/cert-scholarship-2024.jpg')" style="cursor:pointer">
-        <div class="honor-img">
-          <img src="assets/images/cert-scholarship-2024.jpg" alt="二等奖学金" loading="lazy">
-        </div>
-        <div class="honor-info">
-          <h4>优秀学生二等奖学金</h4>
-          <span>2023 — 2024 年度</span>
-        </div>
-      </div>
-      <div class="honor-card reveal" onclick="openLightboxImg('assets/images/cert-thesis-award.jpg')" style="cursor:pointer">
-        <div class="honor-img">
-          <img src="assets/images/cert-thesis-award.jpg" alt="毕设创新奖" loading="lazy">
-        </div>
-        <div class="honor-info">
-          <h4>本科毕业设计（论文）创新奖</h4>
-          <span>2026 届</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="inner">
-    <div class="section-header">
-      <div class="num">06 / CONTACT</div>
-      <h2>保持联系</h2>
-      <p class="sub">如果你对我的经历感兴趣，欢迎随时联系</p>
-    </div>
-    <div class="contact-grid">
-      <a href="mailto:laozhoujiade@qq.com" class="contact-item">
-        <div class="ci-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div class="ci-text">
-          <div class="ci-label">邮箱</div>
-          <div class="ci-value">laozhoujiade@qq.com</div>
-        </div>
-      </a>
-      <div class="contact-item" onclick="copyWechat()" style="cursor:pointer">
-        <div class="ci-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        </div>
-        <div class="ci-text">
-          <div class="ci-label">微信</div>
-          <div class="ci-value">TTlisten0905 <span style="font-size:11px;color:var(--text-muted-dark)">（点击复制）</span></div>
-        </div>
-      </div>
-      <a href="assets/resume.pdf" class="contact-item" download>
-        <div class="ci-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
-        </div>
-        <div class="ci-text">
-          <div class="ci-label">简历</div>
-          <div class="ci-value">下载PDF简历</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 周惠琳 · 更新于2026.07</p>
-</footer>
-
-<!-- LIGHTBOX -->
+</div></section>
+<footer><p data-i18n-html="footer">© 2026 周惠琳 · 更新于2026.07</p></footer>
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
   <div id="lightboxContent" style="text-align:center;color:#fff;max-width:600px;padding:24px;"></div>
 </div>
-
-<!-- BACK TO TOP -->
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="返回顶部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
 <script>
-  // ===== THEME =====
-  function getTheme() {
-    const saved = localStorage.getItem('theme');
-    if (saved) return saved;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  function applyTheme(t) {
-    document.documentElement.setAttribute('data-theme', t);
-    localStorage.setItem('theme', t);
-  }
-  function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme');
-    applyTheme(current === 'dark' ? 'light' : 'dark');
-  }
+  const I18N = {"label_intro": {"zh": "项目介绍", "tw": "項目介紹", "en": "Overview"}, "label_duties": {"zh": "项目职责", "tw": "項目職責", "en": "Responsibilities"}, "label_solution": {"zh": "解决方案", "tw": "解決方案", "en": "Solution"}, "p01_title": {"zh": "可信AI裁判评估系统", "tw": "可信AI裁判評估系統", "en": "Trustworthy AI Judge & Evaluation System"}, "p01_role": {"zh": "主导产品设计 · 甲方：某中信旗下国企 · 2026.02 — 2026.07", "tw": "主導產品設計 · 甲方：某中信旗下國企 · 2026.02 — 2026.07", "en": "Product Lead · Client: a CITIC-affiliated SOE · 2026.02 — 2026.07"}, "p01_intro": {"zh": "可信AI评估系统结合开源 LLM 评估框架 opik，对企业 AI 应用（智能体 / 通用大模型）的输出内容进行统一评估并输出评估报告，解决 AI 应用投产前「输出无统一评判标准、质量不可预测」的痛点，为 AI 应用投入实际业务奠定基础。", "tw": "可信AI評估系統結合開源 LLM 評估框架 opik，對企業 AI 應用（智能體 / 通用大模型）的輸出內容進行統一評估並輸出評估報告，解決 AI 應用投產前「輸出無統一評判標準、質量不可預測」的痛點，為 AI 應用投入實際業務奠定基礎。", "en": "Built on the open-source LLM evaluation framework opik, the system uniformly evaluates the outputs of enterprise AI applications (agents / general LLMs) and produces evaluation reports, solving the pre-production pain point of “no unified scoring standard and unpredictable quality” and laying the groundwork for putting AI applications into real business use."}, "p01_duty1": {"zh": "深入调研 opik 开源框架，对其托管云服务与开发文档进行深度研究，结合甲方业务需求与开发团队共同制定产品与技术方案", "tw": "深入調研 opik 開源框架，對其託管雲服務與開發文檔進行深度研究，結合甲方業務需求與開發團隊共同制定產品與技術方案", "en": "Researched the opik framework in depth — its hosted cloud service and developer docs — and defined the product and technical solution together with the dev team based on the client’s business needs"}, "p01_duty2": {"zh": "开展项目管理，根据交付时间及开发团队工期制定排期计划，推动前后端团队紧密协作，保证各里程碑按时交付", "tw": "開展項目管理，根據交付時間及開發團隊工期制定排期計劃，推動前後端團隊緊密協作，保證各里程碑按時交付", "en": "Ran project management: built the schedule around the delivery deadline and team capacity, driving front-end and back-end teams to hit every milestone on time"}, "p01_duty3": {"zh": "管理需求变更，评估变更影响并制定解决措施，隔离甲方等干系人变更对开发团队的干扰", "tw": "管理需求變更，評估變更影響並制定解決措施，隔離甲方等干係人變更對開發團隊的干擾", "en": "Managed requirement changes: assessed their impact and shielded the dev team from disruption caused by the client and other stakeholders"}, "p01_sol1": {"zh": "采用 Agent-to-Agent 模式，通过 opik 的评估能力与内置指标，配置裁判模型对 AI 应用输出统一评判，生成结构化评估报告", "tw": "採用 Agent-to-Agent 模式，通過 opik 的評估能力與內置指標，配置裁判模型對 AI 應用輸出統一評判，生成結構化評估報告", "en": "Adopted an Agent-to-Agent pattern: configured judge models via opik’s evaluation capabilities and built-in metrics to score AI outputs uniformly and generate structured evaluation reports"}, "p01_sol2": {"zh": "采用「业务系统 + opik 本地部署 + SDK 调用」模式，数据本地化存储保障隐私性", "tw": "採用「業務系統 + opik 本地部署 + SDK 調用」模式，數據本地化存儲保障隱私性", "en": "Used a “business system + on-premise opik + SDK call” model, keeping data stored locally to guarantee privacy"}, "p01_sol3": {"zh": "模型经 OpenAI 协议接入、智能体经中间层形式接入，适配多智能体 / 多裁判模型", "tw": "模型經 OpenAI 協議接入、智能體經中間層形式接入，適配多智能體 / 多裁判模型", "en": "Connected models via the OpenAI protocol and agents via a middle layer, supporting multiple agents / judge models"}, "p01_tag1": {"zh": "0→1", "tw": "0→1", "en": "0→1"}, "p01_tag2": {"zh": "opik评估框架", "tw": "opik評估框架", "en": "opik framework"}, "p01_tag3": {"zh": "Agent-to-Agent", "tw": "Agent-to-Agent", "en": "Agent-to-Agent"}, "p01_tag4": {"zh": "国企客户", "tw": "國企客戶", "en": "SOE client"}, "p01_tag5": {"zh": "LLM评估", "tw": "LLM評估", "en": "LLM evaluation"}, "p02_title": {"zh": "客户活动物料管理系统", "tw": "客戶活動物料管理系統", "en": "Campaign Material (Gift Pool) Management System"}, "p02_role": {"zh": "产品实习生 · 需求管理与系统设计 · 2026.05 — 2026.07", "tw": "產品實習生 · 需求管理與系統設計 · 2026.05 — 2026.07", "en": "Product Intern · Requirements & System Design · 2026.05 — 2026.07"}, "p02_intro": {"zh": "面向客户活动运营的物料（礼品池）管理系统，覆盖礼品池管理、角色权限、活动核销等能力，帮助企业规范化管理活动物料的申请、发放与核销流程。", "tw": "面向客戶活動運營的物料（禮品池）管理系統，覆蓋禮品池管理、角色權限、活動核銷等能力，幫助企業規範化管理活動物料的申請、發放與核銷流程。", "en": "A material (gift-pool) management system for campaign operations, covering gift-pool management, role permissions and redemption, helping enterprises standardize the request, distribution and redemption of campaign materials."}, "p02_duty1": {"zh": "主导产品需求文档从 V1 至 V6 的 6 个版本迭代，基于甲方反馈持续细化功能清单与业务规则", "tw": "主導產品需求文檔從 V1 至 V6 的 6 個版本迭代，基於甲方反饋持續細化功能清單與業務規則", "en": "Led the requirement document through 6 iterations (V1–V6), continuously refining the feature list and business rules based on client feedback"}, "p02_duty2": {"zh": "参与系统架构设计评审，输出数据库设计说明书（含 ER 图、表结构、索引策略）", "tw": "參與系統架構設計評審，輸出數據庫設計說明書（含 ER 圖、表結構、索引策略）", "en": "Took part in architecture reviews and produced the database design spec (ER diagrams, table schemas, indexing strategy)"}, "p02_duty3": {"zh": "组织项目周会与需求评审会，管理项目计划表，跟踪开发进度与风险点", "tw": "組織項目週會與需求評審會，管理項目計劃表，跟蹤開發進度與風險點", "en": "Ran weekly meetings and requirement reviews, maintained the project plan, and tracked progress and risks"}, "p02_sol1": {"zh": "对接第三方接口（微信支付、短信服务、对象存储），编写接口对接文档与联调测试方案，保障链路稳定", "tw": "對接第三方接口（微信支付、短信服務、對象存儲），編寫接口對接文檔與聯調測試方案，保障鏈路穩定", "en": "Integrated third-party services (WeChat Pay, SMS, object storage) and wrote integration docs and joint-testing plans to keep the pipeline stable"}, "p02_sol2": {"zh": "针对多角色（管理员 / 运营 / 审核）设计差异化的操作权限与礼品核销流程，保证物料发放合规、可追溯", "tw": "針對多角色（管理員 / 運營 / 審核）設計差異化的操作權限與禮品核銷流程，保證物料發放合規、可追溯", "en": "Designed differentiated permissions and redemption flows for multiple roles (admin / operator / reviewer), keeping distribution compliant and traceable"}, "p02_tag1": {"zh": "需求迭代", "tw": "需求迭代", "en": "Requirement iteration"}, "p02_tag2": {"zh": "系统设计", "tw": "系統設計", "en": "System design"}, "p02_tag3": {"zh": "接口对接", "tw": "接口對接", "en": "Integration"}, "p02_tag4": {"zh": "项目管理", "tw": "項目管理", "en": "Project mgmt"}, "p02_tag5": {"zh": "SaaS", "tw": "SaaS", "en": "SaaS"}, "p03_title": {"zh": "CS客户订单模块 (ePO)", "tw": "CS客戶訂單模塊 (ePO)", "en": "CS Customer Order Module (ePO)"}, "p03_role": {"zh": "需求分析与原型设计 · 甲方：某中信旗下国企 · 2026.04 — 2026.07", "tw": "需求分析與原型設計 · 甲方：某中信旗下國企 · 2026.04 — 2026.07", "en": "Requirements & Prototyping · Client: a CITIC-affiliated SOE · 2026.04 — 2026.07"}, "p03_intro": {"zh": "面向国企的财务综合平台采购订单（ePO）模块，覆盖采购订单、预算费用、库存管理、付款报表等财务全流程，帮助企业实现采购与费用的规范化、线上化管理。", "tw": "面向國企的財務綜合平台採購訂單（ePO）模塊，覆蓋採購訂單、預算費用、庫存管理、付款報表等財務全流程，幫助企業實現採購與費用的規範化、線上化管理。", "en": "The purchase-order (ePO) module of an enterprise finance platform for an SOE, covering purchase orders, budgets & expenses, inventory and payment reports — bringing procurement and expense management online in a standardized way."}, "p03_duty1": {"zh": "独立完成中英双语需求规格说明书，将甲方财务业务需求转化为清晰、可开发的产品需求文档", "tw": "獨立完成中英雙語需求規格說明書，將甲方財務業務需求轉化為清晰、可開發的產品需求文檔", "en": "Independently authored the bilingual (CN/EN) requirement specification, turning the client’s finance needs into clear, buildable requirements"}, "p03_duty2": {"zh": "设计 HTML 高保真交互原型，覆盖工作台、采购订单管理、预算费用、库存管理、付款报表等核心页面", "tw": "設計 HTML 高保真交互原型，覆蓋工作台、採購訂單管理、預算費用、庫存管理、付款報表等核心頁面", "en": "Designed high-fidelity HTML prototypes covering the dashboard, purchase-order management, budgets & expenses, inventory and payment reports"}, "p03_duty3": {"zh": "与甲方对接需求，完成 3 轮需求评审，持续跟进原型与需求文档的迭代修订", "tw": "與甲方對接需求，完成 3 輪需求評審，持續跟進原型與需求文檔的迭代修訂", "en": "Worked directly with the client, ran 3 rounds of requirement review, and kept iterating the prototype and requirement docs"}, "p03_sol1": {"zh": "梳理 CAPEX / OPEX 资本性与运营性支出的业务流程差异，针对不同费用类型设计差异化的审批与记账流程，保证财务处理的合规性", "tw": "梳理 CAPEX / OPEX 資本性與運營性支出的業務流程差異，針對不同費用類型設計差異化的審批與記賬流程，保證財務處理的合規性", "en": "Mapped the process differences between CAPEX and OPEX and designed differentiated approval and accounting flows per expense type to ensure financial compliance"}, "p03_sol2": {"zh": "输出数据字典与功能清单，明确字段定义、状态流转与接口逻辑，降低开发的理解成本与返工风险", "tw": "輸出數據字典與功能清單，明確字段定義、狀態流轉與接口邏輯，降低開發的理解成本與返工風險", "en": "Produced a data dictionary and feature list defining field semantics, status transitions and interface logic, cutting development effort and rework risk"}, "p03_tag1": {"zh": "ToB产品", "tw": "ToB產品", "en": "ToB product"}, "p03_tag2": {"zh": "原型设计", "tw": "原型設計", "en": "Prototyping"}, "p03_tag3": {"zh": "财务系统", "tw": "財務系統", "en": "Finance system"}, "p03_tag4": {"zh": "双语文档", "tw": "雙語文檔", "en": "Bilingual docs"}, "p03_tag5": {"zh": "需求分析", "tw": "需求分析", "en": "Requirements"}, "p04_title": {"zh": "汉全AI营销系统", "tw": "漢全AI營銷系統", "en": "Hanquan AI Marketing System"}, "p04_role": {"zh": "产品/运营实习生 · 文档建设与迭代管理 · 2025.09 — 2026.07", "tw": "產品/運營實習生 · 文檔建設與迭代管理 · 2025.09 — 2026.07", "en": "Product / Operations Intern · Docs & Iteration Management · 2025.09 — 2026.07"}, "p04_intro": {"zh": "汉全AI营销系统专注于 AI 与 RPA 自动化相结合，提供 AI 获客、AI 销冠、AI 客服、矩阵发布等功能，为企业和商家管理客户的全生命周期，提升获客效率与客户转化率。", "tw": "漢全AI營銷系統專注於 AI 與 RPA 自動化相結合，提供 AI 獲客、AI 銷冠、AI 客服、矩陣發佈等功能，為企業和商家管理客戶的全生命週期，提升獲客效率與客戶轉化率。", "en": "Hanquan’s AI Marketing System combines AI with RPA automation — AI lead generation, AI top-sales, AI customer service and matrix publishing — to manage the full customer lifecycle and improve acquisition efficiency and conversion."}, "p04_duty1": {"zh": "负责 AI 营销系统的迭代计划，统筹需求评审、开发跟进及版本发布流程，确保产品按计划高质量上线", "tw": "負責 AI 營銷系統的迭代計劃，統籌需求評審、開發跟進及版本發佈流程，確保產品按計劃高質量上線", "en": "Owned the iteration plan, coordinating requirement reviews, development follow-up and release to ensure on-schedule, high-quality launches"}, "p04_duty2": {"zh": "负责面向客户的产品演示与方案讲解，配合商务部门交付，完成 AI 手机的基础配置及系统功能培训", "tw": "負責面向客戶的產品演示與方案講解，配合商務部門交付，完成 AI 手機的基礎配置及系統功能培訓", "en": "Delivered client-facing product demos and solution walk-throughs, supported the sales team, and handled basic AI-phone setup and feature training"}, "p04_duty3": {"zh": "统筹规划客户生命周期管理，制定 SOP 流程、SOP 看板、SOP 任务等功能，跟踪客户完成转化的全过程", "tw": "統籌規劃客戶生命週期管理，制定 SOP 流程、SOP 看板、SOP 任務等功能，跟蹤客戶完成轉化的全過程", "en": "Planned the customer-lifecycle management, designing SOP flows, boards and tasks to track the whole conversion journey"}, "p04_sol1": {"zh": "针对传统获客效率低，结合 RPA 技术代替人工操作，通过 AI 扩展关键词锁定目标客户，提供「直接抓取线索」与「关键词匹配后触达」等三大获客方式，将询盘客户量提升约 20%-30%", "tw": "針對傳統獲客效率低，結合 RPA 技術代替人工操作，通過 AI 擴展關鍵詞鎖定目標客戶，提供「直接抓取線索」與「關鍵詞匹配後觸達」等三大獲客方式，將詢盤客戶量提升約 20%-30%", "en": "To fix low acquisition efficiency, used RPA to replace manual work and AI-expanded keywords to lock onto target customers, offering three acquisition modes (“direct lead scraping” and “keyword-matched outreach”, etc.), raising inquiry volume by roughly 20%–30%"}, "p04_sol2": {"zh": "针对销售培训成本高、人手不足，提供 AI 销冠功能：结合企业知识库自动接待客户，当 AI 遇到无法解决的问题或客户进入询价阶段时自动通知销售接管，销售只需处理核心环节，降低约 50% 的用工成本", "tw": "針對銷售培訓成本高、人手不足，提供 AI 銷冠功能：結合企業知識庫自動接待客戶，當 AI 遇到無法解決的問題或客戶進入詢價階段時自動通知銷售接管，銷售只需處理核心環節，降低約 50% 的用工成本", "en": "To address high sales-training cost and staff shortages, built an “AI top-sales” feature that greets customers automatically using the corporate knowledge base and, when it hits an unsolvable question or the customer enters the quoting stage, notifies sales to take over — cutting labor cost by about 50%"}, "p04_tag1": {"zh": "SaaS", "tw": "SaaS", "en": "SaaS"}, "p04_tag2": {"zh": "AI自动化", "tw": "AI自動化", "en": "AI automation"}, "p04_tag3": {"zh": "小程序", "tw": "小程序", "en": "Mini-program"}, "p04_tag4": {"zh": "文档建设", "tw": "文檔建設", "en": "Documentation"}, "p04_tag5": {"zh": "运营支持", "tw": "運營支持", "en": "Ops support"}, "p05_title": {"zh": "智能闹钟枕头App", "tw": "智能鬧鐘枕頭App", "en": "Smart Alarm Pillow App"}, "p05_role": {"zh": "产品实习生 · 需求分析与产品设计 · 2026.04 — 2026.06", "tw": "產品實習生 · 需求分析與產品設計 · 2026.04 — 2026.06", "en": "Product Intern · Requirements & Product Design · 2026.04 — 2026.06"}, "p05_intro": {"zh": "为智能硬件（闹钟枕头）设计的 React Native + BLE 蓝牙双平台（iOS / Android）配套 App，实现闹钟设置、蓝牙同步、离线可用等核心能力，保障用户在弱网 / 断连场景下的可靠唤醒体验。", "tw": "為智能硬件（鬧鐘枕頭）設計的 React Native + BLE 藍牙雙平台（iOS / Android）配套 App，實現鬧鐘設置、藍牙同步、離線可用等核心能力，保障用戶在弱網 / 斷連場景下的可靠喚醒體驗。", "en": "A companion app for smart hardware (an alarm pillow), built with React Native + BLE for both platforms (iOS / Android), delivering alarm setup, Bluetooth sync and offline availability for reliable wake-ups in weak-network / disconnected scenarios."}, "p05_duty1": {"zh": "独立完成产品需求分析与设计，输出覆盖 4 大功能模块与蓝牙配对流程的开发评审文档", "tw": "獨立完成產品需求分析與設計，輸出覆蓋 4 大功能模塊與藍牙配對流程的開發評審文檔", "en": "Independently completed requirement analysis and design, delivering dev-review docs covering 4 feature modules and the Bluetooth pairing flow"}, "p05_duty2": {"zh": "设计中英双语 i18n 方案，覆盖导航标签、按钮文案、Toast 提示、表单标签与文档内容", "tw": "設計中英雙語 i18n 方案，覆蓋導航標籤、按鈕文案、Toast 提示、表單標籤與文檔內容", "en": "Designed a bilingual (CN/EN) i18n scheme covering nav labels, button copy, toasts, form labels and documentation"}, "p05_sol1": {"zh": "设计完整的闹钟状态机：响铃 30s→暂停 60s→循环，15 分钟后自动停止，蓝牙断开后本地仍可离线响铃，保证核心闹钟功能的可靠性", "tw": "設計完整的鬧鐘狀態機：響鈴 30s→暫停 60s→循環，15 分鐘後自動停止，藍牙斷開後本地仍可離線響鈴，保證核心鬧鐘功能的可靠性", "en": "Designed a full alarm state machine (ring 30s → snooze 60s → loop, auto-stop after 15 min) with local offline ringing even when Bluetooth drops, keeping the core alarm reliable"}, "p05_sol2": {"zh": "梳理蓝牙通信全链路：设备扫描→配对→同步闹钟 / 音量 / 振动档位→电量上报，明确各环节的数据结构与异常处理逻辑", "tw": "梳理藍牙通信全鏈路：設備掃描→配對→同步鬧鐘 / 音量 / 振動檔位→電量上報，明確各環節的數據結構與異常處理邏輯", "en": "Mapped the full Bluetooth link (device scan → pairing → syncing alarm / volume / vibration → battery reporting), defining data structures and exception handling for each step"}, "p05_tag1": {"zh": "智能硬件", "tw": "智能硬件", "en": "Smart hardware"}, "p05_tag2": {"zh": "BLE蓝牙", "tw": "BLE藍牙", "en": "BLE"}, "p05_tag3": {"zh": "React Native", "tw": "React Native", "en": "React Native"}, "p05_tag4": {"zh": "状态机设计", "tw": "狀態機設計", "en": "State machine"}, "p05_tag5": {"zh": "i18n", "tw": "i18n", "en": "i18n"}, "p06_title": {"zh": "Next Canvas 协作画板（毕设）", "tw": "Next Canvas 協作畫板（畢設）", "en": "Next Canvas — Collaborative Whiteboard (Thesis)"}, "p06_role": {"zh": "毕业设计 · 全栈开发 + 产品设计 · 2025.08 — 2026.05", "tw": "畢業設計 · 全棧開發 + 產品設計 · 2025.08 — 2026.05", "en": "Graduation Project · Full-stack Dev + Product Design · 2025.08 — 2026.05"}, "p06_intro": {"zh": "本科毕业设计《屏幕在线共享平台的几何元素设计与实现》，基于 React 19 + Konva.js + Yjs CRDT 实现支持多人实时协作的几何元素画板，可绘制、编辑、协同多种几何图形与文字、图片元素。", "tw": "本科畢業設計《屏幕在線共享平台的幾何元素設計與實現》，基於 React 19 + Konva.js + Yjs CRDT 實現支持多人實時協作的幾何元素畫板，可繪製、編輯、協同多種幾何圖形與文字、圖片元素。", "en": "My undergraduate thesis, “Design and Implementation of Geometric Elements for an Online Screen-Sharing Platform” — a real-time collaborative geometric whiteboard on React 19 + Konva.js + Yjs CRDT, supporting drawing, editing and co-editing of shapes, text and images."}, "p06_duty1": {"zh": "独立完成毕业设计全流程，AI 辅助完成需求分析、竞品调研、系统设计与答辩材料", "tw": "獨立完成畢業設計全流程，AI 輔助完成需求分析、競品調研、系統設計與答辯材料", "en": "Completed the whole graduation project independently, using AI to assist requirement analysis, competitor research, system design and defense materials"}, "p06_duty2": {"zh": "设计画板的图形绘制、多选编辑、文字样式、房间协同等核心功能", "tw": "設計畫板的圖形繪製、多選編輯、文字樣式、房間協同等核心功能", "en": "Designed the core features: shape drawing, multi-select editing, text styling and room-based collaboration"}, "p06_sol1": {"zh": "设计静态 / 动态双层渲染策略（Konva StaticLayer + DynamicLayer），100+ 元素下稳定保持 60 FPS", "tw": "設計靜態 / 動態雙層渲染策略（Konva StaticLayer + DynamicLayer），100+ 元素下穩定保持 60 FPS", "en": "Designed a static/dynamic two-layer rendering strategy (Konva StaticLayer + DynamicLayer), holding a stable 60 FPS with 100+ elements"}, "p06_sol2": {"zh": "基于 Yjs CRDT 算法实现无冲突协同编辑，端到端同步延迟 &lt;50ms；采用 IndexedDB + SQLite 双层持久化架构，支持离线编辑自动恢复", "tw": "基於 Yjs CRDT 算法實現無衝突協同編輯，端到端同步延遲 &lt;50ms；採用 IndexedDB + SQLite 雙層持久化架構，支持離線編輯自動恢復", "en": "Implemented conflict-free co-editing with the Yjs CRDT algorithm (end-to-end latency &lt;50ms) and a two-tier IndexedDB + SQLite persistence architecture supporting automatic recovery of offline edits"}, "p06_tag1": {"zh": "React 19", "tw": "React 19", "en": "React 19"}, "p06_tag2": {"zh": "Konva.js", "tw": "Konva.js", "en": "Konva.js"}, "p06_tag3": {"zh": "Yjs CRDT", "tw": "Yjs CRDT", "en": "Yjs CRDT"}, "p06_tag4": {"zh": "WebSocket", "tw": "WebSocket", "en": "WebSocket"}, "p06_tag5": {"zh": "毕设", "tw": "畢設", "en": "Thesis"}, "p07_title": {"zh": "AI内容生产工具链", "tw": "AI內容生產工具鏈", "en": "AI Content Production Pipeline"}, "p07_role": {"zh": "独立探索 · 技术选型与流程搭建 · 2025.11 — 2026.07", "tw": "獨立探索 · 技術選型與流程搭建 · 2025.11 — 2026.07", "en": "Independent Exploration · Tooling & Workflow · 2025.11 — 2026.07"}, "p07_intro": {"zh": "基于 OpenClaw、Whisper、FFmpeg、即梦AI 等工具搭建的 AI 视频内容生产流水线，实现从素材到成片的自动化处理，显著提升内容运营效率。", "tw": "基於 OpenClaw、Whisper、FFmpeg、即夢AI 等工具搭建的 AI 視頻內容生產流水線，實現從素材到成片的自動化處理，顯著提升內容運營效率。", "en": "An AI video-content production pipeline built on OpenClaw, Whisper, FFmpeg and Jimeng AI, automating processing from raw footage to finished clips and significantly boosting content-operation efficiency."}, "p07_duty1": {"zh": "独立完成工具选型与流程设计，搭建可复用的 AI 内容生产链路", "tw": "獨立完成工具選型與流程設計，搭建可復用的 AI 內容生產鏈路", "en": "Independently handled tool selection and workflow design, building a reusable AI content-production pipeline"}, "p07_duty2": {"zh": "沉淀《OpenClaw 技能复刻指南》，覆盖 8 个核心技能的安装、配置、使用全流程文档", "tw": "沉澱《OpenClaw 技能復刻指南》，覆蓋 8 個核心技能的安裝、配置、使用全流程文檔", "en": "Wrote the “OpenClaw Skill Replication Guide”, documenting install/config/usage for 8 core skills end to end"}, "p07_sol1": {"zh": "实现「语音转写→字幕生成→封面标题→顶格标题→成片烧录」全自动处理流程", "tw": "實現「語音轉寫→字幕生成→封面標題→頂格標題→成片燒錄」全自動處理流程", "en": "Automated the full flow: speech-to-text → subtitle generation → cover title → full-width title → burned-in finished clip"}, "p07_sol2": {"zh": "搭建社交卡片生成系统，支持小红书 3:4 图文封面（1080×1440）的自动化设计输出", "tw": "搭建社交卡片生成系統，支持小紅書 3:4 圖文封面（1080×1440）的自動化設計輸出", "en": "Built a social-card generation system supporting automated 3:4 image-text covers for Xiaohongshu (1080×1440)"}, "p07_tag1": {"zh": "AI工具链", "tw": "AI工具鏈", "en": "AI toolchain"}, "p07_tag2": {"zh": "自动化", "tw": "自動化", "en": "Automation"}, "p07_tag3": {"zh": "Whisper", "tw": "Whisper", "en": "Whisper"}, "p07_tag4": {"zh": "内容运营", "tw": "內容運營", "en": "Content ops"}, "p07_tag5": {"zh": "技能沉淀", "tw": "技能沉澱", "en": "Knowledge base"}, "sk1_h": {"zh": "AI产品能力", "tw": "AI產品能力", "en": "AI Product Skills"}, "sk1_t1": {"zh": "LLM应用（Claude / DeepSeek）", "tw": "LLM應用（Claude / DeepSeek）", "en": "LLM apps (Claude / DeepSeek)"}, "sk1_t2": {"zh": "Prompt Engineering", "tw": "Prompt Engineering", "en": "Prompt Engineering"}, "sk1_t3": {"zh": "Coze智能体搭建", "tw": "Coze智能體搭建", "en": "Coze agent building"}, "sk1_t4": {"zh": "Claude Skill开发", "tw": "Claude Skill開發", "en": "Claude Skill dev"}, "sk1_t5": {"zh": "RAG / Agent概念", "tw": "RAG / Agent概念", "en": "RAG / Agent concepts"}, "sk1_t6": {"zh": "AI原型工具（Trea）", "tw": "AI原型工具（Trea）", "en": "AI prototyping (Trea)"}, "sk2_h": {"zh": "产品设计", "tw": "產品設計", "en": "Product Design"}, "sk2_t1": {"zh": "需求分析与管理", "tw": "需求分析與管理", "en": "Requirement analysis & mgmt"}, "sk2_t2": {"zh": "竞品分析", "tw": "競品分析", "en": "Competitive analysis"}, "sk2_t3": {"zh": "PRD/BRD撰写", "tw": "PRD/BRD撰寫", "en": "PRD / BRD writing"}, "sk2_t4": {"zh": "高保真原型（Axure RP）", "tw": "高保真原型（Axure RP）", "en": "Hi-fi prototyping (Axure RP)"}, "sk2_t5": {"zh": "用户旅程地图", "tw": "用戶旅程地圖", "en": "User journey mapping"}, "sk2_t6": {"zh": "产品全生命周期管理", "tw": "產品全生命週期管理", "en": "Full product lifecycle mgmt"}, "sk3_h": {"zh": "技术理解", "tw": "技術理解", "en": "Technical Understanding"}, "sk3_t1": {"zh": "前端基础（HTML / Vue3）", "tw": "前端基礎（HTML / Vue3）", "en": "Front-end basics (HTML / Vue3)"}, "sk3_t2": {"zh": "后端概念（Java / Spring Boot）", "tw": "後端概念（Java / Spring Boot）", "en": "Back-end concepts (Java / Spring Boot)"}, "sk3_t3": {"zh": "数据库基础（MySQL）", "tw": "數據庫基礎（MySQL）", "en": "Database basics (MySQL)"}, "sk3_t4": {"zh": "API接口设计理解", "tw": "API接口設計理解", "en": "API design understanding"}, "sk3_t5": {"zh": "Git版本管理", "tw": "Git版本管理", "en": "Git version control"}, "sk3_t6": {"zh": "Python脚本/自动化", "tw": "Python腳本/自動化", "en": "Python scripting / automation"}, "sk4_h": {"zh": "协作与工具", "tw": "協作與工具", "en": "Collaboration & Tools"}, "sk4_t1": {"zh": "项目管理（飞书 / Jira）", "tw": "項目管理（飛書 / Jira）", "en": "Project mgmt (Feishu / Jira)"}, "sk4_t2": {"zh": "文档规范建设", "tw": "文檔規範建設", "en": "Documentation standards"}, "sk4_t3": {"zh": "微信生态（小程序/公众号）", "tw": "微信生態（小程序/公眾號）", "en": "WeChat ecosystem (mini-program / OA)"}, "sk4_t4": {"zh": "SQL数据查询", "tw": "SQL數據查詢", "en": "SQL querying"}, "sk4_t5": {"zh": "中英双语文档（CET-6）", "tw": "中英雙語文檔（CET-6）", "en": "Bilingual docs CN/EN (CET-6)"}, "sk4_t6": {"zh": "跨部门协调沟通", "tw": "跨部門協調溝通", "en": "Cross-team coordination"}, "e1_li1": {"zh": "主导可信AI裁判评估系统（服务某中信旗下国企客户）从0到1产品设计，输出需求规格说明书、详细设计、操作手册全套文档，协调前后端团队按期迭代交付", "tw": "主導可信AI裁判評估系統（服務某中信旗下國企客戶）從0到1產品設計，輸出需求規格說明書、詳細設計、操作手冊全套文檔，協調前後端團隊按期迭代交付", "en": "Led the Trustworthy AI Judge & Evaluation System (for a CITIC-affiliated SOE client) from 0 to 1, producing the full doc set — requirement spec, detailed design, user manual — and coordinating front-end/back-end teams to deliver on schedule"}, "e1_li2": {"zh": "负责客户活动物料管理系统需求管理，推动PRD从V1至V6的6个版本迭代，覆盖系统架构、数据库、第三方接口的全链路产品设计", "tw": "負責客戶活動物料管理系統需求管理，推動PRD從V1至V6的6個版本迭代，覆蓋系統架構、數據庫、第三方接口的全鏈路產品設計", "en": "Owned requirements for the campaign-material management system, driving the PRD through 6 versions (V1–V6) covering architecture, database and third-party integrations end to end"}, "e1_li3": {"zh": "参与AI营销SaaS平台产品文档建设及小程序版本迭代管理，跟进微信审核发布流程", "tw": "參與AI營銷SaaS平台產品文檔建設及小程序版本迭代管理，跟進微信審核發佈流程", "en": "Contributed to product documentation and mini-program iteration management for the AI-marketing SaaS platform, following the WeChat review-and-release process"}, "e1_li4": {"zh": "建立产品部门文档规范及标准化模板体系，提升团队文档产出效率", "tw": "建立產品部門文檔規範及標準化模板體系，提升團隊文檔產出效率", "en": "Established the product team’s documentation standards and template system, improving doc-output efficiency"}, "e1_li5": {"zh": "独立搭建AI内容生产工具链（Whisper + FFmpeg + OpenClaw），撰写技术复刻指南沉淀知识", "tw": "獨立搭建AI內容生產工具鏈（Whisper + FFmpeg + OpenClaw），撰寫技術復刻指南沉澱知識", "en": "Independently built an AI content-production pipeline (Whisper + FFmpeg + OpenClaw) and wrote a technical replication guide to capture the know-how"}, "e1_li6": {"zh": "搭建4个Coze智能体用于用户访谈结构化、竞品动态监控、PRD自动生成、原型文案润色，显著提升原型产出效率", "tw": "搭建4個Coze智能體用於用戶訪談結構化、競品動態監控、PRD自動生成、原型文案潤色，顯著提升原型產出效率", "en": "Built 4 Coze agents for interview structuring, competitor monitoring, PRD auto-generation and prototype copy polishing, markedly improving prototyping efficiency"}, "e1_li7": {"zh": "开发Claude Skill将会议录音/纪要自动转化为结构化需求文档，减少人工整理时间，提升需求一致性", "tw": "開發Claude Skill將會議錄音/紀要自動轉化為結構化需求文檔，減少人工整理時間，提升需求一致性", "en": "Developed a Claude Skill that turns meeting recordings/notes into structured requirement docs, cutting manual effort and improving consistency"}, "e2_li1": {"zh": "主导ToB营销平台优惠券模块设计：竞品分析拼多多、淘宝、京东优惠券玩法，深访目标用户，输出Axure高保真原型覆盖C端+B端全流程", "tw": "主導ToB營銷平台優惠券模塊設計：競品分析拼多多、淘寶、京東優惠券玩法，深訪目標用戶，輸出Axure高保真原型覆蓋C端+B端全流程", "en": "Led the coupon module design for a ToB marketing platform: analyzed coupon mechanics of Pinduoduo, Taobao and JD, interviewed target users, and delivered Axure hi-fi prototypes covering the full C-end + B-end flow"}, "e2_li2": {"zh": "跨部门协同多个团队，组织多轮需求评审，输出PRD及接口说明文档，推动项目按期上线", "tw": "跨部門協同多個團隊，組織多輪需求評審，輸出PRD及接口說明文檔，推動項目按期上線", "en": "Coordinated multiple teams across departments, ran several requirement reviews, produced PRDs and interface docs, and pushed the project to launch on schedule"}, "e2_li3": {"zh": "优惠券模块上线后有效带动订单转化与GMV增长，并沉淀为平台通用营销工具", "tw": "優惠券模塊上線後有效帶動訂單轉化與GMV增長，並沉澱為平台通用營銷工具", "en": "After launch, the coupon module boosted order conversion and GMV and became a reusable marketing tool for the platform"}, "e1_role": {"zh": "AI产品经理实习生", "tw": "AI產品經理實習生", "en": "AI Product Manager Intern"}, "e1_co": {"zh": "广州汉全信息科技股份有限公司", "tw": "廣州漢全信息科技股份有限公司", "en": "Guangzhou Hanquan Information Technology Co., Ltd."}, "e2_role": {"zh": "产品经理助理", "tw": "產品經理助理", "en": "Product Manager Assistant"}, "e2_co": {"zh": "深圳市博思通信息技术有限公司", "tw": "深圳市博思通信息技術有限公司", "en": "Shenzhen Bositong Information Technology Co., Ltd."}, "nav_projects": {"zh": "项目", "tw": "項目", "en": "Projects"}, "nav_skills": {"zh": "技能", "tw": "技能", "en": "Skills"}, "nav_experience": {"zh": "经历", "tw": "經歷", "en": "Experience"}, "nav_education": {"zh": "教育", "tw": "教育", "en": "Education"}, "nav_honors": {"zh": "荣誉", "tw": "榮譽", "en": "Honors"}, "nav_contact": {"zh": "联系", "tw": "聯繫", "en": "Contact"}, "meta_title": {"zh": "周惠琳 · AI产品经理", "tw": "周惠琳 · AI產品經理", "en": "Zhou Huilin · AI Product Manager"}, "logo": {"zh": "周惠琳<span>.</span>", "tw": "周惠琳<span>.</span>", "en": "Zhou Huilin<span>.</span>"}, "hero_greeting": {"zh": "2026届应届毕业生 · 即日到岗", "tw": "2026屆應屆畢業生 · 即日到崗", "en": "Class of 2026 · Available immediately"}, "hero_h1": {"zh": "你好，我是<span class=\"name\">周惠琳</span>", "tw": "你好，我是<span class=\"name\">周惠琳</span>", "en": "Hi, I'm <span class=\"name\">Zhou Huilin</span>"}, "hero_title": {"zh": "AI产品经理 · 广东工业大学网络工程", "tw": "AI產品經理 · 廣東工業大學網絡工程", "en": "AI Product Manager · Network Engineering, GDUT"}, "hero_bio": {"zh": "网络工程科班出身，深耕AI产品方向。<strong style=\"color:var(--text-primary);font-weight:600\">从0到1主导服务某中信旗下国企的可信AI评估系统</strong>，并参与AI营销SaaS、财务综合平台等多个B端系统迭代。擅长把 LLM / RPA / Agent 能力落地为可交付产品，能独立输出中英双语PRD与高保真原型。", "tw": "網絡工程科班出身，深耕AI產品方向。<strong style=\"color:var(--text-primary);font-weight:600\">從0到1主導服務某中信旗下國企的可信AI評估系統</strong>，並參與AI營銷SaaS、財務綜合平台等多個B端系統迭代。擅長把 LLM / RPA / Agent 能力落地為可交付產品，能獨立輸出中英雙語PRD與高保真原型。", "en": "With a Network Engineering background and a focus on AI products, I <strong style=\"color:var(--text-primary);font-weight:600\">led a Trustworthy AI Evaluation System for a CITIC-affiliated SOE from 0 to 1</strong>, and contributed to multiple B-end systems including an AI-marketing SaaS and an enterprise finance platform. I turn LLM / RPA / Agent capabilities into shippable products and independently produce bilingual (CN/EN) PRDs and high-fidelity prototypes."}, "stat1": {"zh": "主导 / 参与项目", "tw": "主導 / 參與項目", "en": "Projects led / joined"}, "stat2": {"zh": "国企级AI系统主导", "tw": "國企級AI系統主導", "en": "SOE-grade AI system led"}, "stat3num": {"zh": "1<span style=\"font-size:15px;font-weight:600\">年</span>", "tw": "1<span style=\"font-size:15px;font-weight:600\">年</span>", "en": "1<span style=\"font-size:15px;font-weight:600\">yr</span>"}, "stat3": {"zh": "产品实习经验", "tw": "產品實習經驗", "en": "Product internship"}, "btn_projects": {"zh": "查看项目作品", "tw": "查看項目作品", "en": "View my work"}, "btn_contact": {"zh": "联系我", "tw": "聯繫我", "en": "Contact me"}, "sec_proj_h": {"zh": "项目作品", "tw": "項目作品", "en": "Projects"}, "sec_proj_sub": {"zh": "实习期间参与的核心项目，从需求到落地的全流程实践", "tw": "實習期間參與的核心項目，從需求到落地的全流程實踐", "en": "Core projects from my internships — end-to-end, from requirements to delivery"}, "sec_sk_h": {"zh": "专业能力", "tw": "專業能力", "en": "Skills"}, "sec_sk_sub": {"zh": "产品经理核心技能 + AI工具实操能力", "tw": "產品經理核心技能 + AI工具實操能力", "en": "Core PM skills + hands-on AI tooling"}, "sec_exp_h": {"zh": "实习经历", "tw": "實習經歷", "en": "Experience"}, "sec_exp_sub": {"zh": "两段产品实习经历，从AI工具应用到B端系统设计", "tw": "兩段產品實習經歷，從AI工具應用到B端系統設計", "en": "Two product internships, from AI tooling to B-end system design"}, "sec_edu_h": {"zh": "教育背景", "tw": "教育背景", "en": "Education"}, "edu_school": {"zh": "广东工业大学", "tw": "廣東工業大學", "en": "Guangdong University of Technology"}, "edu_major": {"zh": "网络工程 · 本科 · 2022 — 2026", "tw": "網絡工程 · 本科 · 2022 — 2026", "en": "Network Engineering · Bachelor · 2022 — 2026"}, "edu_details": {"zh": "主修课程：Java程序设计、数据库原理、C语言、计算机网络、数据结构<br>语言能力：CET-6，中英双语文档输出<br>校园经历：女子篮球队后勤负责人（组织赛事后勤保障，赞助转化率50%）、班级心委", "tw": "主修課程：Java程序設計、數據庫原理、C語言、計算機網絡、數據結構<br>語言能力：CET-6，中英雙語文檔輸出<br>校園經歷：女子籃球隊後勤負責人（組織賽事後勤保障，贊助轉化率50%）、班級心委", "en": "Core courses: Java Programming, Database Principles, C, Computer Networks, Data Structures<br>Languages: CET-6, bilingual (CN/EN) documentation<br>Campus: Logistics lead of the women’s basketball team (organized event logistics, 50% sponsorship conversion), class mental-health committee member"}, "edu_rank": {"zh": "专业排名 · 前7%", "tw": "專業排名 · 前7%", "en": "Major rank · Top 7%"}, "sec_hon_h": {"zh": "荣誉与证书", "tw": "榮譽與證書", "en": "Honors & Certificates"}, "hon1_t": {"zh": "优秀学生一等奖学金", "tw": "優秀學生一等獎學金", "en": "First-class Merit Scholarship"}, "hon1_d": {"zh": "2024 — 2025 年度", "tw": "2024 — 2025 年度", "en": "AY 2024 — 2025"}, "hon2_t": {"zh": "优秀学生二等奖学金", "tw": "優秀學生二等獎學金", "en": "Second-class Merit Scholarship"}, "hon2_d": {"zh": "2023 — 2024 年度", "tw": "2023 — 2024 年度", "en": "AY 2023 — 2024"}, "hon3_t": {"zh": "本科毕业设计（论文）创新奖", "tw": "本科畢業設計（論文）創新獎", "en": "Undergraduate Thesis Innovation Award"}, "hon3_d": {"zh": "2026 届", "tw": "2026 屆", "en": "Class of 2026"}, "wx_value": {"zh": "TTlisten0905 <span style=\"font-size:11px;color:var(--text-muted-dark)\">（点击复制）</span>", "tw": "TTlisten0905 <span style=\"font-size:11px;color:var(--text-muted-dark)\">（點擊複製）</span>", "en": "TTlisten0905 <span style=\"font-size:11px;color:var(--text-muted-dark)\">(click to copy)</span>"}, "sec_ct_h": {"zh": "保持联系", "tw": "保持聯繫", "en": "Get in Touch"}, "sec_ct_sub": {"zh": "如果你对我的经历感兴趣，欢迎随时联系", "tw": "如果你對我的經歷感興趣，歡迎隨時聯繫", "en": "If my experience interests you, feel free to reach out"}, "ct_email_l": {"zh": "邮箱", "tw": "郵箱", "en": "Email"}, "ct_wx_l": {"zh": "微信", "tw": "微信", "en": "WeChat"}, "ct_cv_l": {"zh": "简历", "tw": "簡歷", "en": "Resume"}, "ct_cv_v": {"zh": "下载PDF简历", "tw": "下載PDF簡歷", "en": "Download PDF resume"}, "footer": {"zh": "© 2026 周惠琳 · 更新于2026.07", "tw": "© 2026 周惠琳 · 更新於2026.07", "en": "© 2026 Zhou Huilin · Updated 2026.07"}};
+  // THEME
+  function getTheme(){const s=localStorage.getItem('theme');if(s)return s;return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  function applyTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('theme',t);}
+  function toggleTheme(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');}
   applyTheme(getTheme());
-
-  // ===== SCROLL =====
-  function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  // LANG
+  function getLang(){return localStorage.getItem('lang')||'zh';}
+  function applyLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(I18N[k]&&I18N[k][lang]!=null)el.textContent=I18N[k][lang];});
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.getAttribute('data-i18n-html');if(I18N[k]&&I18N[k][lang]!=null)el.innerHTML=I18N[k][lang];});
+    document.documentElement.setAttribute('lang',lang==='en'?'en':(lang==='tw'?'zh-Hant':'zh-CN'));
+    document.documentElement.setAttribute('data-lang',lang);
+    localStorage.setItem('lang',lang);
+    if(I18N['meta_title'])document.title=I18N['meta_title'][lang];
+    document.querySelectorAll('[data-lang-btn]').forEach(b=>b.classList.toggle('active',b.getAttribute('data-lang-btn')===lang));
   }
-
-  // ===== BACK TO TOP =====
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    backToTop.classList.toggle('visible', window.scrollY > 600);
-  });
-
-  // ===== LIGHTBOX =====
-  function openLightbox(text) {
-    const lb = document.getElementById('lightbox');
-    const content = document.getElementById('lightboxContent');
-    content.innerHTML = '<p style="font-size:16px;line-height:1.8;color:#e7e5e4">' + text + '</p><p style="margin-top:16px;font-size:13px;color:#a8a29e">（截图待补充 — 文档类项目展示产品文档清单）</p>';
-    lb.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  function openLightboxImg(src) {
-    const lb = document.getElementById('lightbox');
-    const content = document.getElementById('lightboxContent');
-    content.innerHTML = '<img src="' + src + '" style="max-width:90vw;max-height:80vh;border-radius:8px;" alt="项目截图">';
-    lb.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
-
-  // ===== COPY WECHAT =====
-  function copyWechat() {
-    navigator.clipboard.writeText('TTlisten0905').then(() => {
-      const el = document.querySelector('.contact-item:nth-child(2) .ci-value');
-      const orig = el.innerHTML;
-      el.innerHTML = '已复制！ ✓';
-      setTimeout(() => { el.innerHTML = orig; }, 1500);
-    }).catch(() => {
-      alert('微信: TTlisten0905');
-    });
-  }
-
-  // ===== SCROLL REVEAL =====
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // ===== CAROUSEL 轮播 =====
-  document.querySelectorAll('[data-carousel]').forEach(car => {
-    const track = car.querySelector('.carousel-track');
-    const slides = Array.from(car.querySelectorAll('.carousel-slide'));
-    const dotsWrap = car.querySelector('.carousel-dots');
-    const curEl = car.querySelector('.cc-cur');
-    const totalEl = car.querySelector('.cc-total');
-    let idx = 0;
-    if (slides.length <= 1) car.classList.add('single');
-    if (totalEl) totalEl.textContent = slides.length;
-    slides.forEach((s, i) => {
-      const b = document.createElement('button');
-      if (i === 0) b.classList.add('active');
-      b.setAttribute('aria-label', '第' + (i + 1) + '张');
-      b.addEventListener('click', (e) => { e.stopPropagation(); go(i); });
-      dotsWrap.appendChild(b);
-      s.addEventListener('click', () => openLightboxImg(s.getAttribute('src')));
-    });
-    const dots = Array.from(dotsWrap.children);
-    function go(n) {
-      idx = (n + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
-      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-      if (curEl) curEl.textContent = idx + 1;
-    }
-    const prev = car.querySelector('.cprev');
-    const next = car.querySelector('.cnext');
-    if (prev) prev.addEventListener('click', (e) => { e.stopPropagation(); go(idx - 1); });
-    if (next) next.addEventListener('click', (e) => { e.stopPropagation(); go(idx + 1); });
+  applyLang(getLang());
+  document.querySelectorAll('[data-lang-btn]').forEach(b=>b.addEventListener('click',()=>applyLang(b.getAttribute('data-lang-btn'))));
+  // SCROLL
+  function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+  const backToTop=document.getElementById('backToTop');
+  window.addEventListener('scroll',()=>{backToTop.classList.toggle('visible',window.scrollY>600);});
+  // LIGHTBOX
+  function openLightboxImg(src){const lb=document.getElementById('lightbox');document.getElementById('lightboxContent').innerHTML='<img src="'+src+'" style="max-width:90vw;max-height:80vh;border-radius:8px;" alt="">';lb.classList.add('active');document.body.style.overflow='hidden';}
+  function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+  // COPY WECHAT
+  function copyWechat(){navigator.clipboard.writeText('TTlisten0905').then(()=>{const el=document.querySelector('#contact .contact-item:nth-child(2) .ci-value');const orig=el.innerHTML;const done={zh:'已复制！ ✓',tw:'已複製！ ✓',en:'Copied! ✓'};el.textContent=done[getLang()]||'Copied! ✓';setTimeout(()=>{el.innerHTML=orig;},1500);}).catch(()=>alert('WeChat: TTlisten0905'));}
+  // REVEAL
+  const observer=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  // CAROUSEL
+  document.querySelectorAll('[data-carousel]').forEach(car=>{
+    const track=car.querySelector('.carousel-track');
+    const slides=Array.from(car.querySelectorAll('.carousel-slide'));
+    const dotsWrap=car.querySelector('.carousel-dots');
+    const curEl=car.querySelector('.cc-cur');const totalEl=car.querySelector('.cc-total');
+    let idx=0;
+    if(slides.length<=1)car.classList.add('single');
+    if(totalEl)totalEl.textContent=slides.length;
+    slides.forEach((s,i)=>{const b=document.createElement('button');if(i===0)b.classList.add('active');b.addEventListener('click',e=>{e.stopPropagation();go(i);});dotsWrap.appendChild(b);s.addEventListener('click',()=>openLightboxImg(s.getAttribute('src')));});
+    const dots=Array.from(dotsWrap.children);
+    function go(n){idx=(n+slides.length)%slides.length;track.style.transform='translateX(-'+(idx*100)+'%)';dots.forEach((d,i)=>d.classList.toggle('active',i===idx));if(curEl)curEl.textContent=idx+1;}
+    const prev=car.querySelector('.cprev');const next=car.querySelector('.cnext');
+    if(prev)prev.addEventListener('click',e=>{e.stopPropagation();go(idx-1);});
+    if(next)next.addEventListener('click',e=>{e.stopPropagation();go(idx+1);});
   });
 </script>
-
 </body>
 </html>
