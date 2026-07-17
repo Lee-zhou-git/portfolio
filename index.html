@@ -146,14 +146,35 @@
   .cap:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-4px);box-shadow:0 14px 30px -12px rgba(0,0,0,.45)}
   .cap:hover::before{transform:scale(1.5)}
 
-  /* AI STRIP — 软化版（浅色块）*/
-  #ai .inner{background:var(--lav);border-radius:40px;padding:60px 8%}
-  #ai .k{font-family:var(--hand);font-size:26px;color:var(--purple)}
-  #ai h2{font-size:clamp(30px,4.4vw,48px);margin:8px 0 16px}
-  #ai p{color:#4a4a4a;max-width:640px;font-size:16px;margin-bottom:26px}
-  #ai .chips{display:flex;flex-wrap:wrap;gap:10px}
-  #ai .chips span{background:rgba(255,255,255,.7);border:1px solid rgba(29,29,29,.1);border-radius:100px;padding:10px 20px;font-size:14px;font-weight:600;color:var(--ink);transition:background .2s}
-  #ai .chips span:hover{background:#fff}
+  /* PERSONAL PRACTICE — 延续柔彩卡片与大标题语言 */
+  #practice{background:var(--paper)}
+  .practice-grid{display:flex;flex-direction:column;counter-reset:practice}
+  .practice-card{position:sticky;top:calc(92px + var(--p,0)*20px);min-height:430px;overflow:hidden;border-radius:34px;padding:46px 48px;margin-bottom:42px;border:1px solid rgba(255,255,255,.72);box-shadow:0 2px 5px rgba(0,0,0,.03),0 44px 80px -42px rgba(0,0,0,.38);transition:transform .28s cubic-bezier(.16,1,.3,1),box-shadow .28s;counter-increment:practice}
+  .practice-card:nth-child(1){background:var(--lav)}.practice-card:nth-child(2){background:var(--mint)}
+  .practice-card:nth-child(3){background:var(--sky)}.practice-card:nth-child(4){background:var(--pink)}
+  .practice-card:nth-child(5){background:var(--lemon)}
+  .practice-card::after{content:attr(data-index);position:absolute;right:38px;top:24px;font-family:var(--disp);font-weight:900;font-size:96px;line-height:1;color:rgba(29,29,29,.055);pointer-events:none}
+  .practice-card.featured{order:-1;background:linear-gradient(135deg,#c9f4ea 0%,var(--mint) 52%,#e3fff8 100%);box-shadow:0 2px 5px rgba(0,0,0,.03),0 48px 86px -42px rgba(20,120,101,.5)}
+  .practice-card.featured h3{font-size:clamp(30px,4vw,48px);max-width:760px}
+  .practice-card.featured .practice-lead{font-size:18px!important;max-width:860px!important}
+  .practice-card.featured .practice-points{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;z-index:1}
+  .practice-card.featured .practice-points li{background:rgba(255,255,255,.55);border-radius:18px;padding:18px 18px 18px 34px;margin:0}
+  .practice-card.featured .practice-points li::before{left:18px;top:27px;background:#15947e}
+  .featured-badge{display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:#fff;border-radius:100px;padding:7px 14px;font-size:12px;font-weight:800;letter-spacing:.08em;margin-bottom:14px}
+  .practice-card:hover{box-shadow:0 2px 5px rgba(0,0,0,.03),0 50px 88px -40px rgba(0,0,0,.48)}
+  .practice-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+  .practice-icon{width:48px;height:48px;border-radius:15px;background:rgba(255,255,255,.72);display:flex;align-items:center;justify-content:center}
+  .practice-icon svg{width:24px;height:24px;stroke:var(--ink)}
+  .practice-no{font-family:var(--disp);font-size:13px;font-weight:800;letter-spacing:.12em;color:rgba(29,29,29,.48)}
+  .practice-card h3{font-size:clamp(24px,2.8vw,34px);line-height:1.08;margin-bottom:12px}
+  .practice-lead{font-size:15.5px!important;color:#3f3f3f!important;font-weight:600;line-height:1.7;margin:0 0 18px!important;max-width:none!important}
+  .practice-points{list-style:none;margin-bottom:20px}
+  .practice-points li{position:relative;padding-left:17px;color:#4b4b4b;font-size:14px;line-height:1.7;margin-bottom:7px}
+  .practice-points li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--ink)}
+  .practice-points b{color:var(--ink)}
+  .practice-tags{display:flex;flex-wrap:wrap;gap:8px}
+  .practice-tags span{background:rgba(255,255,255,.64);border:1px solid rgba(29,29,29,.08);border-radius:100px;padding:6px 12px;font-size:12px;font-weight:700}
+  @media(max-width:760px){.practice-card,.practice-card.featured{top:calc(80px + var(--p,0)*12px);min-height:0;padding:28px 24px;margin-bottom:28px}.practice-card::after{font-size:62px;right:20px;top:18px}.practice-card.featured .practice-points{grid-template-columns:1fr;gap:10px}.practice-card.featured .practice-lead{font-size:16px!important}}
 
   /* CONTACT */
   #contact{text-align:center}
@@ -197,6 +218,7 @@
   <a href="#hero" class="logo">周惠琳<em>.</em></a>
   <div class="navlinks">
     <a href="#works">作品</a>
+    <a href="#practice">AI 实践</a>
     <a href="#process">方法</a>
     <a href="#caps">能力</a>
     <a href="#contact" class="navcta">联系我</a>
@@ -209,6 +231,7 @@
   <p class="lead">真正「用 AI 造 AI 产品」的应届产品经理。计算机科班背景，<b>0→1 主导国企级可信 AI 评估系统</b>，ToB 复杂系统与 ToC 智能硬件 App 均独立交付过，擅长用 Agent / RAG / 自动化把前沿 AI 落地为可交付产品与中英双语 PRD。</p>
   <div class="quickbtns">
     <a href="#works" class="qbtn c1">我的作品 <span class="a">→</span></a>
+    <a href="#practice" class="qbtn c2">AI 实践 <span class="a">→</span></a>
     <a href="#caps" class="qbtn c2">我的能力 <span class="a">→</span></a>
     <a href="#contact" class="qbtn c3">联系我 <span class="a">→</span></a>
   </div>
@@ -300,6 +323,51 @@
   <div class="who">香港某跨行业集团 · 董事长<span>AI 营销系统「系统 + 代运营」客户</span></div>
   <div class="src">* 客户方复盘会口头反馈口径</div>
 </div></section></div>
+
+<section id="practice"><div class="wrap">
+  <div class="shead">
+    <div><span class="k">ai in action</span><h2>AI 实践</h2></div>
+    <p>不只会描述 AI 能力，更把 Agent、RAG 与自动化真正放进产品和业务流程里。</p>
+  </div>
+  <div class="practice-grid">
+    <article class="practice-card" style="--p:1" data-index="02">
+      <div class="practice-top"><span class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 2v20M17 2v20M2 12h20"/></svg></span><span class="practice-no">PRACTICE 02</span></div>
+      <h3>AI 内容工厂<br>多智能体自动化生产</h3>
+      <p class="practice-lead">部署多智能体 + 企业 RAG 知识库，把内容生产从「人工日更」变成「一句话出片」。</p>
+      <ul class="practice-points"><li><b>智能体部署：</b>负责 OpenClaw、Hermes 等多 Agent 的部署配置与企业知识库搭建</li><li><b>一句话触发：</b>员工在飞书发一句话，Agent 自动采集并分析抖音、小红书、TikTok 对标内容</li><li><b>自动成片：</b>从文案、素材匹配到自动剪辑，产出达到运营可直接发布质量</li></ul>
+      <div class="practice-tags"><span>OpenClaw</span><span>Hermes</span><span>RAG</span><span>多 Agent 编排</span><span>自动剪辑</span></div>
+    </article>
+    <article class="practice-card featured" style="--p:0" data-index="01">
+      <div class="practice-top"><span class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="practice-no">PRACTICE 01</span></div>
+      <span class="featured-badge">✦ 重点实践 · 核心案例</span>
+      <h3>无感 AI 客服<br>拟人化健康管理 Agent</h3>
+      <p class="practice-lead">主导企业微信慢病健康管理 AI 客服，以 Agent 承接真人客服工作；测试过程中，甲方与真实客户均未察觉对话方是 AI。</p>
+      <ul class="practice-points"><li><b>替代人工：</b>自动输出复购提醒话术，实时应答客户疑问</li><li><b>定制陪伴：</b>按个人习惯定制血糖监测、饮食记录与用药提醒</li><li><b>数据沉淀：</b>生成健康档案、付费意愿评分及后续话术策略</li></ul>
+      <div class="practice-tags"><span>企业微信</span><span>Agent</span><span>用户画像</span><span>付费意愿评分</span><span>拟人化对话</span></div>
+    </article>
+    <article class="practice-card" style="--p:2" data-index="03">
+      <div class="practice-top"><span class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></span><span class="practice-no">PRACTICE 03</span></div>
+      <h3>AI 原型与文档流水线</h3>
+      <p class="practice-lead">用 AI 打通「需求 → 可交互原型 → 交付文档」全链路，成果已通过甲方评审。</p>
+      <ul class="practice-points"><li><b>高保真原型：</b>用 open-design 与 AI 编程工具直出可复用、可点击的 HTML 原型</li><li><b>文档自动化：</b>沉淀自研 Skill，由 Agent 一键生成用户操作手册</li><li><b>会议转需求：</b>将录音与纪要自动转成结构化需求文档，提升需求一致性</li></ul>
+      <div class="practice-tags"><span>open-design</span><span>Claude Code</span><span>Cursor</span><span>自研 Skill</span><span>HTML 原型</span></div>
+    </article>
+    <article class="practice-card" style="--p:3" data-index="04">
+      <div class="practice-top"><span class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><span class="practice-no">PRACTICE 04</span></div>
+      <h3>AI 赋能产品工作流</h3>
+      <p class="practice-lead">自建 4 个 Coze 智能体组成「产品助理矩阵」，把重复工作交给 Agent，自己聚焦判断与决策。</p>
+      <ul class="practice-points"><li><b>访谈结构化：</b>将录音与纪要整理为结构化洞察和需求线索</li><li><b>竞品监控：</b>定时追踪竞品动态与版本更新，自动汇总简报</li><li><b>PRD / 文案：</b>依模板产出 PRD 初稿并一键润色原型文案</li></ul>
+      <div class="practice-tags"><span>Coze</span><span>智能体矩阵</span><span>用户研究</span><span>竞品监控</span><span>PRD 提效</span></div>
+    </article>
+    <article class="practice-card" style="--p:4" data-index="05">
+      <div class="practice-top"><span class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="practice-no">PRACTICE 05</span></div>
+      <h3>AI 质量评估 · 给 AI 应用当「裁判」</h3>
+      <p class="practice-lead">用裁判模型给 AI 输出统一打分，让质量可量化、可追溯——这是可信 AI 评估系统的核心方法。</p>
+      <ul class="practice-points"><li><b>裁判模型：</b>基于 opik 配置 Agent-to-Agent 裁判，按预设规则评价开放式输出</li><li><b>结构化报告：</b>自动生成分维度、可量化的评估报告</li><li><b>本地可信：</b>本地化部署 + SDK 调用，数据不出内网，兼顾能力与隐私合规</li></ul>
+      <div class="practice-tags"><span>opik</span><span>LLM-as-a-judge</span><span>准确性 / 幻觉 / 安全</span><span>结构化报告</span><span>本地部署</span></div>
+    </article>
+  </div>
+</div></section>
 
 <section id="process"><div class="wrap">
   <div class="proc-grid">
