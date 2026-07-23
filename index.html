@@ -173,8 +173,8 @@
   #thinking .think-lead .k{font-family:var(--hand);font-size:25px;color:#afa6ff;display:block;margin-bottom:10px}
   #thinking .think-lead p{position:relative;z-index:1;font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.3vw,40px);letter-spacing:-.025em;line-height:1.3;max-width:900px}
   #thinking .think-lead strong{color:#bdb6ff}
-  .think-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  .think-card{border-radius:28px;padding:32px 34px;min-height:220px;position:relative;overflow:hidden}
+  .think-grid{display:flex;flex-direction:column}
+  .think-card{position:sticky;top:calc(94px + var(--t,0)*22px);border-radius:30px;padding:42px 44px;min-height:280px;margin-bottom:28px;overflow:hidden;border:1px solid rgba(255,255,255,.7);box-shadow:0 2px 5px rgba(0,0,0,.03),0 40px 72px -40px rgba(0,0,0,.36)}
   .think-card:nth-child(1){background:var(--lav)}.think-card:nth-child(2){background:var(--mint)}
   .think-card:nth-child(3){background:var(--sky)}.think-card:nth-child(4){background:var(--blush)}
   .think-card .n{font-family:var(--disp);font-weight:900;font-size:13px;letter-spacing:.12em;color:rgba(29,29,29,.48);margin-bottom:24px}
@@ -183,7 +183,7 @@
   .think-card b{color:var(--ink)}
   .think-loop{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:18px;padding:18px 24px;background:var(--paper);border-radius:100px;font-size:13px;font-weight:700;color:var(--ink-soft)}
   .think-loop .arr{color:var(--purple)}
-  @media(max-width:760px){#thinking .think-lead{padding:32px 26px}#thinking .think-lead::after{font-size:44px;right:18px}.think-grid{grid-template-columns:1fr}.think-card{min-height:0;padding:28px 26px}.think-loop{border-radius:24px}}
+  @media(max-width:760px){#thinking .think-lead{padding:32px 26px}#thinking .think-lead::after{font-size:44px;right:18px}.think-card{top:calc(80px + var(--t,0)*12px);min-height:240px;padding:30px 26px;margin-bottom:22px}.think-loop{border-radius:24px}}
 
   /* CONTACT */
   #contact{text-align:center}
@@ -254,6 +254,42 @@
     <div class="ncard"><span class="big">1<span style="font-size:.5em">年+</span></span><span class="lbl">产品实习经验</span></div>
     <div class="ncard"><span class="big">前7%</span><span class="lbl">专业排名 11/159</span></div>
     <div class="ncard"><span class="big">8</span><span class="lbl">标杆客户单月新增签约（客户复盘口径）</span></div>
+  </div>
+</div></section>
+
+<section id="thinking"><div class="wrap">
+  <div class="shead">
+    <div><span class="k">how i think</span><h2>我对 AI 产品经理的理解</h2></div>
+    <p>AI 不是目的，而是解决真实问题的一种能力。产品经理要做的，是把这种不确定的能力变成可落地、可衡量、可持续迭代的产品。</p>
+  </div>
+  <div class="think-lead">
+    <span class="k">my product principle</span>
+    <p>AI 产品经理的核心，不是背模型名词，而是把<strong>不确定的模型能力</strong>，转化为可落地、可衡量、可持续迭代的业务产品。</p>
+  </div>
+  <div class="think-grid">
+    <article class="think-card" style="--t:0">
+      <div class="n">(01)</div>
+      <h3>从业务问题出发，而不是从 AI 出发</h3>
+      <p>先判断用户痛点是否高频明确、AI 是否优于规则或人工，再回答它最终是<b>增收、降本还是提效</b>；不为使用 AI 而制造场景。</p>
+    </article>
+    <article class="think-card" style="--t:1">
+      <div class="n">(02)</div>
+      <h3>让不确定性可管理</h3>
+      <p>产品设计必须同时定义能力边界、低置信度处理、权限与安全约束，并为高风险场景配置<b>拒答、降级和人工兜底</b>。</p>
+    </article>
+    <article class="think-card" style="--t:2">
+      <div class="n">(03)</div>
+      <h3>评测是迭代的方向盘</h3>
+      <p>用离线评估集验证版本，用线上任务成功率与业务指标观察价值；持续分类 Bad Case、建立回归集，让每次优化都<b>有证据、可复现</b>。</p>
+    </article>
+    <article class="think-card" style="--t:3">
+      <div class="n">(04)</div>
+      <h3>在效果、体验与成本之间取舍</h3>
+      <p>模型越大不一定越适合业务。结合准确率、延迟、并发、数据安全与 Token 成本做选型，关注<b>每解决一个业务问题的成本</b>和长期 ROI。</p>
+    </article>
+  </div>
+  <div class="think-loop">
+    <span>用户与痛点</span><span class="arr">→</span><span>为什么需要 AI</span><span class="arr">→</span><span>方案与边界</span><span class="arr">→</span><span>指标与评测</span><span class="arr">→</span><span>数据反馈闭环</span><span class="arr">→</span><span>成本与 ROI</span>
   </div>
 </div></section>
 
@@ -368,42 +404,6 @@
       <ul class="practice-points"><li><b>裁判模型：</b>基于 opik 配置 Agent-to-Agent 裁判，按预设规则评价开放式输出</li><li><b>结构化报告：</b>自动生成分维度、可量化的评估报告</li><li><b>本地可信：</b>本地化部署 + SDK 调用，数据不出内网，兼顾能力与隐私合规</li></ul>
       <div class="practice-tags"><span>opik</span><span>LLM-as-a-judge</span><span>准确性 / 幻觉 / 安全</span><span>结构化报告</span><span>本地部署</span></div>
     </article>
-  </div>
-</div></section>
-
-<section id="thinking"><div class="wrap">
-  <div class="shead">
-    <div><span class="k">how i think</span><h2>我对 AI 产品经理的理解</h2></div>
-    <p>AI 不是目的，而是解决真实问题的一种能力。产品经理要做的，是把这种不确定的能力变成可落地、可衡量、可持续迭代的产品。</p>
-  </div>
-  <div class="think-lead">
-    <span class="k">my product principle</span>
-    <p>AI 产品经理的核心，不是背模型名词，而是把<strong>不确定的模型能力</strong>，转化为可落地、可衡量、可持续迭代的业务产品。</p>
-  </div>
-  <div class="think-grid">
-    <article class="think-card">
-      <div class="n">(01)</div>
-      <h3>从业务问题出发，而不是从 AI 出发</h3>
-      <p>先判断用户痛点是否高频明确、AI 是否优于规则或人工，再回答它最终是<b>增收、降本还是提效</b>；不为使用 AI 而制造场景。</p>
-    </article>
-    <article class="think-card">
-      <div class="n">(02)</div>
-      <h3>让不确定性可管理</h3>
-      <p>产品设计必须同时定义能力边界、低置信度处理、权限与安全约束，并为高风险场景配置<b>拒答、降级和人工兜底</b>。</p>
-    </article>
-    <article class="think-card">
-      <div class="n">(03)</div>
-      <h3>评测是迭代的方向盘</h3>
-      <p>用离线评估集验证版本，用线上任务成功率与业务指标观察价值；持续分类 Bad Case、建立回归集，让每次优化都<b>有证据、可复现</b>。</p>
-    </article>
-    <article class="think-card">
-      <div class="n">(04)</div>
-      <h3>在效果、体验与成本之间取舍</h3>
-      <p>模型越大不一定越适合业务。结合准确率、延迟、并发、数据安全与 Token 成本做选型，关注<b>每解决一个业务问题的成本</b>和长期 ROI。</p>
-    </article>
-  </div>
-  <div class="think-loop">
-    <span>用户与痛点</span><span class="arr">→</span><span>为什么需要 AI</span><span class="arr">→</span><span>方案与边界</span><span class="arr">→</span><span>指标与评测</span><span class="arr">→</span><span>数据反馈闭环</span><span class="arr">→</span><span>成本与 ROI</span>
   </div>
 </div></section>
 
