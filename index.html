@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>周惠琳 · AI 产品经理 | 用 AI 造 AI 产品</title>
-<meta name="description" content="周惠琳，2026届应届 AI 产品经理。计算机科班背景，0→1 主导国企级可信 AI 评估系统，擅长用 Agent / RAG / 自动化把前沿 AI 落地为可交付产品，独立交付中英双语 PRD 与可交互原型。">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="canonical" href="https://lee-zhou-git.github.io/portfolio/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="周惠琳 · AI 产品经理 | 用 AI 造 AI 产品">
-<meta property="og:description" content="2026届应届 AI 产品经理。0→1 主导国企级可信 AI 评估系统，擅长用前沿 AI 能力落地可交付产品。">
-<meta property="og:url" content="https://lee-zhou-git.github.io/portfolio/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>周惠琳 · AI产品经理 | 用 AI 造 AI 产品</title>
+  <meta name="description" content="周惠琳，2026届应届 AI 产品经理。计算机科班背景，0→1 主导国企级可信 AI 评估系统，擅长用 Agent / RAG / 自动化把前沿 AI 能力落地为可交付产品，独立交付中英双语 PRD 与可交互原型。">
+  <link rel="canonical" href="https://lee-zhou-git.github.io/portfolio/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <!-- Open Graph（微信/钉钉/邮件分享卡片） -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="周惠琳 · 个人作品集">
+  <meta property="og:title" content="周惠琳 · AI产品经理 | 用 AI 造 AI 产品">
+  <meta property="og:description" content="2026届应届 AI 产品经理。0→1 主导国企级可信 AI 评估系统，擅长用 Agent / RAG / 自动化把前沿 AI 能力落地为可交付产品。">
+  <meta property="og:url" content="https://lee-zhou-git.github.io/portfolio/">
+  <meta property="og:image" content="https://lee-zhou-git.github.io/portfolio/assets/images/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_CN">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="周惠琳 · AI产品经理 | 用 AI 造 AI 产品">
+  <meta name="twitter:description" content="2026届应届 AI 产品经理。0→1 主导国企级可信 AI 评估系统，擅长用前沿 AI 能力落地可交付产品。">
+  <meta name="twitter:image" content="https://lee-zhou-git.github.io/portfolio/assets/images/og-cover.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
@@ -210,284 +221,396 @@
   .modal-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
   .modal-chips span{background:var(--paper);border-radius:100px;padding:7px 15px;font-size:13px;font-weight:600;color:var(--ink)}
   @media(max-width:620px){.modal-card{padding:38px 24px}}
+
+  /* ===== LANG SWITCH ===== */
+  /* 已停用多语言切换，仅保留简体中文。 */
+  /* 无头像：首屏单列居中布局 */
+  #hero .inner { grid-template-columns: 1fr; }
+  #hero .hero-left { text-align: center; }
+  #hero .hero-left .bio { margin-left: auto; margin-right: auto; }
+  #hero .hero-stats { justify-content: center; }
+  #hero .hero-btns { justify-content: center; }
+  /* ===== AI IN ACTION ===== */
+  #ai { background:var(--bg-alt); }
+  .ai-actions { display:flex; flex-direction:column; gap:20px; }
+  .ai-card { display:flex; gap:20px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:26px 28px; transition:all 0.3s cubic-bezier(0.16,1,0.3,1); }
+  .ai-card:hover { border-color:var(--border-hover); box-shadow:var(--shadow-lg); transform:translateY(-2px); }
+  .ai-card .ai-icon { flex-shrink:0; width:48px; height:48px; border-radius:12px; background:var(--accent-subtle); display:flex; align-items:center; justify-content:center; }
+  .ai-card .ai-icon svg { width:24px; height:24px; color:var(--accent); }
+  .ai-card .ai-body { min-width:0; }
+  .ai-card .ai-body h3 { font-size:17px; font-weight:700; letter-spacing:-0.3px; margin-bottom:8px; }
+  .ai-card .ai-body .ai-lead { font-size:14px; color:var(--text-primary); font-weight:600; line-height:1.7; margin-bottom:12px; }
+  .ai-card .ai-body ul.ai-points { list-style:none; margin-bottom:14px; }
+  .ai-card .ai-body ul.ai-points li { position:relative; padding-left:18px; font-size:13.5px; color:var(--text-secondary); line-height:1.7; margin-bottom:7px; }
+  .ai-card .ai-body ul.ai-points li:last-child { margin-bottom:0; }
+  .ai-card .ai-body ul.ai-points li::before { content:''; position:absolute; left:0; top:9px; width:5px; height:5px; border-radius:50%; background:var(--accent); }
+  .ai-card .ai-body ul.ai-points li b { color:var(--text-primary); font-weight:600; }
+  .ai-card .ai-tags { display:flex; flex-wrap:wrap; gap:6px; }
+  .ai-card .ai-tags span { font-size:12px; font-weight:500; padding:3px 10px; border-radius:100px; background:var(--accent-subtle); color:var(--accent); }
+  @media (max-width:768px){ .ai-card { flex-direction:column; gap:14px; padding:22px; } }
+
+  /* ===== AI PRODUCT THINKING ===== */
+  #thinking { background:var(--bg-page); }
+  .thinking-manifesto {
+    position:relative; overflow:hidden; margin-bottom:22px; padding:30px 32px;
+    border:1px solid var(--border); border-radius:var(--radius-lg);
+    background:linear-gradient(135deg,var(--bg-card) 0%,var(--accent-subtle) 100%);
+  }
+  .thinking-manifesto::after {
+    content:'AI ≠ PRODUCT'; position:absolute; right:24px; bottom:-14px;
+    color:var(--accent); opacity:.055; font-family:"JetBrains Mono",monospace;
+    font-size:56px; font-weight:700; letter-spacing:-3px; white-space:nowrap;
+  }
+  .thinking-kicker {
+    display:flex; align-items:center; gap:8px; margin-bottom:12px;
+    color:var(--accent); font-size:12px; font-weight:700; letter-spacing:1.4px;
+    text-transform:uppercase;
+  }
+  .thinking-kicker::before { content:''; width:22px; height:2px; background:var(--accent); }
+  .thinking-quote {
+    position:relative; z-index:1; max-width:720px; margin:0;
+    color:var(--text-primary); font-size:22px; font-weight:700;
+    line-height:1.55; letter-spacing:-.45px;
+  }
+  .thinking-quote strong { color:var(--accent); }
+  .thinking-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+  .thinking-card {
+    position:relative; padding:22px 22px 20px 64px;
+    border:1px solid var(--border); border-radius:var(--radius-md);
+    background:var(--bg-card); transition:all .25s ease;
+  }
+  .thinking-card:hover { transform:translateY(-2px); border-color:var(--border-hover); box-shadow:var(--shadow-md); }
+  .thinking-no {
+    position:absolute; top:21px; left:20px; width:30px; height:30px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:9px; background:var(--accent-subtle); color:var(--accent);
+    font-family:"JetBrains Mono",monospace; font-size:12px; font-weight:700;
+  }
+  .thinking-card h3 { margin-bottom:7px; color:var(--text-primary); font-size:16px; line-height:1.4; }
+  .thinking-card p { margin:0; color:var(--text-secondary); font-size:13.5px; line-height:1.75; }
+  .thinking-card b { color:var(--text-primary); font-weight:600; }
+  .thinking-loop {
+    display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+    gap:8px; margin-top:18px; padding:14px 18px;
+    border-radius:var(--radius-md); background:var(--bg-alt);
+    color:var(--text-secondary); font-size:12.5px; font-weight:600;
+  }
+  .thinking-loop .loop-step { color:var(--text-primary); }
+  .thinking-loop .loop-arrow { color:var(--accent); font-family:"JetBrains Mono",monospace; }
+  @media (max-width:768px) {
+    .thinking-manifesto { padding:24px 22px; }
+    .thinking-manifesto::after { font-size:38px; right:14px; }
+    .thinking-quote { font-size:18px; }
+    .thinking-grid { grid-template-columns:1fr; }
+  }
+
+  /* ===== 项目「结果金句」callout ===== */
+  .project-highlight { display:flex; gap:10px; align-items:flex-start; margin:14px 0 6px; padding:12px 16px; background:var(--accent-subtle); border-radius:10px; border-left:3px solid var(--accent); }
+  .project-highlight svg { flex-shrink:0; width:18px; height:18px; color:var(--accent); margin-top:2px; }
+  .project-highlight span { font-size:15px; font-weight:600; line-height:1.6; color:var(--text-primary); }
+  @media (max-width:768px){ .project-highlight { padding:11px 13px; } .project-highlight span { font-size:14px; } }
+
+  /* ===== 项目分级：靠柔和的标签引导，不用硬边框 ===== */
+  /* 分类眉标 + 分级徽章 */
+  .proj-meta { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:11px; }
+  .project-kind { display:inline-flex; align-items:center; padding:4px 11px; border-radius:100px; border:1px solid var(--border-hover); color:var(--text-secondary); font-size:12px; font-weight:600; letter-spacing:.3px; }
+  .proj-badge { display:inline-flex; align-items:center; gap:6px; padding:5px 12px; border-radius:100px; font-size:12px; font-weight:700; letter-spacing:.5px; }
+  .proj-badge svg { width:14px; height:14px; }
+  /* 柔和浅色徽章（非实心） */
+  .proj-badge.badge-case { background:var(--accent-subtle); color:var(--accent); }
+  .proj-badge.badge-solo { background:rgba(217,119,6,0.12); color:#b45309; }
+  [data-theme="dark"] .proj-badge.badge-solo { background:rgba(245,158,11,0.15); color:#fbbf24; }
+  .case-study { margin-top:16px; display:flex; flex-direction:column; gap:16px; }
+  .cs-block .cs-h { font-size:13px; font-weight:700; letter-spacing:.5px; color:var(--accent); margin-bottom:7px; text-transform:uppercase; }
+  .cs-p { font-size:14px; line-height:1.8; color:var(--text-secondary); }
+  .cs-decisions { list-style:none; display:flex; flex-direction:column; gap:12px; }
+  .cs-decisions li { display:flex; gap:11px; align-items:flex-start; }
+  .cs-decisions li svg { flex-shrink:0; width:17px; height:17px; color:var(--accent); margin-top:3px; }
+  .cs-dec-t { font-size:14.5px; font-weight:650; color:var(--text-primary); line-height:1.55; margin-bottom:3px; }
+  .cs-dec-w { font-size:13.5px; color:var(--text-secondary); line-height:1.7; }
+  .cs-block.cs-result { background:var(--accent-subtle); border-radius:12px; padding:16px 18px; }
+  .cs-block.cs-result .cs-p { color:var(--text-primary); font-weight:500; }
+
+  /* 首屏名字不折断（移动端） */
+  #hero .hero-left h1 .name { white-space:nowrap; }
+  /* 技能：主打分类用柔和的标题色 + 短下划线引导，不用整框 */
+  .skill-category.featured h3 { color:var(--accent); }
+  .skill-category.featured h3::after { content:''; display:block; width:26px; height:2px; margin-top:7px; border-radius:2px; background:var(--accent); }
+  .skill-tag.core { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .skill-tag.core .dot { background:#fff; }
+  [data-theme="dark"] .skill-tag.core { color:#08211c; }
+  [data-theme="dark"] .skill-tag.core .dot { background:#08211c; }
+
+  /* 桌面截图：极简浏览器框 */
+  .card-visual.framed { display:flex !important; flex-direction:column; align-items:stretch; justify-content:flex-start; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg-card); box-shadow:var(--shadow-lg); }
+  .card-visual.framed .carousel { width:100%; border-radius:0 !important; border:none !important; }
+  .browser-bar { display:flex; align-items:center; gap:7px; width:100%; padding:9px 13px; background:var(--bg-alt); border-bottom:1px solid var(--border); box-sizing:border-box; }
+  .browser-bar .bdot { width:11px; height:11px; border-radius:50%; background:var(--border-hover); flex-shrink:0; }
+  .browser-bar .burl { flex:1; height:20px; margin-left:9px; border-radius:6px; background:var(--bg-card); border:1px solid var(--border); }
+
+  /* ===== 大厂风 HERO 重设计 ===== */
+  :root{
+    --grid-dot: rgba(13,148,136,0.16);
+    --orb-1: rgba(13,148,136,0.30);
+    --orb-2: rgba(14,165,233,0.24);
+    --name-grad: linear-gradient(115deg,#0d9488 0%,#0891b2 48%,#0ea5e9 100%);
+    --nav-bg: rgba(250,250,249,0.72);
+    --stat-card-bg: rgba(255,255,255,0.66);
+  }
+  [data-theme="dark"]{
+    --grid-dot: rgba(45,212,191,0.18);
+    --orb-1: rgba(45,212,191,0.26);
+    --orb-2: rgba(56,189,248,0.22);
+    --name-grad: linear-gradient(115deg,#2dd4bf 0%,#22d3ee 48%,#38bdf8 100%);
+    --nav-bg: rgba(28,25,23,0.72);
+    --stat-card-bg: rgba(41,37,36,0.55);
+  }
+  nav{ background:var(--nav-bg); backdrop-filter:blur(14px) saturate(1.5); -webkit-backdrop-filter:blur(14px) saturate(1.5); }
+
+  #hero{ position:relative; overflow:hidden; }
+  .hero-bg{ position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+  .hero-bg::before{ content:''; position:absolute; inset:-2px;
+    background-image:radial-gradient(var(--grid-dot) 1px, transparent 1.4px); background-size:24px 24px;
+    -webkit-mask-image:radial-gradient(ellipse 62% 55% at 50% 42%, #000 34%, transparent 100%);
+    mask-image:radial-gradient(ellipse 62% 55% at 50% 42%, #000 34%, transparent 100%); }
+  .hero-bg .orb{ position:absolute; border-radius:50%; filter:blur(80px); will-change:transform; }
+  .hero-bg .orb-1{ width:460px; height:460px; background:radial-gradient(circle,var(--orb-1),transparent 68%); top:-150px; left:-70px; animation:floatA 15s ease-in-out infinite; }
+  .hero-bg .orb-2{ width:420px; height:420px; background:radial-gradient(circle,var(--orb-2),transparent 68%); top:6%; right:-130px; animation:floatB 17s ease-in-out infinite; }
+  @keyframes floatA{ 0%,100%{transform:translate(0,0)} 50%{transform:translate(32px,26px)} }
+  @keyframes floatB{ 0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,22px)} }
+  #hero .inner{ position:relative; z-index:1; }
+
+  .hero-badge{ display:inline-flex; align-items:center; gap:9px; padding:6px 15px; border-radius:100px;
+    background:var(--accent-subtle); border:1px solid var(--border); font-size:13px; font-weight:600;
+    color:var(--accent); margin-bottom:22px; }
+  .hero-badge .pulse-dot{ width:8px; height:8px; border-radius:50%; background:#10b981; position:relative; flex-shrink:0; }
+  .hero-badge .pulse-dot::after{ content:''; position:absolute; inset:-4px; border-radius:50%; background:rgba(16,185,129,0.45); animation:pulse 1.9s ease-out infinite; }
+  @keyframes pulse{ 0%{transform:scale(.55);opacity:.85} 100%{transform:scale(1.9);opacity:0} }
+
+  #hero .hero-left h1{ font-size:clamp(38px,6vw,58px); line-height:1.1; margin-bottom:16px; }
+  #hero .hero-left h1 .name{ background:var(--name-grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  #hero .hero-left .bio{ font-size:16px; }
+
+  #hero .hero-stats{ gap:14px; }
+  #hero .hero-stats .stat{ padding:14px 22px; border-radius:14px; background:var(--stat-card-bg);
+    border:1px solid var(--border); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    min-width:118px; transition:transform .28s cubic-bezier(.16,1,.3,1), border-color .25s, box-shadow .25s; }
+  #hero .hero-stats .stat:hover{ transform:translateY(-3px); border-color:var(--accent); box-shadow:var(--shadow-md); }
+
+  #hero .btn-primary{ background:var(--name-grad); box-shadow:0 6px 20px var(--accent-glow); border:none; }
+  #hero .btn-primary:hover{ filter:brightness(1.06); transform:translateY(-2px); box-shadow:0 10px 30px var(--accent-glow); }
+
+  .tech-strip{ margin-top:36px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; }
+  .tech-strip .ts-label{ font-size:11.5px; font-weight:700; color:var(--text-tertiary); letter-spacing:1px; margin-right:4px; text-transform:uppercase; }
+  .tech-strip .ts-chip{ font-size:12.5px; font-weight:500; padding:5px 12px; border-radius:8px; background:var(--bg-card);
+    border:1px solid var(--border); color:var(--text-secondary); font-family:"JetBrains Mono",monospace; transition:all .2s; }
+  .tech-strip .ts-chip:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-1px); }
+
+  .scroll-cue{ position:absolute; bottom:22px; left:50%; transform:translateX(-50%); z-index:1; color:var(--text-tertiary); animation:bob 2s ease-in-out infinite; }
+  .scroll-cue svg{ width:24px; height:24px; }
+  @keyframes bob{ 0%,100%{transform:translate(-50%,0)} 50%{transform:translate(-50%,8px)} }
+  @media (max-width:768px){ .scroll-cue{ display:none; } .tech-strip{ margin-top:26px; } #hero .hero-stats .stat{ min-width:96px; padding:12px 16px; } }
+  @media (prefers-reduced-motion: reduce){ .orb,.pulse-dot::after,.scroll-cue{ animation:none !important; } }
 </style>
 </head>
 <body>
-
-<nav><div class="wrap">
-  <a href="#hero" class="logo">周惠琳<em>.</em></a>
-  <div class="navlinks">
-    <a href="#works">作品</a>
-    <a href="#practice">AI 实践</a>
-    <a href="#process">方法</a>
-    <a href="#caps">能力</a>
-    <a href="#contact" class="navcta">联系我</a>
+<nav>
+  <div class="inner">
+    <a href="#" class="logo">周惠琳<span>.</span></a>
+    <div class="links">
+      <a href="#ai" onclick="scrollToSection('ai');return false;">AI实践</a><a href="#thinking" onclick="scrollToSection('thinking');return false;">我的理解</a><a href="#projects" onclick="scrollToSection('projects');return false;">项目</a><a href="#skills" onclick="scrollToSection('skills');return false;">技能</a><a href="#experience" onclick="scrollToSection('experience');return false;">经历</a><a href="#education" onclick="scrollToSection('education');return false;">教育</a><a href="#honors" onclick="scrollToSection('honors');return false;">荣誉</a><a href="#contact" onclick="scrollToSection('contact');return false;">联系</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    </div>
   </div>
-</div></nav>
-
-<header id="hero"><div class="wrap">
-  <div class="avail"><span class="dot"></span>2026 届应届 · 即日到岗</div>
-  <h1><span class="wave">你好！</span><br>我是周惠琳，<br>一名 <span class="hl">AI 产品经理</span>。</h1>
-  <p class="lead">真正「用 AI 造 AI 产品」的应届产品经理。计算机科班背景，<b>0→1 主导国企级可信 AI 评估系统</b>，ToB 复杂系统与 ToC 智能硬件 App 均独立交付过，擅长用 Agent / RAG / 自动化把前沿 AI 落地为可交付产品与中英双语 PRD。</p>
-  <div class="quickbtns">
-    <a href="#works" class="qbtn c1">我的作品 <span class="a">→</span></a>
-    <a href="#practice" class="qbtn c2">AI 实践 <span class="a">→</span></a>
-    <a href="#caps" class="qbtn c2">我的能力 <span class="a">→</span></a>
-    <a href="#contact" class="qbtn c3">联系我 <span class="a">→</span></a>
+</nav>
+<section id="hero">
+  <div class="hero-bg" aria-hidden="true"><span class="orb orb-1"></span><span class="orb orb-2"></span></div>
+  <div class="inner">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="pulse-dot"></span><span>2026届应届毕业生 · 即日到岗</span></div>
+      <h1>你好，我是<span class="name">周惠琳</span></h1>
+      <p class="bio">真正「用 AI 造 AI 产品」的应届产品经理。计算机科班背景，<strong style="color:var(--text-primary);font-weight:600">0→1 主导国企级可信 AI 评估系统</strong>；ToB 复杂系统与 ToC 智能硬件 App 均独立交付过，擅长用 Agent / RAG / 自动化把前沿 AI 落地为可交付产品与中英双语 PRD。</p>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">6+</div><div class="stat-label">主导 / 参与项目</div></div>
+        <div class="stat"><div class="stat-num">0→1</div><div class="stat-label">国企级AI系统主导</div></div>
+        <div class="stat"><div class="stat-num">1<span style="font-size:15px;font-weight:600">年+</span></div><div class="stat-label">产品实习经验</div></div>
+      </div>
+      <div class="hero-btns">
+        <a href="#projects" onclick="scrollToSection('projects');return false;" class="btn btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span>查看项目作品</span></a>
+        <a href="#contact" onclick="scrollToSection('contact');return false;" class="btn btn-secondary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>联系我</span></a>
+      </div>
+      <div class="tech-strip">
+        <span class="ts-label">常用工具</span>
+        <span class="ts-chip">Claude Code</span><span class="ts-chip">Codex</span><span class="ts-chip">Cursor</span><span class="ts-chip">WorkBuddy</span><span class="ts-chip">OpenClaw</span><span class="ts-chip">Hermes</span><span class="ts-chip">MCP</span><span class="ts-chip">Coze</span><span class="ts-chip">Dify</span><span class="ts-chip">RAG</span><span class="ts-chip">opik</span><span class="ts-chip">Whisper</span><span class="ts-chip">即梦AI</span>
+      </div>
+    </div>
   </div>
-</div></header>
-
-<section id="numbers"><div class="wrap">
-  <div class="nhead"><span class="k">by the numbers</span><h2>关键数字，一目了然</h2><p>这些数字背后，是可复用、可交付、可验收的真实产出。</p></div>
-  <div class="nums">
-    <div class="ncard"><span class="big">6+</span><span class="lbl">主导 / 参与项目</span></div>
-    <div class="ncard"><span class="big">0→1</span><span class="lbl">国企级 AI 系统主导</span></div>
-    <div class="ncard"><span class="big">1<span style="font-size:.5em">年+</span></span><span class="lbl">产品实习经验</span></div>
-    <div class="ncard"><span class="big">前7%</span><span class="lbl">专业排名 11/159</span></div>
-    <div class="ncard"><span class="big">8</span><span class="lbl">标杆客户单月新增签约（客户复盘口径）</span></div>
+  <div class="scroll-cue" aria-hidden="true" onclick="scrollToSection('ai')" style="cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+</section>
+<section id="ai"><div class="inner">
+  <div class="section-header"><div class="num">01 / AI IN ACTION</div><h2>AI 实践</h2><p class="sub">把最新的 AI Agent / RAG / 自动化能力，真正落到产品与业务里</p></div>
+  <div class="ai-actions">
+<div class="ai-card reveal"><div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg></div><div class="ai-body"><h3>AI 内容工厂 · 多智能体自动化生产</h3><div class="ai-lead">部署多智能体 + 企业 RAG 知识库，把内容生产从「人工日更」变成「一句话出片」。</div><ul class="ai-points"><li><b>智能体部署：</b>负责 OpenClaw（小龙虾）、Hermes 等多 Agent 的部署配置与企业知识库搭建</li><li><b>一句话触发：</b>员工在飞书发一句话，Agent 即自动完成抖音 / 小红书 / TikTok 对标竞品的数据采集与汇总分析</li><li><b>自动成片：</b>结合知识库自动生成文案、智能匹配素材、自动剪辑，短视频与图文达运营可直接发布质量</li></ul><div class="ai-tags"><span>OpenClaw</span><span>Hermes</span><span>RAG 知识库</span><span>飞书触发</span><span>多Agent编排</span><span>自动剪辑</span></div></div></div>
+<div class="ai-card reveal"><div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="ai-body"><h3>无感 AI 客服 · 拟人化健康管理 Agent</h3><div class="ai-lead">主导企业微信 AI 客服（慢病健康管理），以 Agent 替代人工——测试中甲方与客户均以为是真人。</div><ul class="ai-points"><li><b>替代人工：</b>复购提醒话术输出、实时应答客户疑问</li><li><b>定制陪伴：</b>按每位客户习惯定制每日血糖监测 / 饮食记录 / 用药提醒</li><li><b>数据沉淀：</b>自动生成客户专属健康档案、付费意愿评分与后续话术优化策略</li></ul><div class="ai-tags"><span>企业微信</span><span>Agent</span><span>RAG</span><span>用户画像</span><span>付费意愿评分</span><span>拟人化对话</span></div></div></div>
+<div class="ai-card reveal"><div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><div class="ai-body"><h3>AI 原型与文档流水线 · 从需求到可交互原型</h3><div class="ai-lead">用 AI 打通「需求 → 可交互原型 → 交付文档」全链路，成果已通过甲方评审。</div><ul class="ai-points"><li><b>高保真原型：</b>open-design 输出原型文档，Claude Code / Trae / Cursor 直出开发可复用的 HTML 可交互原型（可预览、可点击）</li><li><b>文档自动化：</b>沉淀自研 Skill，由 Agent 一键生成用户操作手册，无需人工干预</li><li><b>会议转需求：</b>开发 Claude Skill 把会议录音 / 纪要自动转成结构化需求文档，减少人工整理、提升需求一致性</li></ul><div class="ai-tags"><span>open-design</span><span>Claude Code</span><span>Trae</span><span>Cursor</span><span>自研Skill</span><span>HTML交互原型</span></div></div></div>
+<div class="ai-card reveal"><div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></svg></div><div class="ai-body"><h3>AI 赋能产品工作流 · Coze 智能体矩阵</h3><div class="ai-lead">把 AI 搬进产品日常——自建 4 个 Coze 智能体组成「产品助理矩阵」，把调研、竞品、文档等重复工作交给 Agent，自己聚焦判断与决策。</div><ul class="ai-points"><li><b>访谈结构化 Agent：</b>把用户访谈录音 / 纪要自动整理成结构化洞察，沉淀可复用的需求线索</li><li><b>竞品监控 Agent：</b>定时追踪竞品动态与版本更新，自动汇总成竞品简报</li><li><b>PRD / 文案 Agent：</b>依模板自动产出 PRD 初稿、一键润色原型文案，把精力留给判断与决策</li></ul><div class="ai-tags"><span>Coze</span><span>智能体矩阵</span><span>用户研究</span><span>竞品监控</span><span>PRD 提效</span><span>Prompt 设计</span></div></div></div>
+<div class="ai-card reveal"><div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="ai-body"><h3>AI 质量评估 · 给 AI 应用当「裁判」</h3><div class="ai-lead">AI 产品要投产，先得能被「验收」——用裁判模型给 AI 输出统一打分，让质量可量化、可追溯，这也是我做可信 AI 评估系统的核心方法。</div><ul class="ai-points"><li><b>裁判模型：</b>基于 opik 配置 Agent-to-Agent 裁判，对开放式 AI 输出按预设规则统一打分</li><li><b>结构化报告：</b>自动生成可量化的评估报告，让「AI 到底靠不靠谱」有据可依</li><li><b>本地可信：</b>本地化部署 + SDK 调用，数据不出内网，兼顾评估能力与隐私合规</li></ul><div class="ai-tags"><span>opik</span><span>裁判模型 · LLM-as-a-judge</span><span>分维度评分（准确性 / 幻觉 / 安全）</span><span>结构化评估报告</span><span>本地部署 · SDK</span><span>可信AI</span></div></div></div>
   </div>
 </div></section>
-
-<section id="works"><div class="wrap">
-  <div class="shead">
-    <div><span class="k">selected works</span><h2>我的精选作品</h2></div>
-    <p>从需求到落地的全流程实践——每个项目我都能讲清「为什么这么做、结果怎么样」。</p>
+<section id="thinking"><div class="inner">
+  <div class="section-header"><div class="num">02 / MY THINKING</div><h2>我对 AI 产品经理的理解</h2><p class="sub">AI 不是目的，而是解决真实问题的一种能力</p></div>
+  <div class="thinking-manifesto reveal">
+    <div class="thinking-kicker">我的产品判断</div>
+    <p class="thinking-quote">AI 产品经理的核心，不是背模型名词，而是把<strong>不确定的模型能力</strong>，转化为可落地、可衡量、可持续迭代的业务产品。</p>
   </div>
-
-  <div class="stack">
-  <div class="work" style="--i:0">
-    <div class="work-media"><img src="assets/images/projects/trustai-dashboard.png" alt="可信AI"></div>
-    <div class="work-body">
-      <div class="work-cat">ToB · AI 评估平台 · 深度案例</div>
-      <h3>可信 AI 裁判评估系统</h3>
-      <p>0→1 主导，甲方为某中信旗下国企。基于开源框架 opik 配置裁判模型（LLM-as-a-judge），对 AI 应用输出按准确性 / 幻觉 / 安全等维度统一打分、出结构化评估报告，本地部署保障数据不出内网。</p>
-      <div class="work-cta"><span class="res">让 AI 应用投产前第一次有了统一质量标尺 →</span><button class="detail-btn" onclick="openProj('1')">查看详情</button></div>
-    </div>
-  </div>
-
-  <div class="work" style="--i:1">
-    <div class="work-media"><img src="assets/images/projects/smartalarm-main.png" alt="智能闹钟"></div>
-    <div class="work-body">
-      <div class="work-cat">ToC · 智能硬件 App · 独立端到端</div>
-      <h3>智能闹钟枕头 App</h3>
-      <p>React Native + BLE 蓝牙双平台。一个人从需求确认、UI 细节、PRD、HTML 原型，到需求/开发评审、排期与测试验收全程闭环；设计了断连场景仍可离线响铃的闹钟状态机。</p>
-      <div class="work-cta"><span class="res">独立交付的 ToC 智能硬件全流程 →</span><button class="detail-btn" onclick="openProj('2')">查看详情</button></div>
-    </div>
-  </div>
-
-  <div class="work" style="--i:2">
-    <div class="work-media"><img src="assets/images/projects/aitoolchain-flow.png" alt="AI工具链"></div>
-    <div class="work-body">
-      <div class="work-cat">内部提效 · AIGC 工具链</div>
-      <h3>AI 内容生产工具链</h3>
-      <p>主导搭建并运营公司多智能体内容产线：以 OpenClaw、Hermes 为核心，串联 Whisper、FFmpeg、即梦AI，用 MCP 打通 Agent 与企业工具，把「从素材到成片」做成自动化流水线。</p>
-      <div class="work-cta"><span class="res">把内容生产从「人工日更」做成「一句话出片」→</span><button class="detail-btn" onclick="openProj('3')">查看详情</button></div>
-    </div>
-  </div>
-
-  <div class="work" style="--i:3">
-    <div class="work-media"><img src="assets/images/projects/aimarketing-dashboard.png" alt="AI营销"></div>
-    <div class="work-body">
-      <div class="work-cat">ToB · AI 营销 SaaS · 代运营</div>
-      <h3>汉全 AI 营销系统</h3>
-      <p>AI + RPA 自动化营销 SaaS，四大模块（获客 / 销冠 / 客服 / 矩阵）。我负责版本迭代、小程序上线、客户演示与培训，并落地了一家香港跨行业集团客户的「系统 + 代运营」。</p>
-      <div class="work-cta"><span class="res">获客 +20–30%、用工成本 −50% →</span><button class="detail-btn" onclick="openProj('4')">查看详情</button></div>
-    </div>
-  </div>
-
-  <div class="work" style="--i:4">
-    <div class="work-media"><img src="assets/images/projects/cspo-CS_PO__.png" alt="ePO"></div>
-    <div class="work-body">
-      <div class="work-cat">ToB · 财务系统 · 双语文档</div>
-      <h3>CS 客户订单模块（ePO）</h3>
-      <p>某中信旗下国企财务综合平台的采购订单模块。独立完成中英双语需求规格说明书，设计工作台 / 采购订单 / 预算费用 / 库存 / 付款报表全套 HTML 高保真原型，3 轮评审通过。</p>
-      <div class="work-cta"><span class="res">啃得动最枯燥复杂的 ToB 业务 →</span><button class="detail-btn" onclick="openProj('5')">查看详情</button></div>
-    </div>
-  </div>
-
-  <div class="work" style="--i:5">
-    <div class="work-media"><img src="assets/images/projects/nextcanvas-main.png" alt="NextCanvas"></div>
-    <div class="work-body">
-      <div class="work-cat">ToC · 实时协作 · 全栈毕设</div>
-      <h3>Next Canvas 协作画板</h3>
-      <p>本科毕设，React 19 + Konva.js + Yjs CRDT 的多人实时协作画板。双层渲染 100+ 元素稳定 60 FPS、CRDT 同步 &lt;50ms、离线持久化。产品经理里少有的「自己能写全栈」的技术底气。</p>
-      <div class="work-cta"><span class="res">获本科毕业设计创新奖 →</span><button class="detail-btn" onclick="openProj('6')">查看详情</button></div>
-    </div>
-  </div>
-  </div>
-</div></section>
-
-<div class="wrap"><section id="quote" style="padding:0"><div class="quote-in">
-  <div class="mark">“</div>
-  <blockquote>一个月，八个新客户。这样的团队，我信得过。</blockquote>
-  <div class="who">香港某跨行业集团 · 董事长<span>AI 营销系统「系统 + 代运营」客户</span></div>
-  <div class="src">* 客户方复盘会口头反馈口径</div>
-</div></section></div>
-
-<section id="practice"><div class="wrap">
-  <div class="shead">
-    <div><span class="k">ai in action</span><h2>AI 实践</h2></div>
-    <p>不只会描述 AI 能力，更把 Agent、RAG 与自动化真正放进产品和业务流程里。</p>
-  </div>
-  <div class="practice-grid">
-    <article class="practice-card" style="--p:1" data-index="02">
-      <div class="practice-top"><span class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 2v20M17 2v20M2 12h20"/></svg></span><span class="practice-no">PRACTICE 02</span></div>
-      <h3>AI 内容工厂<br>多智能体自动化生产</h3>
-      <p class="practice-lead">部署多智能体 + 企业 RAG 知识库，把内容生产从「人工日更」变成「一句话出片」。</p>
-      <ul class="practice-points"><li><b>智能体部署：</b>负责 OpenClaw、Hermes 等多 Agent 的部署配置与企业知识库搭建</li><li><b>一句话触发：</b>员工在飞书发一句话，Agent 自动采集并分析抖音、小红书、TikTok 对标内容</li><li><b>自动成片：</b>从文案、素材匹配到自动剪辑，产出达到运营可直接发布质量</li></ul>
-      <div class="practice-tags"><span>OpenClaw</span><span>Hermes</span><span>RAG</span><span>多 Agent 编排</span><span>自动剪辑</span></div>
+  <div class="thinking-grid">
+    <article class="thinking-card reveal">
+      <span class="thinking-no">01</span>
+      <h3>从业务问题出发，而不是从 AI 出发</h3>
+      <p>先判断用户痛点是否高频明确、AI 是否优于规则或人工，再回答它最终是<b>增收、降本还是提效</b>；不为使用 AI 而制造场景。</p>
     </article>
-    <article class="practice-card featured" style="--p:0" data-index="01">
-      <div class="practice-top"><span class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="practice-no">PRACTICE 01</span></div>
-      <span class="featured-badge">✦ 重点实践 · 核心案例</span>
-      <h3>无感 AI 客服<br>拟人化健康管理 Agent</h3>
-      <p class="practice-lead">主导企业微信慢病健康管理 AI 客服，以 Agent 承接真人客服工作；测试过程中，甲方与真实客户均未察觉对话方是 AI。</p>
-      <ul class="practice-points"><li><b>替代人工：</b>自动输出复购提醒话术，实时应答客户疑问</li><li><b>定制陪伴：</b>按个人习惯定制血糖监测、饮食记录与用药提醒</li><li><b>数据沉淀：</b>生成健康档案、付费意愿评分及后续话术策略</li></ul>
-      <div class="practice-tags"><span>企业微信</span><span>Agent</span><span>用户画像</span><span>付费意愿评分</span><span>拟人化对话</span></div>
+    <article class="thinking-card reveal">
+      <span class="thinking-no">02</span>
+      <h3>让不确定性可管理</h3>
+      <p>产品设计必须同时定义能力边界、低置信度处理、权限与安全约束，并为高风险场景配置<b>拒答、降级和人工兜底</b>。</p>
     </article>
-    <article class="practice-card" style="--p:2" data-index="03">
-      <div class="practice-top"><span class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></span><span class="practice-no">PRACTICE 03</span></div>
-      <h3>AI 原型与文档流水线</h3>
-      <p class="practice-lead">用 AI 打通「需求 → 可交互原型 → 交付文档」全链路，成果已通过甲方评审。</p>
-      <ul class="practice-points"><li><b>高保真原型：</b>用 open-design 与 AI 编程工具直出可复用、可点击的 HTML 原型</li><li><b>文档自动化：</b>沉淀自研 Skill，由 Agent 一键生成用户操作手册</li><li><b>会议转需求：</b>将录音与纪要自动转成结构化需求文档，提升需求一致性</li></ul>
-      <div class="practice-tags"><span>open-design</span><span>Claude Code</span><span>Cursor</span><span>自研 Skill</span><span>HTML 原型</span></div>
+    <article class="thinking-card reveal">
+      <span class="thinking-no">03</span>
+      <h3>评测是迭代的方向盘</h3>
+      <p>用离线评估集验证版本，用线上任务成功率与业务指标观察真实价值；持续分类 Bad Case、建立回归集，让每次优化都<b>有证据、可复现</b>。</p>
     </article>
-    <article class="practice-card" style="--p:3" data-index="04">
-      <div class="practice-top"><span class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><span class="practice-no">PRACTICE 04</span></div>
-      <h3>AI 赋能产品工作流</h3>
-      <p class="practice-lead">自建 4 个 Coze 智能体组成「产品助理矩阵」，把重复工作交给 Agent，自己聚焦判断与决策。</p>
-      <ul class="practice-points"><li><b>访谈结构化：</b>将录音与纪要整理为结构化洞察和需求线索</li><li><b>竞品监控：</b>定时追踪竞品动态与版本更新，自动汇总简报</li><li><b>PRD / 文案：</b>依模板产出 PRD 初稿并一键润色原型文案</li></ul>
-      <div class="practice-tags"><span>Coze</span><span>智能体矩阵</span><span>用户研究</span><span>竞品监控</span><span>PRD 提效</span></div>
-    </article>
-    <article class="practice-card" style="--p:4" data-index="05">
-      <div class="practice-top"><span class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="practice-no">PRACTICE 05</span></div>
-      <h3>AI 质量评估 · 给 AI 应用当「裁判」</h3>
-      <p class="practice-lead">用裁判模型给 AI 输出统一打分，让质量可量化、可追溯——这是可信 AI 评估系统的核心方法。</p>
-      <ul class="practice-points"><li><b>裁判模型：</b>基于 opik 配置 Agent-to-Agent 裁判，按预设规则评价开放式输出</li><li><b>结构化报告：</b>自动生成分维度、可量化的评估报告</li><li><b>本地可信：</b>本地化部署 + SDK 调用，数据不出内网，兼顾能力与隐私合规</li></ul>
-      <div class="practice-tags"><span>opik</span><span>LLM-as-a-judge</span><span>准确性 / 幻觉 / 安全</span><span>结构化报告</span><span>本地部署</span></div>
+    <article class="thinking-card reveal">
+      <span class="thinking-no">04</span>
+      <h3>在效果、体验与成本之间取舍</h3>
+      <p>模型越大不一定越适合业务。结合准确率、延迟、并发、数据安全与 Token 成本做选型，关注<b>每解决一个业务问题的成本</b>和长期 ROI。</p>
     </article>
   </div>
+  <div class="thinking-loop reveal" aria-label="AI product decision loop">
+    <span class="loop-step">用户与痛点</span><span class="loop-arrow">→</span>
+    <span class="loop-step">为什么需要 AI</span><span class="loop-arrow">→</span>
+    <span class="loop-step">方案与边界</span><span class="loop-arrow">→</span>
+    <span class="loop-step">指标与评测</span><span class="loop-arrow">→</span>
+    <span class="loop-step">数据反馈闭环</span><span class="loop-arrow">→</span>
+    <span class="loop-step">成本与 ROI</span>
+  </div>
 </div></section>
-
-<section id="process"><div class="wrap">
-  <div class="proc-grid">
-    <div class="proc-left">
-      <span class="k">how i work</span>
-      <h2>我做产品的方式</h2>
-      <p>一套把「模糊需求」变成「可交付、可验收」AI 产品的稳定打法，从场景洞察到评估迭代。</p>
+<section id="projects"><div class="inner">
+  <div class="section-header"><div class="num">03 / PROJECTS</div><h2>项目作品</h2><p class="sub">实习期间参与的核心项目，从需求到落地的全流程实践</p></div>
+  <div class="project-list">
+<div class="project-card reveal flagship"><div class="card-text"><div class="project-index">01</div><div class="proj-meta"><span class="project-kind">ToB · AI 评估平台</span><span class="proj-badge badge-case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg><span>深度案例</span></span></div><h3>可信AI裁判评估系统</h3><div class="role">主导产品设计 · 甲方：某中信旗下国企 · 2026.02 — 2026.07</div><div class="project-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>0→1 建成国企级 AI 评估体系，让 AI 应用投产前第一次有了统一的质量标尺与结构化评估报告。</span></div><div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">可信AI评估系统结合开源 LLM 评估框架 opik，对企业 AI 应用（智能体 / 通用大模型）的输出内容进行统一评估并输出评估报告，解决 AI 应用投产前「输出无统一评判标准、质量不可预测」的痛点，为 AI 应用投入实际业务奠定基础。</div></div><div class="case-study"><div class="cs-block"><div class="cs-h">背景 & 痛点</div><p class="cs-p">企业想把 AI 应用（智能体 / 大模型）投入实际业务，却卡在一个根本问题：AI 的输出没有统一评判标准、质量不可预测——投产前根本无法判断一个 AI 应用到底靠不靠谱。甲方（某中信旗下国企）急需一套能对 AI 输出统一打分、并出具评估报告的体系。</p></div><div class="cs-block"><div class="cs-h">我的角色 & 目标</div><p class="cs-p">作为 0→1 产品负责人，我要从零定义这套评估体系：评什么、怎么评、评完给谁看，并推动前后端团队把它做成能落进国企业务的可交付产品。</p></div><div class="cs-block"><div class="cs-h">关键决策（为什么这么做）</div><ul class="cs-decisions"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div><div class="cs-dec-t">选型 opik 开源评估框架，而非从零自研</div><div class="cs-dec-w">深入调研其托管云服务与开发文档后，判断它指标可扩展、可私有化部署、社区活跃，省下造轮子的时间，把精力放在业务适配上。</div></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div><div class="cs-dec-t">采用 Agent-to-Agent「裁判模型」模式</div><div class="cs-dec-w">AI 应用的输出多是开放式文本，规则匹配评不了。用一个裁判大模型按预设评分规则给业务 AI 的输出打分，才能贴着语义评质量。</div></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div><div class="cs-dec-t">本地部署 + SDK 调用，数据不出内网</div><div class="cs-dec-w">国企客户数据高度敏感，必须数据本地化。我定的方案是「业务系统 + opik 本地部署 + SDK 调用」，从架构上保证隐私合规。</div></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div><div class="cs-dec-t">隔离甲方频繁变更，保护开发节奏</div><div class="cs-dec-w">甲方需求变更频繁，我对每次变更做影响评估、制定解决措施，把干系人的变更挡在开发团队之外，保证里程碑按时交付。</div></div></li></ul></div><div class="cs-block cs-result"><div class="cs-h">结果 & 沉淀</div><p class="cs-p">0→1 建成国企级可信 AI 评估体系：AI 应用投产前第一次有了统一的质量标尺与结构化评估报告，评估流程可复用到后续多个 AI 应用。这也是我理解「AI 产品怎么定义好坏、怎么被验收」最扎实的一段经历。</p></div></div><div class="project-tags"><span>0→1</span><span>opik评估框架</span><span>Agent-to-Agent</span><span>国企客户</span><span>LLM评估</span></div></div><div class="card-visual framed"><div class="browser-bar" aria-hidden="true"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl"></span></div><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/trustai-dashboard.png" alt="可信AI任务列表" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/trustai-results.png" alt="可信AI评估结果" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/trustai-config.png" alt="可信AI模型配置" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/trustai-report.png" alt="可信AI评估报告" loading="lazy" tabindex="0" role="button"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal owned"><div class="card-text"><div class="project-index">02</div><div class="proj-meta"><span class="project-kind">ToC · 智能硬件 App</span><span class="proj-badge badge-solo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>独立负责 · 端到端</span></span></div><h3>智能闹钟枕头App</h3><div class="role">产品实习生 · 需求分析与产品设计 · 2026.04 — 2026.06</div><div class="project-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>独立一手包办这款 ToC 智能硬件 App 的全流程——从需求确认、UI 细节、PRD、HTML 原型到需求/开发评审、排期与测试验收。</span></div><div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">为智能硬件（闹钟枕头）设计的 React Native + BLE 蓝牙双平台（iOS / Android）配套 App，实现闹钟设置、蓝牙同步、离线可用等核心能力，保障用户在弱网 / 断连场景下的可靠唤醒体验。</div></div><div class="pb"><div class="pb-label">项目职责</div><ul class="contributions"><li>独立负责这款 ToC App 从 0 到 1 全流程：与客户确认需求、敲定 UI 细节、输出产品需求书、开发 HTML 交互原型</li><li>组织需求评审与开发评审、输出排期计划，并主导产品测试与验收，把控端到端交付质量</li><li>跨层级协调：对接直属（+1）领导申请与协调开发资源，推动项目按期落地</li><li>设计中英双语 i18n 方案，覆盖导航标签、按钮文案、Toast 提示、表单标签与文档内容</li></ul></div><div class="pb"><div class="pb-label">解决方案</div><ul class="contributions"><li>设计完整的闹钟状态机：响铃 30s→暂停 60s→循环，15 分钟后自动停止，蓝牙断开后本地仍可离线响铃，保证核心闹钟功能的可靠性</li><li>梳理蓝牙通信全链路：设备扫描→配对→同步闹钟 / 音量 / 振动档位→电量上报，明确各环节的数据结构与异常处理逻辑</li></ul></div><div class="project-tags"><span>智能硬件</span><span>BLE蓝牙</span><span>React Native</span><span>状态机设计</span><span>i18n</span></div></div><div class="card-visual"><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/smartalarm-main.png" alt="智能闹钟App主页" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/smartalarm-alarms.png" alt="闹钟列表" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/smartalarm-connect.png" alt="蓝牙连接" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/smartalarm-settings.png" alt="设置页" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/smartalarm-modal.png" alt="弹窗交互" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/smartalarm-card.png" alt="设备卡片" loading="lazy" tabindex="0" role="button"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">6</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal"><div class="card-text"><div class="project-index">03</div><div class="proj-meta"><span class="project-kind">内部提效 · AIGC 工具链</span></div><h3>AI内容生产工具链</h3><div class="role">主导搭建 · 技术选型与多 Agent 运营 · 2025.11 — 2026.07</div><div class="project-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>主导搭建并运营公司多智能体内容产线，把内容生产从「人工日更」做成「一句话出片」。</span></div><div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">主导搭建并持续运营公司的 AI 内容生产工具链：以 OpenClaw（小龙虾）、Hermes 等多智能体为核心，串联 Whisper、FFmpeg、即梦AI 等工具，并通过 MCP 打通 Agent 与企业工具 / 数据，把「从素材到成片」的内容生产做成自动化流水线，显著提升内容运营效率。</div></div><div class="pb"><div class="pb-label">项目职责</div><ul class="contributions"><li>主导工具链的技术选型与流程设计，搭建可复用的 AI 内容生产链路，并持续运营维护公司的 OpenClaw（小龙虾）、Hermes 等多智能体</li><li>基于 MCP（Model Context Protocol）打通 Agent 与企业工具 / 数据，编排多智能体协作，把重复的内容生产环节交给 Agent 自动完成</li><li>熟练使用 Claude Code、Cursor、腾讯 WorkBuddy 等 AI 研发 / 办公工具提效；沉淀《OpenClaw 技能复刻指南》，覆盖 8 个核心技能的安装、配置、使用全流程文档</li></ul></div><div class="pb"><div class="pb-label">解决方案</div><ul class="contributions"><li>实现「语音转写→字幕生成→封面标题→顶格标题→成片烧录」全自动处理流程，并引入 AI 配音 / 数字人口播，降低出镜与制作成本</li><li>搭建社交卡片生成系统，支持小红书 3:4 图文封面（1080×1440）自动化输出；结合文生图 / 文生视频（即梦AI、可灵）扩充素材产能</li></ul></div><div class="project-tags"><span>多Agent编排</span><span>MCP</span><span>数字人口播</span><span>文生视频</span><span>WorkBuddy</span><span>内容运营</span></div></div><div class="card-visual framed"><div class="browser-bar" aria-hidden="true"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl"></span></div><div class="carousel single" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/aitoolchain-flow.png" alt="AI内容生产工具链流程图" loading="lazy" tabindex="0" role="button"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">1</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal"><div class="card-text"><div class="project-index">04</div><div class="proj-meta"><span class="project-kind">ToB · AI 营销 SaaS</span></div><h3>汉全AI营销系统</h3><div class="role">产品/运营实习生 · 文档建设与迭代管理 · 2025.09 — 2026.07</div><div class="project-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>以 RPA + AI 重构获客与接待链路，将询盘客户量提升约 20%–30%、销售用工成本降低约 50%。</span></div><div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">汉全AI营销系统专注于 AI 与 RPA 自动化相结合，提供 AI 获客、AI 销冠、AI 客服、矩阵发布等功能，为企业和商家管理客户的全生命周期，提升获客效率与客户转化率。</div></div><div class="pb"><div class="pb-label">项目职责</div><ul class="contributions"><li>负责 AI 营销系统的迭代计划，统筹需求评审、开发跟进及版本发布流程，确保产品按计划高质量上线</li><li>负责面向客户的产品演示与方案讲解，配合商务部门交付，完成 AI 手机的基础配置及系统功能培训</li><li>统筹规划客户生命周期管理，制定 SOP 流程、SOP 看板、SOP 任务等功能，跟踪客户完成转化的全过程</li></ul></div><div class="pb"><div class="pb-label">解决方案</div><ul class="contributions"><li>针对传统获客效率低，结合 RPA 技术代替人工操作，通过 AI 扩展关键词锁定目标客户，提供「直接抓取线索」与「关键词匹配后触达」等三大获客方式，将询盘客户量提升约 20%-30%</li><li>针对销售培训成本高、人手不足，提供 AI 销冠功能：结合企业知识库自动接待客户，当 AI 遇到无法解决的问题或客户进入询价阶段时自动通知销售接管，销售只需处理核心环节，降低约 50% 的用工成本</li><li>落地香港某跨行业集团客户，以「系统 + 代运营」模式为其搭建并运营获客与接待链路；据客户方复盘反馈，系统接入约一个月新增 8 名签约客户</li></ul></div><div class="project-tags"><span>SaaS</span><span>AI自动化</span><span>小程序</span><span>代运营</span><span>香港集团客户案例</span><span>文档建设</span></div></div><div class="card-visual framed"><div class="browser-bar" aria-hidden="true"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl"></span></div><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/aimarketing-dashboard.png" alt="AI营销系统主页" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/aimarketing-acquisition.png" alt="AI获客任务创建" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/aimarketing-agent.png" alt="AI智能体配置" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/aimarketing-mobile.png" alt="移动端AI销冠" loading="lazy" tabindex="0" role="button"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal"><div class="card-text"><div class="project-index">05</div><div class="proj-meta"><span class="project-kind">ToB · 财务系统</span></div><h3>CS客户订单模块 (ePO)</h3><div class="role">需求分析与原型设计 · 甲方：某中信旗下国企 · 2026.04 — 2026.07</div><div class="project-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>独立交付中英双语需求规格 + HTML 高保真原型，3 轮评审通过，让国企财务采购全流程搬上线。</span></div><div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">面向国企的财务综合平台采购订单（ePO）模块，覆盖采购订单、预算费用、库存管理、付款报表等财务全流程，帮助企业实现采购与费用的规范化、线上化管理。</div></div><div class="pb"><div class="pb-label">项目职责</div><ul class="contributions"><li>独立完成中英双语需求规格说明书，将甲方财务业务需求转化为清晰、可开发的产品需求文档</li><li>设计 HTML 高保真交互原型，覆盖工作台、采购订单管理、预算费用、库存管理、付款报表等核心页面</li><li>与甲方对接需求，完成 3 轮需求评审，持续跟进原型与需求文档的迭代修订</li></ul></div><div class="pb"><div class="pb-label">解决方案</div><ul class="contributions"><li>梳理 CAPEX / OPEX 资本性与运营性支出的业务流程差异，针对不同费用类型设计差异化的审批与记账流程，保证财务处理的合规性</li><li>输出数据字典与功能清单，明确字段定义、状态流转与接口逻辑，降低开发的理解成本与返工风险</li></ul></div><div class="project-tags"><span>ToB产品</span><span>原型设计</span><span>财务系统</span><span>双语文档</span><span>需求分析</span></div></div><div class="card-visual framed"><div class="browser-bar" aria-hidden="true"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl"></span></div><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/cspo-CS_PO__.png" alt="CS客户订单模块原型" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/cspo-Purchase_Order_Manag.png" alt="采购订单管理原型" loading="lazy" tabindex="0" role="button"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">2</span></div><div class="carousel-dots"></div></div></div></div>
+<div class="project-card reveal"><div class="card-text"><div class="project-index">06</div><div class="proj-meta"><span class="project-kind">ToC · 实时协作工具（毕设）</span></div><h3>Next Canvas 协作画板（毕设）</h3><div class="role">毕业设计 · 全栈开发 + 产品设计 · 2025.08 — 2026.05</div><div class="project-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>独立做出多人实时协作画板，100+ 元素稳定 60 FPS、端到端同步 &lt;50ms，获本科毕设创新奖。</span></div><div class="pb"><div class="pb-label">项目介绍</div><div class="pb-desc">本科毕业设计《屏幕在线共享平台的几何元素设计与实现》，基于 React 19 + Konva.js + Yjs CRDT 实现支持多人实时协作的几何元素画板，可绘制、编辑、协同多种几何图形与文字、图片元素。</div></div><div class="pb"><div class="pb-label">项目职责</div><ul class="contributions"><li>独立完成毕业设计全流程，AI 辅助完成需求分析、竞品调研、系统设计与答辩材料</li><li>设计画板的图形绘制、多选编辑、文字样式、房间协同等核心功能</li></ul></div><div class="pb"><div class="pb-label">解决方案</div><ul class="contributions"><li>设计静态 / 动态双层渲染策略（Konva StaticLayer + DynamicLayer），100+ 元素下稳定保持 60 FPS</li><li>基于 Yjs CRDT 算法实现无冲突协同编辑，端到端同步延迟 &lt;50ms；采用 IndexedDB + SQLite 双层持久化架构，支持离线编辑自动恢复</li></ul></div><div class="project-tags"><span>React 19</span><span>Konva.js</span><span>Yjs CRDT</span><span>WebSocket</span><span>毕设</span></div></div><div class="card-visual framed"><div class="browser-bar" aria-hidden="true"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl"></span></div><div class="carousel" data-carousel><div class="carousel-viewport"><div class="carousel-track"><img class="carousel-slide" src="assets/images/projects/nextcanvas-shapes.png" alt="Next Canvas 几何元素画布" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/nextcanvas-edit.png" alt="多图形选中与文字样式编辑" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/nextcanvas-collab.png" alt="协同编辑面板与画布" loading="lazy" tabindex="0" role="button"><img class="carousel-slide" src="assets/images/projects/nextcanvas-connected.png" alt="多人实时协同已连接" loading="lazy" tabindex="0" role="button"></div></div><button class="carousel-btn cprev" aria-label="prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><button class="carousel-btn cnext" aria-label="next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><div class="carousel-counter"><span class="cc-cur">1</span>/<span class="cc-total">4</span></div><div class="carousel-dots"></div></div></div></div>
+  </div>
+</div></section>
+<section id="skills"><div class="inner">
+  <div class="section-header"><div class="num">04 / SKILLS</div><h2>专业能力</h2><p class="sub">产品经理核心技能 + AI工具实操能力</p></div>
+  <div class="skills-categories">
+<div class="skill-category reveal featured"><h3>AI产品能力</h3><div class="skill-tags"><span class="skill-tag core"><span class="dot"></span><span>LLM应用（Claude / DeepSeek）</span></span><span class="skill-tag"><span class="dot"></span><span>Prompt Engineering</span></span><span class="skill-tag core"><span class="dot"></span><span>RAG（切块 / 混合检索 / rerank）</span></span><span class="skill-tag"><span class="dot"></span><span>Agent / Workflow 编排（Coze / Dify）</span></span><span class="skill-tag core"><span class="dot"></span><span>LLM 评估（LLM-as-a-judge / opik）</span></span><span class="skill-tag"><span class="dot"></span><span>模型选型（Prompt / RAG / 微调）</span></span><span class="skill-tag"><span class="dot"></span><span>MCP 工具编排</span></span><span class="skill-tag"><span class="dot"></span><span>Claude Skill 开发</span></span></div></div>
+<div class="skill-category reveal"><h3>产品设计</h3><div class="skill-tags"><span class="skill-tag core"><span class="dot"></span><span>需求分析与管理</span></span><span class="skill-tag"><span class="dot"></span><span>竞品分析</span></span><span class="skill-tag core"><span class="dot"></span><span>PRD/BRD撰写</span></span><span class="skill-tag"><span class="dot"></span><span>高保真原型（Axure RP）</span></span><span class="skill-tag"><span class="dot"></span><span>用户旅程地图</span></span><span class="skill-tag"><span class="dot"></span><span>产品全生命周期管理</span></span></div></div>
+<div class="skill-category reveal"><h3>技术理解</h3><div class="skill-tags"><span class="skill-tag"><span class="dot"></span><span>前端基础（HTML / Vue3）</span></span><span class="skill-tag"><span class="dot"></span><span>后端概念（Java / Spring Boot）</span></span><span class="skill-tag"><span class="dot"></span><span>数据库基础（MySQL）</span></span><span class="skill-tag core"><span class="dot"></span><span>API接口设计理解</span></span><span class="skill-tag"><span class="dot"></span><span>Git版本管理</span></span><span class="skill-tag core"><span class="dot"></span><span>Python脚本/自动化</span></span></div></div>
+<div class="skill-category reveal"><h3>协作与工具</h3><div class="skill-tags"><span class="skill-tag core"><span class="dot"></span><span>项目管理（飞书 / Jira）</span></span><span class="skill-tag"><span class="dot"></span><span>文档规范建设</span></span><span class="skill-tag"><span class="dot"></span><span>微信生态（小程序/公众号）</span></span><span class="skill-tag"><span class="dot"></span><span>SQL数据查询</span></span><span class="skill-tag core"><span class="dot"></span><span>中英双语文档（CET-6）</span></span><span class="skill-tag"><span class="dot"></span><span>跨部门协调沟通</span></span></div></div>
+  </div>
+</div></section>
+<section id="experience"><div class="inner">
+  <div class="section-header"><div class="num">05 / EXPERIENCE</div><h2>实习经历</h2><p class="sub">两段产品实习经历，从AI工具应用到B端系统设计</p></div>
+  <div class="timeline">
+<div class="timeline-item reveal"><div class="dot"></div><div class="date">2025.09 — 2026.07</div><h3>AI产品经理实习生</h3><div class="company">广州汉全信息科技股份有限公司</div><ul><li>主导可信AI裁判评估系统（服务某中信旗下国企客户）从0到1产品设计，输出需求规格说明书、详细设计、操作手册全套文档，协调前后端团队按期迭代交付</li><li>负责客户活动物料管理系统需求管理，推动PRD从V1至V6的6个版本迭代，覆盖系统架构、数据库、第三方接口的全链路产品设计</li><li>参与AI营销SaaS平台产品文档建设及小程序版本迭代管理，跟进微信审核发布流程</li><li>建立产品部门文档规范及标准化模板体系，提升团队文档产出效率</li><li>独立搭建AI内容生产工具链（Whisper + FFmpeg + OpenClaw），撰写技术复刻指南沉淀知识</li><li>搭建4个Coze智能体用于用户访谈结构化、竞品动态监控、PRD自动生成、原型文案润色，显著提升原型产出效率</li><li>开发Claude Skill将会议录音/纪要自动转化为结构化需求文档，减少人工整理时间，提升需求一致性</li></ul></div><div class="timeline-item reveal"><div class="dot"></div><div class="date">2024.10 — 2025.01</div><h3>产品经理助理</h3><div class="company">深圳市博思通信息技术有限公司</div><ul><li>主导ToB营销平台优惠券模块设计：竞品分析拼多多、淘宝、京东优惠券玩法，深访目标用户，输出Axure高保真原型覆盖C端+B端全流程</li><li>跨部门协同多个团队，组织多轮需求评审，输出PRD及接口说明文档，推动项目按期上线</li><li>优惠券模块上线后有效带动订单转化与GMV增长，并沉淀为平台通用营销工具</li></ul></div>
+  </div>
+</div></section>
+<section id="education"><div class="inner">
+  <div class="section-header"><div class="num">06 / EDUCATION</div><h2>教育背景</h2></div>
+  <div class="edu-card reveal">
+    <div>
+      <h3>广东工业大学</h3>
+      <div class="major">网络工程 · 本科 · 2022 — 2026</div>
+      <div class="details">主修课程：Java程序设计、数据库原理、C语言、计算机网络、数据结构<br>语言能力：CET-6，中英双语文档输出<br>校园经历：女子篮球队后勤负责人（组织赛事后勤保障，赞助转化率50%）、班级心委</div>
     </div>
-    <div class="proc-right">
-      <div class="pcard" style="--i:0"><div class="n">(01)</div><h3>场景与需求</h3><p>深入真实业务场景，把用户和甲方的痛点抽象成清晰、通用、可落地的需求，为项目定方向。</p></div>
-      <div class="pcard" style="--i:1"><div class="n">(02)</div><h3>方案与原型</h3><p>结合 AI 能力做方案设计与选型（Prompt / RAG / 微调），用 HTML 高保真原型让各方「看见」后再决策。</p></div>
-      <div class="pcard" style="--i:2"><div class="n">(03)</div><h3>协同与交付</h3><p>统筹排期、跨团队协同、管理需求变更，把干系人的干扰挡在开发之外，推动里程碑按期交付。</p></div>
-      <div class="pcard" style="--i:3"><div class="n">(04)</div><h3>评估与迭代</h3><p>用评估体系度量 AI 输出质量（离线 + 在线、分维度评分），基于数据和反馈持续迭代，而非交付即结束。</p></div>
+    <div class="edu-badge">
+      <div class="rank">11/159</div>
+      <div class="rank-label">专业排名 · 前7%</div>
     </div>
   </div>
 </div></section>
-
-<section id="caps" style="padding-top:20px"><div class="wrap">
-  <div class="shead" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
-    <div><span class="k">what i do</span><h2>我能交付的能力</h2></div>
-    <p style="max-width:560px">围绕「把前沿 AI 落地为可交付产品」展开的一套能力。</p>
-  </div>
-  <div class="caps">
-    <span class="cap"><span class="ico">✦</span>AI 产品设计</span>
-    <span class="cap"><span class="ico">✧</span>RAG · Agent 应用</span>
-    <span class="cap"><span class="ico">◆</span>LLM 评估体系</span>
-    <span class="cap"><span class="ico">△</span>模型选型（Prompt/RAG/微调）</span>
-    <span class="cap"><span class="ico">✺</span>需求分析与 PRD</span>
-    <span class="cap"><span class="ico">☆</span>高保真原型</span>
-    <span class="cap"><span class="ico">❖</span>MCP 工具编排</span>
-    <span class="cap"><span class="ico">♡</span>中英双语文档</span>
-    <span class="cap"><span class="ico">⚡</span>数据驱动迭代</span>
-  </div>
-</div></section>
-
-<section id="contact"><div class="wrap">
-  <span class="k">let's talk</span>
-  <h2>一起做点<br>厉害的 AI 产品。</h2>
-  <p class="sub">如果你在找一个「既懂产品流程、又真的会用 AI」的应届产品经理，欢迎随时联系我。</p>
-  <div class="cbtns">
-    <a href="mailto:laozhoujiade@qq.com" class="cbtn dark">✉ laozhoujiade@qq.com</a>
-    <a href="#" class="cbtn out" onclick="navigator.clipboard&&navigator.clipboard.writeText('TTlisten0905');this.textContent='微信已复制 ✓ TTlisten0905';return false;">微信 TTlisten0905</a>
-    <a href="assets/resume.pdf" class="cbtn out" download>↓ 下载简历 PDF</a>
+<section id="honors"><div class="inner">
+  <div class="section-header"><div class="num">07 / HONORS</div><h2>荣誉与证书</h2></div>
+  <div class="honors-grid">
+<div class="honor-card reveal" onclick="openLightboxImg('assets/images/cert-scholarship-2025.jpg')" role="button" tabindex="0" style="cursor:pointer">
+      <div class="honor-img"><img src="assets/images/cert-scholarship-2025.jpg" alt="honor" loading="lazy"></div>
+      <div class="honor-info"><h4>优秀学生一等奖学金</h4><span>2024 — 2025 年度</span></div>
+    </div>
+<div class="honor-card reveal" onclick="openLightboxImg('assets/images/cert-scholarship-2024.jpg')" role="button" tabindex="0" style="cursor:pointer">
+      <div class="honor-img"><img src="assets/images/cert-scholarship-2024.jpg" alt="honor" loading="lazy"></div>
+      <div class="honor-info"><h4>优秀学生二等奖学金</h4><span>2023 — 2024 年度</span></div>
+    </div>
+<div class="honor-card reveal" onclick="openLightboxImg('assets/images/cert-thesis-award.jpg')" role="button" tabindex="0" style="cursor:pointer">
+      <div class="honor-img"><img src="assets/images/cert-thesis-award.jpg" alt="honor" loading="lazy"></div>
+      <div class="honor-info"><h4>本科毕业设计（论文）创新奖</h4><span>2026 届</span></div>
+    </div>
   </div>
 </div></section>
-
-<footer>© 2026 周惠琳 · AI 产品经理 · 用 AI 造 AI 产品</footer>
-
-<div class="modal" id="modal" onclick="if(event.target===this)closeProj()">
-  <div class="modal-card">
-    <button class="modal-x" onclick="closeProj()" aria-label="关闭">×</button>
-    <div class="modal-cat" id="m-cat"></div>
-    <h2 class="modal-title" id="m-title"></h2>
-    <div class="modal-body" id="m-body"></div>
+<section id="contact"><div class="inner">
+  <div class="section-header"><div class="num">08 / CONTACT</div><h2>保持联系</h2><p class="sub">如果你对我的经历感兴趣，欢迎随时联系</p></div>
+  <div class="contact-grid">
+    <a href="mailto:laozhoujiade@qq.com" class="contact-item">
+      <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="ci-text"><div class="ci-label">邮箱</div><div class="ci-value">laozhoujiade@qq.com</div></div>
+    </a>
+    <div class="contact-item" onclick="copyWechat()" role="button" tabindex="0" style="cursor:pointer">
+      <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+      <div class="ci-text"><div class="ci-label">微信</div><div class="ci-value">TTlisten0905 <span style="font-size:11px;color:var(--text-muted-dark)">（点击复制）</span></div></div>
+    </div>
+    <a href="assets/resume.pdf" class="contact-item" download="周惠琳-AI产品经理-简历.pdf">
+      <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg></div>
+      <div class="ci-text"><div class="ci-label">简历</div><div class="ci-value">下载PDF简历</div></div>
+    </a>
   </div>
+</div></section>
+<footer><p>© 2026 周惠琳 · 更新于2026.07</p></footer>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <div id="lightboxContent" style="text-align:center;color:#fff;max-width:600px;padding:24px;"></div>
 </div>
-
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
 <script>
-const PROJ = {
- '1':{cat:'ToB · AI 评估平台 · 甲方：某中信旗下国企 · 2026.02–07',title:'可信 AI 裁判评估系统',body:`
-  <h4>背景 & 痛点</h4><p>企业想把 AI 应用（智能体 / 大模型）投入实际业务，却卡在一个根本问题：AI 输出没有统一评判标准、质量不可预测——投产前根本无法判断一个 AI 应用到底靠不靠谱。</p>
-  <h4>我的角色 & 职责</h4><p>作为 0→1 产品负责人，从零定义这套评估体系：评什么、怎么评、评完给谁看，并推动前后端团队做成能落进国企业务的可交付产品。</p>
-  <h4>关键决策（为什么这么做）</h4><ul>
-   <li><b>选型 opik 而非自研：</b>深入调研其托管服务与开发文档后，判断指标可扩展、可私有化部署、社区活跃，省下造轮子的时间。</li>
-   <li><b>Agent-to-Agent 裁判模型：</b>开放式文本规则匹配评不了，用裁判 LLM 按预设 rubric 打分，才能贴着语义评质量。</li>
-   <li><b>本地部署 + SDK 调用：</b>国企数据高度敏感，必须数据不出内网，从架构上保证隐私合规。</li>
-   <li><b>隔离甲方频繁变更：</b>对每次变更做影响评估，把干系人变更挡在开发之外，保证里程碑按期交付。</li></ul>
-  <h4>成果 & 沉淀</h4><p>0→1 建成国企级可信 AI 评估体系，AI 应用投产前第一次有了统一质量标尺与结构化评估报告，评估流程可复用到后续多个 AI 应用。</p>
-  <h4>技术 & 工具</h4><div class="modal-chips"><span>opik</span><span>LLM-as-a-judge</span><span>Agent-to-Agent</span><span>本地部署</span><span>OpenAI 协议</span></div>`},
- '2':{cat:'ToC · 智能硬件 App · 独立端到端 · 2026.04–06',title:'智能闹钟枕头 App',body:`
-  <h4>背景 & 痛点</h4><p>智能硬件（闹钟枕头）需要配套 App，核心难点是：闹钟是「不能失败」的功能，弱网 / 蓝牙断连是常态，必须保证可靠唤醒。</p>
-  <h4>我的角色 & 职责</h4><p>独立负责这款 ToC App 从 0 到 1 全流程：与客户确认需求、敲定 UI、写 PRD、做 HTML 原型、组织需求 / 开发评审、出排期、主导测试与验收。</p>
-  <h4>关键决策（为什么这么做）</h4><ul>
-   <li><b>闹钟状态机：</b>响铃 30s→暂停 60s→循环、15 分钟自动停；蓝牙断开后本地仍可离线响铃——可靠性方案要建立在「默认断连」的假设上。</li>
-   <li><b>蓝牙全链路设计：</b>扫描→配对→同步（闹钟 / 音量 / 振动）→电量上报，每个环节定义数据结构与异常处理。</li>
-   <li><b>跨层级协调：</b>带排期方案向 +1 领导申请开发资源，把资源取舍做成选择题而不是问答题。</li></ul>
-  <h4>成果</h4><p>独立交付双平台 App，为可靠性定下「断连场景 100% 可响铃」的验收标准并通过验收。</p>
-  <h4>技术 & 工具</h4><div class="modal-chips"><span>React Native</span><span>BLE 蓝牙</span><span>状态机设计</span><span>i18n</span></div>`},
- '3':{cat:'内部提效 · AIGC 工具链 · 2025.11–2026.07',title:'AI 内容生产工具链',body:`
-  <h4>背景 & 痛点</h4><p>公司内容生产靠人工日更，效率低、出镜与制作成本高。</p>
-  <h4>我的角色 & 职责</h4><p>主导工具链技术选型与流程设计，搭建可复用的 AI 内容产线，并持续运营维护公司的 OpenClaw、Hermes 等多智能体。</p>
-  <h4>关键决策（为什么这么做）</h4><ul>
-   <li><b>多智能体 + MCP 编排：</b>用 MCP 打通 Agent 与企业工具 / 数据，把重复的内容生产环节交给 Agent 自动完成。</li>
-   <li><b>该上 LLM 才上：</b>字幕切分用 Whisper + 规则而非通用大模型——不该上 LLM 的环节就不上，控成本。</li>
-   <li><b>自动成片 + 数字人：</b>语音转写→字幕→封面→烧录全自动，引入 AI 配音 / 数字人口播降低出镜成本。</li></ul>
-  <h4>成果</h4><p>把内容生产从「人工日更」做成「一句话出片」；沉淀《OpenClaw 技能复刻指南》，覆盖 8 个核心技能的安装、配置、使用全流程文档。</p>
-  <h4>技术 & 工具</h4><div class="modal-chips"><span>OpenClaw</span><span>Hermes</span><span>MCP</span><span>Whisper</span><span>FFmpeg</span><span>即梦AI</span><span>可灵</span></div>`},
- '4':{cat:'ToB · AI 营销 SaaS · 代运营 · 2025.09–2026.07',title:'汉全 AI 营销系统',body:`
-  <h4>背景 & 痛点</h4><p>企业获客效率低、销售培训成本高、人手不足，需要 AI + RPA 自动化营销 SaaS 管理客户全生命周期。</p>
-  <h4>我的角色 & 职责</h4><p>负责版本迭代统筹、小程序审核发布、客户演示与培训交付，深度参与获客与 AI 销冠模块方案设计，并落地香港某跨行业集团客户的「系统 + 代运营」。</p>
-  <h4>关键决策（为什么这么做）</h4><ul>
-   <li><b>RPA + AI 关键词扩展获客：</b>代替人工，抓线索 + 关键词匹配触达，将询盘量提升约 20%–30%。</li>
-   <li><b>AI 销冠自动接待 + 询价转人工：</b>结合知识库自动接待，进入询价阶段自动转人工——「何时转人工」是产品判断，不是技术问题，用工成本降约 50%。</li>
-   <li><b>付费意愿评分分层触达：</b>让接待优先级与转人工时机有数据依据，而非一刀切。</li></ul>
-  <h4>成果</h4><p>四大模块（获客 / 销冠 / 客服 / 矩阵）落地；询盘 +20%–30%、用工成本 −50%。香港某跨行业集团客户「系统 + 代运营」，据客户董事长复盘反馈，使用系统约一个月新增 8 个新客户。</p>
-  <p style="font-size:12.5px;color:#8a8a8a">* 数字为公司 / 客户复盘口径。</p>
-  <h4>技术 & 工具</h4><div class="modal-chips"><span>AI + RPA</span><span>企业知识库</span><span>付费意愿评分</span><span>SOP 体系</span><span>微信小程序</span></div>`},
- '5':{cat:'ToB · 财务系统 · 甲方：某中信旗下国企 · 2026.04–07',title:'CS 客户订单模块（ePO）',body:`
-  <h4>背景 & 痛点</h4><p>国企财务综合平台的采购订单（ePO）流程需要规范化、线上化，涉及采购订单、预算费用、库存、付款报表全流程。</p>
-  <h4>我的角色 & 职责</h4><p>独立完成中英双语需求规格说明书，设计全套 HTML 高保真原型，与甲方对接完成 3 轮需求评审。</p>
-  <h4>关键决策（为什么这么做）</h4><ul>
-   <li><b>CAPEX / OPEX 差异化流程：</b>梳理资本性与运营性支出的差异，针对不同费用类型设计差异化审批与记账，保证财务合规。</li>
-   <li><b>数据字典 + 功能清单：</b>明确字段定义、状态流转与接口逻辑，降低开发理解成本与返工风险。</li>
-   <li><b>逆向学业务：</b>拿甲方现有单据和审批流当教材逆向学，用原型把理解「翻译」出来让甲方纠错，3 轮评审就是 3 轮纠错。</li></ul>
-  <h4>成果</h4><p>独立交付中英双语需求规格 + 全套高保真原型，3 轮评审通过，让国企财务采购全流程搬上线。</p>
-  <h4>技术 & 工具</h4><div class="modal-chips"><span>需求规格</span><span>HTML 高保真原型</span><span>财务流程</span><span>中英双语文档</span></div>`},
- '6':{cat:'ToC · 实时协作 · 全栈毕设 · 2025.08–2026.05',title:'Next Canvas 协作画板',body:`
-  <h4>背景 & 痛点</h4><p>本科毕业设计《屏幕在线共享平台的几何元素设计与实现》——做一个支持多人实时协作、可绘制编辑多种图形与文字图片的几何画板。</p>
-  <h4>我的角色 & 职责</h4><p>独立完成毕业设计全流程（全栈开发 + 产品设计），AI 辅助需求分析、竞品调研、系统设计与答辩材料。</p>
-  <h4>关键决策（为什么这么做）</h4><ul>
-   <li><b>静态 / 动态双层渲染：</b>Konva StaticLayer + DynamicLayer，100+ 元素稳定保持 60 FPS。</li>
-   <li><b>Yjs CRDT 无冲突协同：</b>端到端同步延迟 &lt;50ms。</li>
-   <li><b>IndexedDB + SQLite 双层持久化：</b>支持离线编辑自动恢复。</li></ul>
-  <h4>成果</h4><p>独立交付多人实时协作画板，性能与协同指标达标，获本科毕业设计（论文）创新奖。</p>
-  <h4>技术 & 工具</h4><div class="modal-chips"><span>React 19</span><span>Konva.js</span><span>Yjs CRDT</span><span>Hocuspocus</span><span>WebSocket</span></div>`}
-};
-function openProj(id){const p=PROJ[id];if(!p)return;document.getElementById('m-cat').textContent=p.cat;document.getElementById('m-title').textContent=p.title;document.getElementById('m-body').innerHTML=p.body;const m=document.getElementById('modal');m.classList.add('open');document.body.style.overflow='hidden';m.scrollTop=0;}
-function closeProj(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProj();});
+  // THEME
+  function getTheme(){const s=localStorage.getItem('theme');if(s)return s;return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  function applyTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('theme',t);}
+  function toggleTheme(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');}
+  applyTheme(getTheme());
+  // A11y：让 role=button 的非按钮元素支持键盘 Enter/Space 激活
+  document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.getAttribute&&e.target.getAttribute('role')==='button'){e.preventDefault();e.target.click();}});
+  // SCROLL
+  function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+  const backToTop=document.getElementById('backToTop');
+  window.addEventListener('scroll',()=>{backToTop.classList.toggle('visible',window.scrollY>600);});
+  // LIGHTBOX
+  function openLightboxImg(src){const lb=document.getElementById('lightbox');document.getElementById('lightboxContent').innerHTML='<img src="'+src+'" style="max-width:90vw;max-height:80vh;border-radius:8px;" alt="">';lb.classList.add('active');document.body.style.overflow='hidden';}
+  function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+  // COPY WECHAT
+  function copyWechat(){navigator.clipboard.writeText('TTlisten0905').then(()=>{const el=document.querySelector('#contact .contact-item:nth-child(2) .ci-value');const orig=el.innerHTML;el.textContent='已复制！ ✓';setTimeout(()=>{el.innerHTML=orig;},1500);}).catch(()=>alert('微信：TTlisten0905'));}
+  // REVEAL
+  const observer=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  // CAROUSEL
+  document.querySelectorAll('[data-carousel]').forEach(car=>{
+    const track=car.querySelector('.carousel-track');
+    const slides=Array.from(car.querySelectorAll('.carousel-slide'));
+    const dotsWrap=car.querySelector('.carousel-dots');
+    const curEl=car.querySelector('.cc-cur');const totalEl=car.querySelector('.cc-total');
+    let idx=0;
+    if(slides.length<=1)car.classList.add('single');
+    if(totalEl)totalEl.textContent=slides.length;
+    slides.forEach((s,i)=>{const b=document.createElement('button');if(i===0)b.classList.add('active');b.addEventListener('click',e=>{e.stopPropagation();go(i);});dotsWrap.appendChild(b);s.addEventListener('click',()=>openLightboxImg(s.getAttribute('src')));});
+    const dots=Array.from(dotsWrap.children);
+    function go(n){idx=(n+slides.length)%slides.length;track.style.transform='translateX(-'+(idx*100)+'%)';dots.forEach((d,i)=>d.classList.toggle('active',i===idx));if(curEl)curEl.textContent=idx+1;}
+    const prev=car.querySelector('.cprev');const next=car.querySelector('.cnext');
+    if(prev)prev.addEventListener('click',e=>{e.stopPropagation();go(idx-1);});
+    if(next)next.addEventListener('click',e=>{e.stopPropagation();go(idx+1);});
+  });
 </script>
-
 </body>
 </html>
